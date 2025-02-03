@@ -1,6 +1,6 @@
 banner:
   enable: true
-  image: "images/banner.webp"
+  image: "images/banner.png"
   contents: "**DEN:** _Devices for Numerical Ecology_"
   
 items:
