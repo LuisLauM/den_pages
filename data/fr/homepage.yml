@@ -1,0 +1,22 @@
+banner:
+  enable: true
+  image: "images/banner.jpg"
+  contents: "**DEN:** _Dispositif d’Ecologie Numérique_"
+  
+items:
+  - type: highlights
+    items_per_row: 3
+    items:
+    - title: Données + Écologie + Numérique
+      icon: fa-database
+      content: >
+        Nous accompagnons les chercheurs dans l'analyse, le traitement et la valorisation des données scientifiques.
+    - title: Des outils pour la recherche
+      icon: fa-terminal
+      content: >
+        Stockage, calcul, gestion des données : nous mettons à disposition des ressources numériques adaptées aux besoins scientifiques.
+    - title: Collaborer & Innover
+      icon: fa-users
+      content: >
+        Ateliers, formations, méthodologies : un espace d’échange pour optimiser les pratiques numériques en écologie.
+  

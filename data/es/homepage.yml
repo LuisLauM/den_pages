@@ -1,0 +1,22 @@
+banner:
+  enable: true
+  image: "images/banner.jpg"
+  contents: "**DEN:** _Dispositivos para Ecología Numérica_"
+  
+items:
+  - type: highlights
+    items_per_row: 3
+    items:
+    - title: Datos + Ecología + Numérica
+      icon: fa-database
+      content: >
+        Apoyamos a los investigadores en el análisis, tratamiento y explotación de datos científicos.
+    - title: Herramientas para la investigación
+      icon: fa-terminal
+      content: >
+        Almacenamiento, cálculo, gestión de datos: proporcionamos recursos digitales adaptados a las necesidades científicas.
+    - title: Colaborar e innovar
+      icon: fa-users
+      content: >
+        Talleres, cursos de formación, metodologías: un foro de intercambio de ideas para optimizar las prácticas digitales en ecología.
+  

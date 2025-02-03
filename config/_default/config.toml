@@ -1,0 +1,33 @@
+baseURL = "https://luislaum.github.io/testwebsite"
+languageCode = "en-us"
+title = "Marbec DEN"
+theme = "hugo-arcana"
+copyright = "© UMR Marbec"
+
+defaultContentLanguage = "en"
+[languages]
+    [languages.fr]
+        languageName = "FR"
+        languageCode = "fr"
+        weight = 1
+        disabled = false
+    [languages.en]
+        languageName = "EN"
+        languageCode = "en-us"
+        weight = 2
+        disabled = false
+    [languages.es]
+        languageName = "ES"
+        languageCode = "es"
+        weight = 3
+        disabled = false
+
+[taxonomies]
+    tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+ignoreFiles = [ "\\.qmd$", "\\.ipynb$", "\\.py$" ]
+
+  

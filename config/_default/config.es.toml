@@ -1,0 +1,27 @@
+[params]
+    description = "Dispositivos para análisis en Ecología Numérica"
+    show_post_dates = false
+
+    [[params.social]]
+        title = "Facebook"
+        icon = "fa-facebook-f"
+        url = "#"
+    [[params.social]]
+        title = "GitHub"
+        icon = "fa-github"
+        url = "https://github.com/umr-marbec"
+    [[params.social]]
+        title = "GitLab"
+        icon = "fa-gitlab"
+        url = "https://forge.ird.fr/marbec"
+    [[params.social]]
+        title = "UMR-Marbec"
+        icon = "fa-chrome"
+        url = "https://umr-marbec.fr/"
+
+[menus]
+    [[menus.main]]
+        name = "Servidores"
+        weight = 32
+        pageRef = "/servers"
+        

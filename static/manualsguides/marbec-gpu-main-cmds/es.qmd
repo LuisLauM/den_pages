@@ -1,0 +1,123 @@
+---
+title: "Principales comandos en <code>marbec-gpu</code>"
+description: |
+  Un listado rápido de los principales comandos para usar dentro de la Terminal de <code>marbec-gpu</code>.
+date: 2024-10-23
+format: 
+  html:
+    toc: true
+    theme: 
+      light: yeti
+      dark: solar
+fig-dpi: 1000
+engine: knitr
+draft: false
+---
+
+![](images/banner.jpg){width=100%}
+
+Créditos de la imagen: Kajetan Sumila en [Unplash](https://unsplash.com/photos/black-metal-tools-on-brown-wooden-shelf-sXPR9JV270c?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+
+
+# Principales comandos en Terminal de `marbec-gpu`
+
+Lo primero que debemos tener en cuenta es que `marbec-gpu` lleva instalado Ubuntu, por lo que los comandos listados a continuación serán los mismos que se usan en dicho SO. En este artículo se mostrará una descripción de los principales modos de uso para cada comando, pero si usted tiene algún requerimiento adicional, siempre puede buscar en foros como Stackoverflow o revisar la ayuda de cada comando, que consiste en colocar el nombre del comando seguido de `--help`. Por ejemplo, si deseo conocer la ayuda del comando `ls`, bastará con ejecutar `ls --help` en la Terminal.
+
+::: {.callout-note title="Mayúsculas y minúsculas"}
+Al igual que en R o Python, el uso de mayúsculas o minúsculas al momento de indicar una opción sí importa. Por ejemplo, `ls -D` no equivale a `ls -d`, por lo que se debe tener cuidado.
+:::
+
+### Navegar entre carpetas
+
+* Comando: `cd`
+* Modo de uso: `cd ruta/carpeta`
+
+Para indicar que se desea ir a una posición (carpeta) anterior, se utilizará el *statement* `..` de la siguiente manera: `../ruta/carpeta1` (esto indica que a partir de la carpeta en donde nos encontramos, en la carpeta anterior hay una carpeta llamada `ruta` que a su vez tiene una llamada `carpeta1`).
+
+### Crear una carpeta
+
+* Comando: `mkdir`
+* Modo de uso: `mkdir ruta/carpeta`
+
+### Generar un listado de archivos
+
+* Comando: `ls`
+* Modo de uso: `ls ruta/folder`
+
+Principales opciones:
+
+* `--all` (o `-a`): Muestra todos los archivos y subcarpetas, incluyendo aquellos protegidos (ocultos) por el sistema.
+
+### Generar un listado de archivos/carpetas mostrando el tamaño de cada elemento
+
+* Comando: `du`
+* Modo de uso: `du ruta/archivo-folder.csv`
+
+Principales opciones:
+
+* `--human-readable` (o `-h`): cambia las unidades dinámicamente para evitar mostrar todo Kb. Esto es especialmente útil cuando se tiene objetos (subcarpetas o archivos) de gran tamaño.
+
+* `--summary` (o `-s`): muestra una tabla resumida, i.e. solo incluye las subcarpetas y archivos presentes en el primer nivel de búsqueda. Esto es útil cuando solo queremos echar un vistazo rápido y evitar que muestre un listado completo de TODAS las subcarpetas internas. 
+
+Si deseo obtener un listado de todos los archivos y carpetas dentro de un folder con sus respectivos tamaños (las tres opciones son equivalentes):
+
+```{bash, eval=FALSE}
+du ruta/de/folder/* --human-readable --summarize
+du ruta/de/folder/* -h -s
+du ruta/de/folder/* -hs
+```
+
+### Copiar-pegar
+
+Para esto, la manera más sencilla es a través del comando `cp` y haciendo uso de los comandos de navegación citados en este post (e.g. `..` para indicar una carpeta anterior). La sintaxis básica es la siguiente: `cp ruta/de/origen ruta/de/destino`, pero existen diferentes casos posibles:
+
+* Copiar un archivo dentro de la misma carpeta, pero con un nombre distinto (crear duplicado): `cp archivo1.csv archivo1-dup.csv`
+
+* Copiar un archivo hacia otra carpeta: `cp ruta/de/archivo1.csv carpeta/de/destino`
+
+* Copiar más de un archivo hacia otra carpeta: `cp ruta/de/archivo1.csv ruta/de/archivo2.csv carpeta/de/destino`
+
+* Copiar una carpeta en otra carpeta: `cp ruta/de/carpeta1 ruta/de/carpeta2 --recursive` o `cp ruta/de/carpeta1 ruta/de/carpeta2 -r`
+
+:::{.callout-note}
+Por defecto, `cp` sobreescribirá cualquier archivo con el mismo nombre. Para evitarlo, es posible añadir la opción `-n` del siguiente modo: `cp ruta/de/archivo1.csv ruta/de/destino -n`
+:::
+
+### Cortar-pegar (y también renombrar)
+
+Será muy similar a lo anterior, pero a través del comando `mv`:
+
+* Renombrar un archivo (dentro de la misma carpeta): `mv archivo1.csv archivo2.csv`
+
+* Mover un archivo hacia otra carpeta: `mv ruta/de/archivo1.csv carpeta/de/destino`
+
+* Mover más de un archivo hacia otra carpeta: `mv ruta/de/archivo1.csv ruta/de/archivo2.csv carpeta/de/destino`
+
+* Mover una carpeta hacia otra carpeta: `mv ruta/antigua/carpeta ruta/nueva/carpeta` 
+
+
+### Borrar
+
+Para esto, utilizaremos el comando `rm` de la siguiente manera:
+
+* Borrar un archivo: `rm ruta/de/archivo.csv`
+
+* Borrar una carpeta (y todo su contenido): `rm ruta/de/carpeta -r`
+
+:::{.callout-caution title="No hay vuelta atrás"}
+Si bien dentro de Terminal siempre es posible cancelar una orden usando el atajo `Ctrl+C` (o `Cmd+C` en MacOS), una vez que se ejecuta el comando `rm` y éste culmina su trabajo, **no hay manera de revertir lo borrado** ni recuperarlo desde alguna papelera de reciclaje, así que ten mucho cuidado al usarlo.
+:::
+
+### Visualizar procesos en curso
+
+* Comando: `top`
+
+Al ejecutarlo, se mostrará en modo interactivo en Terminal los procesos que se están ejecutando, así como los recursos utilizados por cada uno de ellos (básicamente como un Administrador de tareas). Para salir de este modo interactivo, basta con pulsar la tecla `q`.
+
+### Detener la ejecución de un proceso
+
+Si queremos forzar el cierre o la cancelación de un proceso ya iniciado, podemos utilizar el atajo `Ctrl+C` (o `Cmd+C` en MacOS). Es importante tener en cuenta que forzar el cierre de un proceso que tenía en marcha el manejo de archivos o carpetas (creación, copia, etc.) puede dejar inutilizables los archivos generados.
+
+### Visualizar un archivo de texto plano
+
+Por defecto, desde Terminal existen dos herramientas disponibles: `vi` y `nano`. La sintaxis para su ejecución es tan sencilla como `vi ruta/archivo1.txt` o `nano ruta/archivo1.txt`, en donde `archivo1.txt` puede ser cualquier archivo de texto plano (e.g. un script en R o Python). Los atajos de navegación dentro de cada uno de esos entornos sí son distintos, pero la documentación es muy abundante en Internet. Elige el que te agrade más.

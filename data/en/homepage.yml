@@ -1,0 +1,22 @@
+banner:
+  enable: true
+  image: "images/banner.webp"
+  contents: "**DEN:** _Devices for Numerical Ecology_"
+  
+items:
+  - type: highlights
+    items_per_row: 3
+    items:
+    - title: Data + Ecology + Digital
+      icon: fa-database
+      content: >
+        We support researchers in the analysis, processing and valorization of scientific data.
+    - title: Tools for research
+      icon: fa-terminal
+      content: >
+        Storage, calculation, data management: we provide digital resources tailored to scientific needs.
+    - title: Collaborate & Innovate
+      icon: fa-users
+      content: >
+        Workshops, training courses, methodologies: a forum for optimizing digital practices in ecology. 
+  

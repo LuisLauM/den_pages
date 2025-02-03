@@ -1,16 +1,12 @@
 project:
-  type: website
+  type: hugo
+  resources: 
+    - "content/**/images/*"
 
-execute:
+about: 
+  template: marquee
+  image-shape: rectangle
+  
+execute: 
   freeze: auto
-  default-kernel: knitr
-
-format:
-  html:
-    theme: pulse
-    css: styles.css
-    toc: true
-
-profile:
-  default: french
-  group: [french, english]
+  warning: false
