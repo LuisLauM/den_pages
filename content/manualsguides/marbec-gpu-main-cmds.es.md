@@ -7,6 +7,6 @@ date: '2024-10-23'
 tags:
 - guias
 - marbec-gpu
-url: //manualsguides/marbec-gpu-main-cmds/es.html
+url: /manualsguides/marbec-gpu-main-cmds/es.html
 
 ---

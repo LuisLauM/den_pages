@@ -1,4 +1,4 @@
-baseURL = "https://luislaum.github.io/testwebsite"
+baseURL = "https://luislaum.github.io/den_pages"
 languageCode = "en-us"
 title = "Marbec DEN"
 theme = "hugo-arcana"
