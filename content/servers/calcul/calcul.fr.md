@@ -5,7 +5,7 @@ menus:
     params:
       class: center
     parent: Serveurs
-    weight: 32.2
+    weight: 31
 ---
 
 ## À propos des serveurs de calcul

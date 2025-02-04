@@ -5,7 +5,7 @@ menus:
     params:
       class: center
     parent: Serveurs
-    weight: 33.1
+    weight: 33
 ---
 
 ## À propos des Serveurs des Applications Web

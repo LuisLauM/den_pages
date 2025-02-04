@@ -4,9 +4,9 @@ menu: main
 weight: 20
 ---
 
-## À propos des NED
+## À propos des DEN
 
-Les dispositifs d'écologie numérique (NED) se concentrent sur la gestion et l'analyse de grands volumes de données numériques issues de la recherche scientifique. Ces tâches comprennent la collecte, le traitement, l'analyse, le stockage et la valorisation des données, et sont réalisées par le biais de groupes de travail, de formations, d'ateliers et de séminaires.
+Les dispositifs d'écologie numérique (DEN) se concentrent sur la gestion et l'analyse de grands volumes de données numériques issues de la recherche scientifique. Ces tâches comprennent la collecte, le traitement, l'analyse, le stockage et la valorisation des données, et sont réalisées par le biais de groupes de travail, de formations, d'ateliers et de séminaires.
 
 ## Objectifs de la DEN
 

@@ -19,6 +19,10 @@
         icon = "fa-chrome"
         url = "https://umr-marbec.fr/"
 
+[[main]]
+    name = "Contact"
+    url = "contact/"
+    
 [menus]
     [[menus.main]]
         name = "Servers"

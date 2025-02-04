@@ -1,12 +1,13 @@
 ---
 title: About
-menu: main
-weight: 20
+menu: 
+  main:
+    weight: 20
 ---
 
 ## About DENs
 
-The Numerical Ecology Devices (NEDs) focus on the management and analysis of large volumes of digital data from scientific research. These tasks include data collection, processing, analysis, storage and valorization, and are carried out through working groups, trainings, workshops and seminars.
+The Numerical Ecology Devices (DENs) focus on the management and analysis of large volumes of digital data from scientific research. These tasks include data collection, processing, analysis, storage and valorization, and are carried out through working groups, trainings, workshops and seminars.
 
 ## DEN objectives
 

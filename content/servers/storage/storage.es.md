@@ -5,7 +5,7 @@ menus:
     params:
       class: center
     parent: Servidores
-    weight: 31.1
+    weight: 32
 ---
 
 ## Acerca de Servidores de Almacenamiento
