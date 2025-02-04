@@ -72,7 +72,7 @@ jobs:
       # Render QMD to HTML
       - name: Render Quarto files to HTML
         run: |
-          quarto render content 
+          quarto render 
       
       # Render with Hugo
       - name: Build with Hugo
