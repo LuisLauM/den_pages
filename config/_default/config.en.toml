@@ -1,6 +1,6 @@
 [params]
     description = "Devices for Numerical Ecology"
-    show_post_dates = false
+    show_post_dates = true
 
     [[params.social]]
         title = "Facebook"

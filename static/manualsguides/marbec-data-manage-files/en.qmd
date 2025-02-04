@@ -1,5 +1,6 @@
 ---
 title: "Managing files within <code>marbec-data</code>"
+image: images/banner.png
 description: |
   How to manage files and carpetas to and from <code>marbec-data</code>?
 date: 2024-10-24
@@ -11,9 +12,10 @@ format:
       dark: solar
 fig-dpi: 1000
 draft: false
+tags:
+  - guides
+  - marbec-data
 ---
-
-![](images/banner.png){width=100%}
 
 Image credits: Declan Sun at [Unplash](https://unsplash.com/photos/a-shelf-filled-with-lots-of-white-boxes-8byGIDpCU1w?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 

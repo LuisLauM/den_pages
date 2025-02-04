@@ -1,5 +1,6 @@
 ---
 title: "Running an R script into <code>marbec-gpu</code>"
+image: images/banner.jpg
 description: |
   Running R scripts in <code>marbec-gpu</code>.
 date: 2024-10-25
@@ -12,9 +13,10 @@ format:
 fig-dpi: 1000
 engine: knitr
 draft: false
+tags:
+  - guides
+  - marbec-gpu
 ---
-
-![](images/banner.jpg){width=100%}
 
 Image credits: Андрей Сизов at [Unplash](https://unsplash.com/photos/a-book-with-a-diagram-on-it-nuz3rK5iiKg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 

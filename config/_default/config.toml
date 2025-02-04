@@ -5,6 +5,8 @@ theme = "hugo-arcana"
 copyright = "© UMR Marbec"
 
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
 [languages]
     [languages.fr]
         languageName = "FR"

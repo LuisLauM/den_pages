@@ -8,9 +8,9 @@
                     {{ with .Date }}<p class="date">{{ . | time.Format ":date_medium" }}</p>{{ end }}
                     <p>
                         {{ with .Description }}
-                            {{ . }}
+                            {{ . | safeHTML }}
                         {{ else }}
-                            {{ .Summary }}
+                            {{ .Summary | safeHTML }}
                         {{ end }}
                     </p>
                 </div>

@@ -8,9 +8,9 @@
             {{ end }}
             <p>
                 {{ with .Description }}
-                    {{- . }}
+                    {{- . | safeHTML }}
                 {{- else }}
-                    {{- .Summary }}
+                    {{- .Summary | safeHTML }}
                 {{- end }}
             </p>
         </div>

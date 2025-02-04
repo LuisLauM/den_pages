@@ -48,26 +48,33 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      
-      # Install Quarto
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
 
+      # Installing R
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.2.0'
 
+      # Installing R packages
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
 
+      # Run script to create Manual & Guides md files
+      - name: Run R script
+        run: Rscript R/mdGenerator.R
+      
+      # Install Quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
       # Render QMD to HTML
       - name: Render Quarto files to HTML
         run: |
           quarto render content 
       
+      # Render with Hugo
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -75,6 +82,7 @@ jobs:
           TZ: America/Los_Angeles
         run: |
           hugo \
+            --cleanDestinationDir \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"

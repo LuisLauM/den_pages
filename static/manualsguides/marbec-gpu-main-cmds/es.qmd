@@ -1,5 +1,6 @@
 ---
 title: "Principales comandos en <code>marbec-gpu</code>"
+image: images/banner.jpg
 description: |
   Un listado rápido de los principales comandos para usar dentro de la Terminal de <code>marbec-gpu</code>.
 date: 2024-10-23
@@ -12,9 +13,10 @@ format:
 fig-dpi: 1000
 engine: knitr
 draft: false
+tags:
+  - guias
+  - marbec-gpu
 ---
-
-![](images/banner.jpg){width=100%}
 
 Créditos de la imagen: Kajetan Sumila en [Unplash](https://unsplash.com/photos/black-metal-tools-on-brown-wooden-shelf-sXPR9JV270c?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
