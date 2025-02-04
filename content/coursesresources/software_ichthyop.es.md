@@ -1,6 +1,7 @@
 ---
 title: Software Ichthyop
 image: coursesresources/software_ichthyop.png
+redirect_url: "http://www.ichthyop.org/"
 date: "2025-02-04"
 tags:
   - formación

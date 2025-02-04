@@ -2,6 +2,7 @@
 title: Tidyverse training
 image: coursesresources/tidyverse_training.png
 date: "2025-02-04"
+redirect_url: "https://umr-marbec.github.io/tidyverse-training/"
 tags:
   - formación
   - cursos

@@ -2,6 +2,7 @@
 title: OSMOSE software
 image: coursesresources/software_osmose.png
 date: "2025-02-04"
+redirect_url: "http://www.osmose-model.org/"
 tags:
   - training
   - courses
