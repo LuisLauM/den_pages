@@ -102,14 +102,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Clean Git cache
+        run: git clean -fdx
+
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: actions/deploy-pages@v4
         with:
-          branch: gh-pages  # Specify the branch to push to
-          folder: public    # Specify the folder containing the generated files
+          branch: gh-pages  
+          folder: public    
