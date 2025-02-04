@@ -32,7 +32,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.129.0
+      HUGO_VERSION: 0.142.0
     steps:
       - name: Install Hugo CLI
         run: |
@@ -63,7 +63,7 @@ jobs:
 
       # Run script to create Manual & Guides md files
       - name: Run R script
-        run: Rscript R/mdGenerator.R
+        run: Rscript R/mdGenerator.R --vanilla
       
       # Install Quarto
       - name: Set up Quarto
@@ -72,7 +72,7 @@ jobs:
       # Render QMD to HTML
       - name: Render Quarto files to HTML
         run: |
-          quarto render 
+          quarto render static/manualsguides
       
       # Render with Hugo
       - name: Build with Hugo
