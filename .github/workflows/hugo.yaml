@@ -106,9 +106,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: public
-        
