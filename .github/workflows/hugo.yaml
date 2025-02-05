@@ -62,10 +62,6 @@ jobs:
         with:
           cache-version: 1
 
-      # Run script to create Manual & Guides md files
-      - name: Run R script
-        run: Rscript R/mdGenerator.R --vanilla
-      
       # Install Quarto
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -80,14 +76,18 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-          TZ: America/Los_Angeles
+          TZ: Europe/Paris
         run: |
           hugo \
             --cleanDestinationDir \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-            --disableFastRender
+      
+      - name: Copy files from _site to public
+        run: |
+          cp -r _site/static/manualsguides/* public/manualsguides/
+          mkdir -p public/site_libs/ && cp -r _site/site_libs/* public/site_libs/
       
       # Upload artifact
       - name: Upload artifact

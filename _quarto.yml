@@ -1,8 +1,7 @@
 project:
   type: website
+  output-dir: "_site"
   pre-render: R/mdGenerator.R
-  resources: 
-    - "*.html"
 
 about: 
   template: marquee
