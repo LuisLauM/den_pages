@@ -99,4 +99,4 @@ Es muy importante que se defina contraseñas seguras (alfanuméricas con símbol
 
 ## ¿Cómo ejecutar un proceso en `marbec-gpu`?
 
-Tenemos un [post](https://luislaum.github.io/blog/marbec-gpu-run-process/marbec-gpu-run-process.html) en donde desarrollamos más a detalle este punto.
+Tenemos un [post](https://luislaum.github.io/den_pages/static/manualsguides/marbec-gpu-run-process/es.html) en donde desarrollamos más a detalle este punto.

@@ -97,6 +97,6 @@ It is very important to define strong passwords (alphanumeric with symbols and u
 
 ## How to run a process on `marbec-gpu`?
 
-We have a [post](https://luislaum.github.io/blog/marbec-gpu-run-process/marbec-gpu-run-process.html) where we develop this point in more detail.
+We have a [post](https://luislaum.github.io/den_pages/static/manualsguides/marbec-gpu-run-process/en.html) where we develop this point in more detail.
 
 

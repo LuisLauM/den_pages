@@ -85,7 +85,7 @@ Si bien el explorador del entorno web de `marbec-data` ofrece las opciones de co
 
 ### Copiar-pegar
 
-Para esto, la manera más sencilla es a través del comando `cp` y haciendo uso de los comandos de navegación citados en este [post](https://luislaum.github.io/blog/marbec-gpu-main-cmds/marbec-gpu-main-cmds.html) (e.g. `..` para indicar una carpeta anterior). La sintaxis básica es la siguiente: `cp ruta/de/origen ruta/de/destino`, pero existen diferentes casos posibles:
+Para esto, la manera más sencilla es a través del comando `cp` y haciendo uso de los comandos de navegación citados en este [post](https://luislaum.github.io/den_pages/static/manualsguides/marbec-gpu-main-cmds/en.html) (e.g. `..` para indicar una carpeta anterior). La sintaxis básica es la siguiente: `cp ruta/de/origen ruta/de/destino`, pero existen diferentes casos posibles:
 
 * Copiar un archivo dentro de la misma carpeta, pero con un nombre distinto (crear duplicado): `cp archivo1.csv archivo1-dup.csv`
 

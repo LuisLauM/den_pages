@@ -32,4 +32,6 @@ defaultContentLanguageInSubdir = true
 
 ignoreFiles = [ "\\.qmd$", "\\.ipynb$", "\\.py$" ]
 
+[outputs]
+    home = [ "HTML", "JSON", "RSS"]
   

@@ -85,7 +85,7 @@ While the `marbec-data` web environment explorer offers the options to copy, pas
 
 ### Copy-paste
 
-For this, the simplest way is through the `cp` command and making use of the navigation commands cited in this [post](https://luislaum.github.io/blog/marbec-gpu-main-cmds/marbec-gpu-main-cmds.html) (e.g. `..` to indicate a previous folder). The basic syntax is the following: `cp path/origin /path/destination`, but there are different possible cases:
+For this, the simplest way is through the `cp` command and making use of the navigation commands cited in this [post](https://luislaum.github.io/den_pages/static/manualsguides/marbec-gpu-main-cmds/en.html) (e.g. `..` to indicate a previous folder). The basic syntax is the following: `cp path/origin /path/destination`, but there are different possible cases:
 
 * Copy a file into the same folder, but with a different name (create duplicate): `cp file1.csv file1-dup.csv`.
 
