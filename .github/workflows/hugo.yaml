@@ -87,7 +87,7 @@ jobs:
       - name: Copy files from _site to public
         run: |
           cp -r _site/static/manualsguides/* public/manualsguides/
-          mkdir -p public/site_libs/ && cp -r _site/site_libs/* public/site_libs/
+          cp -r _site/site_libs/* ./
       
       # Upload artifact
       - name: Upload artifact
