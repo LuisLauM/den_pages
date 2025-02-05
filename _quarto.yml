@@ -1,7 +1,8 @@
 project:
-  type: hugo
+  type: website
+  pre-render: R/mdGenerator.R
   resources: 
-    - "content/**/images/*"
+    - "*.html"
 
 about: 
   template: marquee
