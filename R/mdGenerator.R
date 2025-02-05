@@ -30,12 +30,16 @@ for(i in seq_along(postDirs)){
     yaml$image <- gsub(x = yaml$image, pattern = "^static/", replacement = "")
     
     # Define url field
-    yaml$url <- file.path(paste0("/", basename(dirname(dirname(qmdFiles[j])))),
-                          basename(dirname(qmdFiles[j])),
-                          gsub(x = basename(qmdFiles[j]), 
-                               pattern = "\\.qmd$", 
-                               replacement = ".html", 
-                               ignore.case = TRUE))
+    # yaml$url <- file.path(paste0("/", basename(dirname(dirname(qmdFiles[j])))),
+    #                       basename(dirname(qmdFiles[j])),
+    #                       gsub(x = basename(qmdFiles[j]), 
+    #                            pattern = "\\.qmd$", 
+    #                            replacement = ".html", 
+    #                            ignore.case = TRUE))
+    yaml$url <- paste0("/", gsub(x = qmdFiles[j], 
+                                  pattern = "\\.qmd$", 
+                                  replacement = ".html", 
+                                  ignore.case = TRUE))
     
     outFile <- file.path("content/manualsguides/", 
                          paste(basename(dirname(qmdFiles[j])), 

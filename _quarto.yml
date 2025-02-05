@@ -1,7 +1,7 @@
 project:
   type: website
-  output-dir: "_site"
-  pre-render: R/mdGenerator.R
+  output-dir: "public/"
+  # pre-render: R/mdGenerator.R
 
 about: 
   template: marquee

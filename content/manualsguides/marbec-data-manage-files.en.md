@@ -7,6 +7,6 @@ date: '2024-10-24'
 tags:
 - guides
 - marbec-data
-url: /manualsguides/marbec-data-manage-files/en.html
+url: /static/manualsguides/marbec-data-manage-files/en.html
 
 ---

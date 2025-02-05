@@ -8,6 +8,6 @@ tags:
 - guias
 - marbec-data
 - marbec-gpu
-url: /manualsguides/marbec-data-gpu-intro/es.html
+url: /static/manualsguides/marbec-data-gpu-intro/es.html
 
 ---

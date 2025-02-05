@@ -62,15 +62,10 @@ jobs:
         with:
           cache-version: 1
 
-      # Install Quarto
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-      
-      # Render Quarto files to HTML
-      - name: Render Quarto files to HTML
-        run: |
-          quarto render static/manualsguides
-      
+      # Run script to create Manual & Guides md files
+      - name: Run R script
+        run: Rscript R/mdGenerator.R --vanilla
+        
       # Render with Hugo
       - name: Build with Hugo
         env:
@@ -84,10 +79,14 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       
-      - name: Copy files from _site to public
+      # Install Quarto
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
+      # Render Quarto files to HTML
+      - name: Render Quarto files to HTML
         run: |
-          cp -r _site/static/manualsguides/* public/manualsguides/
-          cp -r _site/site_libs/* ./
+          quarto render static/manualsguides
       
       # Upload artifact
       - name: Upload artifact

@@ -1,13 +1,13 @@
 #!/bin/bash
 rm resources public -r
 
-quarto render static/manualsguides
+Rscript R/mdGenerator.R --vanilla
 
 hugo --cleanDestinationDir --gc --minify
-# hugo server --disableFastRender
 
-cp -r _site/static/manualsguides/* public/manualsguides/
-mkdir -p public/site_libs/ && cp -r _site/site_libs/* public/site_libs/
-
-cd public && python -m http.server 8080
+# quarto render static/manualsguides
+# cp -r _site/static/manualsguides/* public/manualsguides/
+# cp -r _site/site_libs/* ./
+ 
+# cd public && python -m http.server 8080
 
