@@ -19,30 +19,30 @@ Image credits: xxxyyy XXXYYY at [PictureSource](https://url.of.picture.source)
 ## Claudia RESTREPO-ORTIZ
 
 * Institution: IRD
-* {{< fa envelope >>}} [claudia.restrepo-ortiz@ird.fr](mailto:claudia.restrepo-ortiz@ird.fr)
-* {{< fa linkedin >>}} [claudiarestrepo-ortiz](https://www.linkedin.com/in/claudiarestrepo-ortiz/)
-* {{< fa orcid >>}} [0000-0002-8314-2420](https://orcid.org/0000-0002-8314-2420)
+* {{< bi envelope-fill >}} [claudia.restrepo-ortiz@ird.fr](mailto:claudia.restrepo-ortiz@ird.fr)
+* {{< bi linkedin >}} [claudiarestrepo-ortiz](https://www.linkedin.com/in/claudiarestrepo-ortiz/)
+* {{< fa brands orcid >}} [0000-0002-8314-2420](https://orcid.org/0000-0002-8314-2420)
 
 ## Nicolas BARRIER
 
 * Institution: IRD
-* {{< fa envelope >>}} [nicolas.barrier@ird.fr](mailto:nicolas.barrier@ird.fr)
-* {{< fa linkedin >>}} [nicolas-barrier](https://fr.linkedin.com/in/nicolas-barrier-47633153)
-* {{< fa globe-pointer >>}} [nicolasbarrier.fr](https://nicolasbarrier.fr/)
-* {{< fa orcid >>}} [0000-0002-1693-4719](https://orcid.org/0000-0002-1693-4719)
-* {{< fa github >>}} [barriern](https://github.com/barriern)
+* {{< bi envelope-fill >}} [nicolas.barrier@ird.fr](mailto:nicolas.barrier@ird.fr)
+* {{< bi linkedin >}} [nicolas-barrier](https://fr.linkedin.com/in/nicolas-barrier-47633153)
+* {{< bi globe >}} [nicolasbarrier.fr](https://nicolasbarrier.fr/)
+* {{< fa brands orcid >}} [0000-0002-1693-4719](https://orcid.org/0000-0002-1693-4719)
+* {{< bi github >}} [barriern](https://github.com/barriern)
 
 ## Laure VELEZ
 
 * Institution: Research Assistant at Université de Montpellier
-* {{< fa envelope >>}} [laure.velez@umontpellier.fr](mailto:laure.velez@umontpellier.fr)
-* {{< fa orcid >>}} [0000-0001-9555-6770](https://orcid.org/0000-0001-9555-6770)
+* {{< bi envelope-fill >}} [laure.velez@umontpellier.fr](mailto:laure.velez@umontpellier.fr)
+* {{< fa brands orcid >}} [0000-0001-9555-6770](https://orcid.org/0000-0001-9555-6770)
 
 ## Mathieu DEPETRIS
 
 * Institution: CNRS
-* {{< fa envelope >>}} [mathieu.depetris@cnrs.fr](mailto:mathieu.depetris@cnrs.fr)
-* {{< fa linkedin >>}} [mathieu-depetris](https://www.linkedin.com/in/mathieu-depetris-ab3b3b90/)
-* {{< fa globe-pointer >>}} [mathieudepetris.github.io](https://mathieudepetris.github.io/)
-* {{< fa orcid >>}} [0000-0001-8080-0531](https://orcid.org/0000-0001-8080-0531)
-* {{< fa github >>}} [barriern](https://github.com/mathieudepetris)
+* {{< bi envelope-fill >}} [mathieu.depetris@cnrs.fr](mailto:mathieu.depetris@cnrs.fr)
+* {{< bi linkedin >}} [mathieu-depetris](https://www.linkedin.com/in/mathieu-depetris-ab3b3b90/)
+* {{< bi globe >}} [mathieudepetris.github.io](https://mathieudepetris.github.io/)
+* {{< fa brands orcid >}} [0000-0001-8080-0531](https://orcid.org/0000-0001-8080-0531)
+* {{< bi github >}} [barriern](https://github.com/mathieudepetris)

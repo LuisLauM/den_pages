@@ -11,7 +11,7 @@ about:
       icon: github
     - text: Email
       href: mailto:marbec-den-admin@listes.ird.fr
-      icon: envelope
+      icon: envelope-fill
 ---
 
 Image credits: xxxyyy XXXYYY at [PictureSource](https://url.of.picture.source)

@@ -1,0 +1,17 @@
+color:
+  background: "#ffffff"
+
+logo: 
+  large: images/logo-den-bw.webp
+
+typography:
+  fonts:
+    - family: Open Sans
+      source: google
+    - family: Roboto Slab
+      source: google
+    - family: Fira Code
+      source: google
+  base: Open Sans
+  headings: Roboto Slab
+  monospace: Fira Code

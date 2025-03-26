@@ -3,7 +3,7 @@ project:
 
 website:
   site-url: https://umr-marbec.github.io/
-  favicon: favicon-wave.png
+  favicon: images/favicon/favicon.ico
   title: "DEN Pages"
   navbar:
     right:
