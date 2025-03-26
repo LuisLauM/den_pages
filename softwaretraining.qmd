@@ -1,0 +1,24 @@
+---
+title: "Logiciels & Formation | Software & Training"
+image: images/main-pages/no-pic.png
+about: 
+  template: marquee
+  image-shape: rectangle
+listing:
+  contents: softwaretraining-posts
+  feed: true
+  sort: "date desc"
+  type: grid
+  date-format: medium
+---
+
+Image credits: xxxyyy XXXYYY at [PictureSource](https://url.of.picture.source)
+
+# [FR] 
+
+Vous trouverez dans cette section tous les libraries/packages, logiciels ou de manière générale les ressources informatiques developés ou utilisés par les personnels et partenaires associés de l'UMR MARBEC. Vous trouverez également ici certains des cours dispensés : détails, matériel et dates à venir.
+
+
+# [EN] 
+
+In this section you will find libraries/packages, software, and general informatics resources developed or used by UMR MARBEC and associated partners. Also, here you will find some of the courses that are being taught: details, materials and upcoming dates.

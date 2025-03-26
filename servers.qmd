@@ -1,0 +1,75 @@
+---
+title: "Serveurs | Servers"
+image: images/main-pages/no-pic.png
+toc: true
+about: 
+  template: marquee
+  image-shape: rectangle
+  links:
+    - text: GitHub
+      href: https://umr-marbec.github.io/
+      icon: github
+    - text: Email
+      href: mailto:marbec-den-admin@listes.ird.fr
+      icon: envelope
+---
+
+Image credits: xxxyyy XXXYYY at [PictureSource](https://url.of.picture.source)
+
+# FR
+
+## Serveurs des Applications Web
+
+## Serveurs de calcul et de Stockage
+
+### Datarmor
+
+### `marbec-gpu` & `marbec-data`
+
+`marbec-gpu` s'agit d'un cluster conçu pour fournir des ressources informatiques de haute performance pour l'exécution de codes, tels que ceux utilisant Python et R. Il est construit sur le noyau Linux-Ubuntu et dispose d'une interface Jupyter pour faciliter l'utilisation. Plusieurs outils courants sont installés, notamment Python, R, Git, Conda, CUDA et RStudio.
+
+`marbec-data` et `marbec-gpu` composent un système de calcul à haute performance. (Très) Fondamentalement, c'est comme avoir un superordinateur préparé pour traiter des problèmes complexes. Imaginez qu'au lieu d'avoir un seul processeur (Intel/AMD) travaillant en conjonction avec la mémoire vive et l'espace de stockage de votre ordinateur (par exemple, votre ordinateur portable), vous avez plusieurs ordinateurs reliés entre eux et combinant leur puissance pour exécuter des processus complexes. C'est ainsi que fonctionne le HPC : il utilise plusieurs ordinateurs qui travaillent ensemble pour résoudre de très gros calculs beaucoup plus rapidement qu'un seul ordinateur personnel ne pourrait le faire. Marbec HPC est composé de deux systèmes : `marbec-data` (un système de fichiers réseau ou NFS) et `marbec-gpu` (une grappe de calcul).
+
+Un NFS est un protocole réseau qui permet à plusieurs appareils connectés à un réseau de partager des fichiers et des répertoires. Cela permet aux chercheurs de stocker les données d'entrée, les codes et les résultats, mais avec l'avantage d'avoir une sauvegarde centralisée et la possibilité d'accéder à leurs fichiers à partir de n'importe quelle machine connectée au cluster. En termes très simples et pour revenir à l'analogie avec votre PC actuel, les « données Marbec » remplacent le stockage (c'est-à-dire le disque dur) dans le HPC. D'autre part, une grappe de calcul est, par essence, un ensemble d'éléments de calcul interconnectés travaillant de manière coordonnée pour exécuter des processus de calcul complexes. Dans l'analogie de votre PC actuel, `marbec-gpu` équivaut à : votre processeur principal (CPU), votre processeur graphique (GPU), la mémoire vive générale et la mémoire vive vidéo. Bien sûr, avec ces simplifications, nous laissons de côté certains détails importants que nous expliquerons en profondeur si nécessaire.
+
+Caractéristiques : 
+
+* 3 GPU : [NVIDIA A40](https://www.nvidia.com/fr-fr/data-center/a40/)
+* 2 CPUs : [Intel Xeon Platinum 8380](https://www.intel.com/content/www/us/en/products/sku/212287/intel-xeon-platinum-8380-processor-60m-cache-2-30-ghz/specifications.html) @ 2.30 GHz, 40 cœurs chacun avec Multithreading (i.e. 80 threads).
+* 1,48 To de RAM
+* Interconnexions `marbec-data`.
+
+Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser correctement `marbec-gpu` et `marbec-data`, jetez un coup d'oeil à la section [Manuals and Guides]().
+
+---
+
+# EN
+
+## Applications' Servers
+
+## Calculation and Storage Servers
+
+### Datarmor
+
+### `marbec-gpu` & `marbec-data`
+
+`marbec-gpu` is a cluster is designed to provide high-performance computing resources for code execution, such as those using Python and R. It is built on the Linux-Ubuntu kernel and features a Jupyter interface for ease of use. Several common tools are installed, including Python, R, Git, Conda, CUDA, and RStudio.
+
+`marbec-data` and `marbec-gpu` compose a High-performance computing system. (Very) Basically, it is like having a supercomputer prepared to deal with complex problems. Imagine that, instead of having a single processor (Intel/AMD) working in conjunction with the RAM and storage space of just your computer (e.g. your laptop), you have several computers linked together combining their power to run complex processes. This is how HPC works: it uses multiple computers working together to solve very large computations much faster than a single personal computer could. Marbec HPC is composed of two systems: `marbec-data` (a Network File System or NFS) and `marbec-gpu` (a compute cluster).
+
+An NFS is a network protocol that allows multiple devices connected to a network to share files and directories. This allows researchers to store input data, codes and results, but with the advantage of having a centralized backup and the ability to access their files from any machine connected to the cluster. In very simple words and going back to the analogy with your current PC, `marbec-data` takes the place of the storage (i.e. the hard disk) in the HPC. On the other hand, a compute cluster is, in essence, a set of interconnected computational elements working in a coordinated manner to execute complex computational processes. Within the analogy of your current PC, `marbec-gpu` equates to: your main processor (CPU), your graphics processor (GPU), general RAM and video RAM. Of course, with these simplifications we are leaving out some important details that we will explain in depth as we need to.
+
+Features: 
+
+* 3 GPUs: [NVIDIA A40](https://www.nvidia.com/fr-fr/data-center/a40/)
+* 2 CPUs: [Intel Xeon Platinum 8380](https://www.intel.com/content/www/us/en/products/sku/212287/intel-xeon-platinum-8380-processor-60m-cache-2-30-ghz/specifications.html) @ 2.30 GHz, 40 cores each with Multithreading (i.e. 80 threads).
+* 1,48 To de RAM
+* `marbec-data` Interconnections
+
+In this web site you can find posts about how to correctly use `marbec-gpu` and `marbec-data`, take a look at the [Manuals and Guides]() section.
+
+## Support
+
+
+
+If you encounter any issues or have questions interact with the RocketChatIRD.

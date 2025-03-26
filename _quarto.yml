@@ -1,16 +1,37 @@
 project:
   type: website
 
-execute:
-  freeze: auto
-  default-kernel: knitr
+website:
+  site-url: https://umr-marbec.github.io/
+  favicon: favicon-wave.png
+  title: "DEN Pages"
+  navbar:
+    right:
+      - href: index.qmd
+        text: Accueil | Home
+      - href: about.qmd
+        text: About | À propos
+      - href: servers.qmd
+        text: Serveurs | Servers
+      - href: softwaretraining.qmd
+        text: Logiciels & Formation | Software & Training
+      - href: manualsguides.qmd
+        text: Manuels & Guides | Manuals & Guides
+      - href: contact.qmd
+        text: Contact     
+  page-footer:
+    left: © Copyright 2025, IRD-Marbec
+    right: This website is built with [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/umr-marbec/den_pages){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
+
 
 format:
   html:
-    theme: pulse
+    theme: 
+      light: sandstone
+      dark: darkly
     css: styles.css
     toc: true
 
-profile:
-  default: french
-  group: [french, english]
+execute:
+  freeze: false
+
