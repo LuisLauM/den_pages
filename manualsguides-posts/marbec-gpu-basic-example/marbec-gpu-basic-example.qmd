@@ -1,5 +1,8 @@
 ---
 title: "Saying 'Hello world 💙' on `marbec-gpu`"
+author: 
+  - name: Auguste Verdier
+    email: auguste.verdier@umontpellier.fr
 description: |
   Un guide rapide sur la façon d'imprimer un `Hello world <3` sur `marbec-gpu`. | A quick guide on how to print a `Hello world <3` on `marbec-gpu`.
 date: 2025-02-13
@@ -65,11 +68,11 @@ Voici un exemple minimal de script bash :
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name=my_job         # Job name
-#SBATCH --output=job_%j.out`      # Standard output and error log
-#SBATCH --gres=gpu:0             # Number of GPUs (optional)
-#SBATCH --mem=4G                  # Memory allocation (4 GB)
-#SBATCH -c 1                      # Number of CPU cores
+#SBATCH --job-name=my_job     # Job name
+#SBATCH --output=job_%j.out`  # Standard output and error log
+#SBATCH --gres=gpu:0          # Number of GPUs (optional)
+#SBATCH --mem=4G              # Memory allocation (4 GB)
+#SBATCH -c 1                  # Number of CPU cores
 
 # execute python file
 python main.py                    
@@ -88,8 +91,10 @@ A l'issu des 2 étapes précédentes, le dossier de travail devrait contenir les
 La dernière étape consiste à soumettre votre script `launch.sh` créé à la partie précédente. Pour cela vous devez utiliser la commande `sbatch` ([voir documentation](https://slurm.schedmd.com/sbatch.html)).  
 
 Dans le terminal, exécutez la commande suivante :
-> `sbatch launch.sh` 
 
+```bash
+sbatch launch.sh
+```
 
 Si les parramètres SLURM (`#SBATCH arg`) sont bien renseignés, vous devriez voir un message de confirmation de soumission de votre job : ` Submitted batch job 1234567`. Sinon un message d'erreur s'affiche à la place.  Lors d'une soumission réussie, SLURM regarde les ressources demandées et place le job en file d'attente ( état `PENDING`) tant que les ressources ne sont pas disponibles. Une fois les ressources disponibles, le job s'exécute (état `RUNNING`). Un fichier de sortie est alors créé dans le répertoire courant avec le nom renseigné dans le script bash (`#SBATCH --output=job_%j.out`). Un deuxième fichier contenant les messages d'erreur peut apparaître si cela est spécifié (`#SBATCH --error=job_%j.err`).
 
@@ -99,9 +104,9 @@ Pour annuler un job (en cours d'éxecution ou encore en file d'attente), utilise
 
 Le fichier `output.log` contenant les sorties de votre script python est créé dans le répertoire courant. Vous pouvez le consulter avec la commande `cat output.log` ou simplement en double-cliquant dessus. Si tout s'est bien passé, le fichier doit ressembler à ceci :
 
-```
-Hello World <3
-```
+
+> `Hello World <3`
+
 
 ---
 
@@ -153,11 +158,11 @@ Here is a minimal example of a bash script:
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name=my_job         # Job name
-#SBATCH --output=job_%j.out`      # Standard output and error log
-#SBATCH --gres=gpu:0             # Number of GPUs (optional)
-#SBATCH --mem=4G                  # Memory allocation (4 GB)
-#SBATCH -c 1                      # Number of CPU cores
+#SBATCH --job-name=my_job     # Job name
+#SBATCH --output=job_%j.out`  # Standard output and error log
+#SBATCH --gres=gpu:0          # Number of GPUs (optional)
+#SBATCH --mem=4G              # Memory allocation (4 GB)
+#SBATCH -c 1                  # Number of CPU cores
 
 # execute python file
 python main.py                    
@@ -177,7 +182,9 @@ The final step is to submit your `launch.sh` script created in the previous sect
 
 In the terminal, run the following command:
 
-> `sbatch launch.sh`
+```bash
+sbatch launch.sh
+```
 
 If the SLURM parameters (`#SBATCH arg`) are correctly filled in, you should see a job submission confirmation message: `Submitted batch job 1234567`. Otherwise, an error message will appear instead. Upon successful submission, SLURM checks the requested resources and places the job in the queue (state `PENDING`) until the resources become available. Once the resources are available, the job runs (state `RUNNING`). An output file is then created in the current directory with the name specified in the bash script (`#SBATCH --output=job_%j.out`). A second file containing error messages can appear if specified (`#SBATCH --error=job_%j.err`).
 
@@ -187,6 +194,4 @@ To cancel a job (running or still in the queue), use the `scancel 1234567` comma
 
 The `output.log` file containing the outputs of your python script is created in the current directory. You can view it with the `cat output.log` command or simply by double-clicking on it. It should look like this:
 
-```
-Hello World <3
-```
+> `Hello World <3`

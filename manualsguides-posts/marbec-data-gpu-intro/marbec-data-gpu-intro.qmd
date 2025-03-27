@@ -1,5 +1,10 @@
 ---
 title: "First steps on `marbec-data` and `marbec-gpu`"
+author: 
+  - name: Auguste Verdier
+    email: auguste.verdier@umontpellier.fr
+  - name: Wencheng Lau-Medrano
+    email: luis.lau-medrano@etu.umontpellier.fr
 description: |
   Comment accéder à `marbec-gpu` et `marbec-data` ? | How to access to `marbec-gpu` and `marbec-data`? 
 date: 2024-10-21

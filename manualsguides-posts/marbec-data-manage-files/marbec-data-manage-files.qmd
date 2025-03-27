@@ -1,5 +1,8 @@
 ---
 title: "Managing files within `marbec-data`"
+author: 
+  - name: Wencheng Lau-Medrano
+    email: luis.lau-medrano@etu.umontpellier.fr
 description: |
   Comment gérer les fichiers et les dossiers de et vers `marbec-data` ? | How to manage files and carpetas to and from `marbec-data`?
 date: 2024-10-24

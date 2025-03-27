@@ -1,5 +1,8 @@
 ---
 title: "GIT training"
+author: 
+  - name: Mathieu Depetris
+    email: mathieu.depetris@cnrs.fr
 description: |
   Git est essentiel pour gérer le contrôle des versions, le suivi des modifications et l'historique du code dans le cadre du développement de logiciels et de projets de recherche. | Git is essential for managing version control, tracking changes, and managing code history for software development and research projects.
 date: 2025-02-04

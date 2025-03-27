@@ -19,9 +19,25 @@ Image credits: Diego Fernandez at [Unplash](https://unsplash.com/photos/mixing-c
 
 ## Serveurs des Applications Web
 
-## Serveurs de calcul et de Stockage
+## Serveurs de Calcul et de Stockage
 
 ### Datarmor
+
+Datarmor est un cluster de calcul haute performance (HPC) exploité par l'Ifremer (Institut Français de Recherche pour l'Exploitation de la Mer). Conçu pour la recherche océanographique et marine, il offre des ressources de calcul puissantes pour traiter de vastes ensembles de données et exécuter des simulations complexes. Datarmor soutient des études en modélisation climatique, biodiversité marine et circulation océanique, contribuant ainsi au leadership de la France en science maritime et en innovation HPC.
+
+Site officiel : [pcdm.ifremer.fr](https://pcdm.ifremer.fr/Equipement)
+
+![](images/servers/datarmor-1.jpg)
+
+Caractéristiques :
+
+* Cluster HPC : 11088 coeurs - 426 Tflops
+* 128 Go de RAM et 28 coeurs par noeud
+* Cluster SMP : 240 coeurs, 5 To RAM
+* Cluster WEB : 10 serveurs dédiés
+* 4 GPUs
+
+![](images/servers/datarmor-2.jpg)
 
 ### `marbec-gpu` & `marbec-data`
 
@@ -77,6 +93,22 @@ Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser corre
 ## Calculation and Storage Servers
 
 ### Datarmor
+
+Datarmor is a high-performance computing (HPC) cluster operated by Ifremer (French Research Institute for the Exploitation of the Sea). Designed for oceanographic and marine research, it provides powerful computational resources to process large datasets and run complex simulations. Datarmor supports studies in climate modeling, marine biodiversity, and ocean circulation, contributing to France’s leadership in maritime science and HPC innovation.
+
+Official web site: [pcdm.ifremer.fr](https://pcdm.ifremer.fr/Equipement)
+
+![](images/servers/datarmor-1.jpg)
+
+Features :
+
+* CPUs: 11088 cores - 426 Tflops
+* 128 GB RAM et 28 cores per node
+* Cluster SMP : 240 cores, 5 TB RAM
+* Cluster WEB : 10 dedicated servers
+* 4 GPUs
+
+![](images/servers/datarmor-2.jpg)
 
 ### `marbec-gpu` & `marbec-data`
 

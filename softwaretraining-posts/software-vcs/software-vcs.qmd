@@ -1,6 +1,8 @@
 ---
 title: "Version Control Systems"
-author: Mathieu Depetris [mathieu.depetris@cnrs.fr](mailto:mathieu.depetris@cnrs.fr)
+author: 
+  - name: Mathieu Depetris 
+    email: mathieu.depetris@cnrs.fr
 description: |
   Ce qu'est un système de contrôle des versions et quelles sont les options disponibles. | What a Version Control System is and what options are available.
 date: 2025-01-31

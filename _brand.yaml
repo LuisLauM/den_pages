@@ -8,10 +8,10 @@ typography:
   fonts:
     - family: Open Sans
       source: google
-    - family: Roboto Slab
+    - family: Sora
       source: google
-    - family: Fira Code
+    - family: Sometype Mono
       source: google
   base: Open Sans
-  headings: Roboto Slab
-  monospace: Fira Code
+  headings: Sora
+  monospace: Sometype Mono
