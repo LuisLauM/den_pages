@@ -152,10 +152,31 @@ El primer paso será subir los cambios realizados a nuestro repositorio `fork`, 
 
 * En la barra lateral (izquierda), daremos click a un ícono que hace referencia al sistema de control de versiones: {{< fa code-branch >}}.
 
+  ![](images/4-7.png)
+
 * En el panel que se abrirá, se mostrarán todos los archivos añadidos, editados o removidos. Pasaremos el cursor a la derecha del título del subpanel Source Control y veremos que aparecerá un botón a manera de check. Ese es el botón de Commit, haremos click en él.
+
+  ![](images/4-8.png)
 
 * En el panel de Editor se abrirá un archivo con la lista de todos los cambios a manera de comentario (i.e., iniciando con el símbolo `#`). Así mismo, el cursor estará posicionado en la línea 1 esperando a que escribamos una MUY breve descripción de los cambios que hayamos realizado. El texto debe ser conciso (no más de una oración), pero lo suficientemente claro para darle una pista a los administradores de los cambios realizados. Al finalizar, daremos click al botón en forma de check justo en la cabecera de este panel.
 
+  ![](images/4-9.png)
 
+* Se mostrará una ventana de confirmación, daremos click en *OK*.
+
+  ![](images/4-10.png)
+
+* Ahora, en el panel de *Source Control* se mostrará habilitado el botón *Sync Changes* que nos permitirá (hacer `push`) subir los cambios realizados al repositorio Github. Haremos click en ese botón.
+
+  ![](images/4-11.png)
+
+* Se mostrará otro mensaje de confirmación en donde daremos click en *OK*.
+
+  ![](images/4-12.png)
+
+
+### Comprobando los cambios
+
+Listo. Independientemente del IDE utilizado, siempre podremos realizar una comprobación de que los cambios se hayan subido exitosamente yendo a nuestro repositorio `fork` en Github y revisando que los cambios ya aparezcan en él.
 
 
