@@ -7,7 +7,7 @@ image: banner.jpg
 about: 
   template: marquee
   image-shape: rectangle
-draft: false
+draft: true
 engine: knitr
 tags: ["marbec-gpu", "commands", "commandes", "terminal", "software", "logiciel"]
 categories: ["marbec-gpu", "guides"]
@@ -102,11 +102,60 @@ Una vez que hayas hecho los cambios deseados, el siguiente paso será comprobar 
 
 * Abriremos cualquiera de los archivos `.qmd` disponibles. Si nuestro cambio involucró la creación misma de archivos `.qmd`, pues sería preferible que abramos uno de estos.
 
-* Seguidamente, daremos la orden de renderizar el archivo `.qmd`: En RStudio, esto es posible
+* Seguidamente, daremos la orden de renderizar el archivo `.qmd`: 
+  
+  * En RStudio, en la pestaña activa del archivo `.qmd` seleccionado, daremos click al botón *Render*.
 
-## Subiendo los cambios
+    ![](images/3-1.png)
 
-Listo, en este punto, ya deberías tener 
+  * En Positron, en la pestaña activa del archivo `.qmd` seleccionado, daremos click a un pequeño botón (*Preview*) ubicado en la barra inmediata superior a nuestro Editor.
+
+    ![](images/3-2.png)
+
+En cualquiera de los casos, lo que sucederá es que nuestro IDE ejecutará en su Terminal interna un comando de renderización de Quarto y, si no hay ningún inconveniente, abrirá una previsualización del sitio web que estará ejecutándose ÚNICAMENTE en nuestra PC. Este modo de previsualización sirve para corregir posibles problemas de espaciado o visualización. Si llega a ocurrir algún error y la previsualización no llegara a cargarse, deberemos ir buscando en internet las causas. Sí, esto puede sonar MUY general, pero lo cierto es que errores que pueden ocurrir a este nivel dependerán mucho del cambio que estemos realizando, por lo que no es posible siquiera colocar un listado de errores-soluciones, porque esta guia no terminaría nunca.
+
+## Subiendo los cambios a nuestro repositorio `fork`
+
+Listo, en este punto, una vez que estés conforme con los cambios/ediciones realizados, llegó la hora de aplicarlos a la web en producción. Sin embargo, debemos recordar que como usuarios externos, todo cambio debe pasar por la revisión, testeo y visto bueno de los administradores.
+
+El primer paso será subir los cambios realizados a nuestro repositorio `fork`, en donde sí tenemos permisos de escritura. Para ello, podremos usar las herramientas del IDE que estemos utilizando:
+
+### En RStudio
+
+* Deberemos dar click a un botón que muestra la palabra Git en vertical, ubicado en la barra de herramientas de RStudio.
+
+  ![](images/4.1.png)
+
+* En el menú desplegado, elegiremos la opción *Commit*
+
+  ![](images/4-2.png)
+
+* Se abrirá una ventana en donde se mostrarán todos los archivos en donde hayamos realizado cambios. 
+
+  ![](images/4-3.png)
+  
+* En esta ventana, deberemos seleccionar TODOS los ítems, utilizando el atajo `Ctrl + A` (En Windows/Linux) o `Cmd + A` (en MacOS).
+
+  ![](images/4-4.png)
+
+* Una vez que todos se muestren seleccionados, daremos click al botón *☑ Stage* (en la parte superior), y nos aseguraremos de que TODOS los ítems tengan un check a la izquierda.
+
+  ![](images/4-5.png)
+
+* Seguidamente, en el panel de *Commit message* redactaremos una MUY breve descripción de los cambios que hayamos realizado. El texto debe ser conciso (no más de una oración), pero lo suficientemente claro para darle una pista a los administradores de los cambios realizados. Al finalizar, daremos click al botón *Commit*.
+
+  ![](images/4-6.png)
+
+* Esperaremos un tiempo a que finalice el proceso (no debería demorar más que unos cuantos segundos) y después de todo daremos click al botón *⬆ Push* y una vez más, esperaremos a que termine el proceso (esto sí podría tomar varios segundos o minutos, dependiendo de la cantidad de archivos editados, añadidos, así como de nuestra velocidad de internet).
+
+### En Positron
+
+* En la barra lateral (izquierda), daremos click a un ícono que hace referencia al sistema de control de versiones: {{< fa code-branch >}}.
+
+* En el panel que se abrirá, se mostrarán todos los archivos añadidos, editados o removidos. Pasaremos el cursor a la derecha del título del subpanel Source Control y veremos que aparecerá un botón a manera de check. Ese es el botón de Commit, haremos click en él.
+
+* En el panel de Editor se abrirá un archivo con la lista de todos los cambios a manera de comentario (i.e., iniciando con el símbolo `#`). Así mismo, el cursor estará posicionado en la línea 1 esperando a que escribamos una MUY breve descripción de los cambios que hayamos realizado. El texto debe ser conciso (no más de una oración), pero lo suficientemente claro para darle una pista a los administradores de los cambios realizados. Al finalizar, daremos click al botón en forma de check justo en la cabecera de este panel.
+
 
 
 
