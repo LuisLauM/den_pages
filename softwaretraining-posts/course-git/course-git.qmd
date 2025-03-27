@@ -1,0 +1,39 @@
+---
+title: "GIT training"
+description: |
+  Git est essentiel pour gérer le contrôle des versions, le suivi des modifications et l'historique du code dans le cadre du développement de logiciels et de projets de recherche. | Git is essential for managing version control, tracking changes, and managing code history for software development and research projects.
+date: 2025-02-04
+image: banner.jpg
+about: 
+  template: marquee
+  image-shape: rectangle
+draft: false
+engine: knitr
+---
+
+Image credits: Roman Synkevych at [Unsplash](https://unsplash.com/photos/a-close-up-of-a-text-description-on-a-computer-screen-842ofHC6MaI?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+
+### [FR]
+
+Vous trouverez ici tous les ressources en lien avec l'utilisation des systèmes de controle de version. Au niveau de l'UMR plusieurs forges sont utilisées, à savoir :
+
+* [GitHub MARBEC](https://github.com/umr-marbec){.external target="_blank"}
+* [GitLab IRD](https://forge.ird.fr/){.external target="_blank"}
+* [GitLab Ifremer](https://gitlab.ifremer.fr/){.external target="_blank"}
+
+
+### [EN]
+
+Here you will find all the resources related to the use of version control systems. Several forges are used at UMR:
+
+* [GitHub MARBEC](https://github.com/umr-marbec){.external target="_blank"}
+* [GitLab IRD](https://forge.ird.fr/){.external target="_blank"}
+* [GitLab Ifremer](https://gitlab.ifremer.fr/){.external target="_blank"}
+
+# Git training course
+
+Le code source est accessible sur | Source code available on: [GitHub](https://github.com/umr-marbec/git-training). 
+
+```{=html}
+<iframe width="780" height="500" src="https://umr-marbec.github.io/git-training/" title="Git training"></iframe>
+```

@@ -1,16 +1,18 @@
 ---
-title: "Introduction to `marbec-data` and `marbec-gpu`"
+title: "First steps on `marbec-data` and `marbec-gpu`"
 description: |
-  What they are and how to access? | ¿Qué son y cómo acceder a ellos?
+  Comment accéder à `marbec-gpu` et `marbec-data` ? | How to access to `marbec-gpu` and `marbec-data`? 
 date: 2024-10-21
 image: banner.jpg
 about: 
   template: marquee
   image-shape: rectangle
 draft: false
+tags: ["marbec-data", "marbec-gpu", "access", "accéder", "password", "mot de passe"]
+categories: ["marbec-data", "marbec-gpu", "guides"]
 ---
 
-Image credits: Diego Fernandez at [Unplash](https://unsplash.com/photos/mixing-console-yRNJAcdpDAo?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+Image credits: Tim Mossholder at [Unplash](https://unsplash.com/photos/bleu-entry-signage-WHXbCz2KWhE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
 # [FR] Introduction à `marbec-data` et `marbec-gpu`
 
@@ -46,7 +48,7 @@ Si, au cours de l'exécution d'un processus, la limite de quota allouée est att
 
 ## Comment gérer des fichiers dans `marbec-data` ou entre `marbec-data` et notre PC ?
 
-Nous avons un [article](https://luislaum.github.io/blog/marbec-data-manage-files/marbec-data-manage-files.html) où nous développons ce point plus en détail.
+Nous avons un [article](../marbec-data-manage-files/marbec-data-manage-files.qmd) où nous développons ce point plus en détail.
 
 ## Comment accéder à `marbec-gpu` ?
 
@@ -74,26 +76,11 @@ Il est très important de définir des mots de passe sécurisés (alphanumériqu
 
 ## Comment exécuter un processus sur `marbec-gpu` ?
 
-Nous avons un [article](https://luislaum.github.io/blog/marbec-gpu-run-process/marbec-gpu-run-process.html) où nous développons ce point plus en détail.
+Nous avons un [article](../marbec-gpu-basic-example/marbec-gpu-basic-example.qmd) où nous développons ce point plus en détail.
 
 ---
 
 # [EN] Introduction to `marbec-data` and `marbec-gpu`
-
-## What are they? Are they the same?
-
-No. `marbec-data` and `marbec-gpu` compose a *High-performance computing system*. (Very) Basically, it is like having a supercomputer prepared to deal with complex problems. Imagine that, instead of having a single processor (Intel/AMD) working in conjunction with the RAM and storage space of just your computer (e.g. your laptop), you have several computers linked together combining their power to run complex processes. This is how HPC works: it uses multiple computers working together to solve very large computations much faster than a single personal computer could. Marbec HPC is composed of two systems: `marbec-data` (a Network File System or NFS) and `marbec-gpu` (a compute cluster).
-
-**An NFS** is a network protocol that allows multiple devices connected to a network to share files and directories. This allows researchers to store input data, codes and results, but with the advantage of having a centralized backup and the ability to access their files from any machine connected to the cluster. In very simple words and going back to the analogy with your current PC, `marbec-data` takes the place of the storage (i.e. the hard disk) in the HPC. On the other hand, a **compute cluster** is, in essence, a set of interconnected computational elements working in a coordinated manner to execute complex computational processes. Within the analogy of your current PC, `marbec-gpu` equates to: your main processor (CPU), your graphics processor (GPU), general RAM and video RAM. Of course, with these simplifications we are leaving out some important details that we will explain in depth as we need to.
-
-## Power of `marbec-gpu`
-
-Up to October 2024, `marbec-gpu` has:
-
-* CPU: 4 x [Intel(R) Xeon(R) Platinum 8380 @2.30GHz, 40 physical cores, 80 logical cores]
-* RAM: 1.5 TB DDR4
-* GPU: 2 x [NVIDIA A40, 48 GB ECC GDDR6 RAM, 10'752 CUDA cores, 336 tensor cores, 696 GB/s bandwidth]
-
 
 ## How to access marbec-data?
 
@@ -127,7 +114,7 @@ If at any time during the execution of a process the allocated quota limit is re
 
 ## How to manage files inside `marbec-data` or between `marbec-data` and our PC?
 
-We have a [post](https://luislaum.github.io/blog/marbec-data-manage-files/marbec-data-manage-files.html) where we develop this point in more detail.
+We have a [post](../marbec-data-manage-files/marbec-data-manage-files.qmd) where we develop this point in more detail.
 
 ## How to access `marbec-gpu`?
 
@@ -153,6 +140,6 @@ It is very important to define strong passwords (alphanumeric with symbols and u
 
 ## How to run a process on `marbec-gpu`?
 
-We have a [post](https://luislaum.github.io/blog/marbec-gpu-run-process/marbec-gpu-run-process.html) where we develop this point in more detail.
+We have a [post](../marbec-gpu-basic-example/marbec-gpu-basic-example.qmd) where we develop this point in more detail.
 
 

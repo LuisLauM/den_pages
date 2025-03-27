@@ -1,0 +1,112 @@
+---
+title: "Main commands in `marbec-gpu` Terminal"
+description: |
+  Une liste rapide des principales commandes à utiliser dans le terminal `marbec-gpu`. | A quick list of the main commands to use within the `marbec-gpu` Terminal. 
+date: 2024-10-23
+image: banner.jpg
+about: 
+  template: marquee
+  image-shape: rectangle
+draft: false
+engine: knitr
+tags: ["marbec-gpu", "commands", "commandes", "terminal", "software", "logiciel"]
+categories: ["marbec-gpu", "guides"]
+---
+
+Image credits: Kajetan Sumila at [Unplash](https://unsplash.com/photos/black-metal-tools-on-brown-wooden-shelf-sXPR9JV270c?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+
+# [FR] Principales commandes dans le Terminal de `marbec-gpu`
+
+
+---
+
+# [EN] ¿Cómo escribir/editar un post para Marbec DEN?
+
+Si has llegado aquí es que estás interesado en apoyar este sitio web y **realmente te lo agradecemos muchísimo**. Vamos directamente al grano, y empezaremos por los softwares que necesitarás:
+
+* **Tener una cuenta en Github**, ya que esa es la plataforma en donde se encuentra alojado este sitio web. Este paso es relativamente sencillo, basta con ir a la web de [Github](https://github.com/), elegir la opción Sign up y rellenar los campos requeridos.
+
+* **Descargar e instalar el software de control de versiones Git** desde su [página oficial](https://git-scm.com/downloads) y según el sistema operativo de tu PC.
+
+* **Descargar e instalar Quarto** desde su [página oficial](https://quarto.org/docs/get-started/) y según el sistema operativo de tu PC. Este software es la plataforma sobre la que está construida la website de DEN pages.
+
+* **Contar con algún software que permita editar código y manejar repositorios Git**. Básicamente, necesitas un IDE. Si bien podrías realizar todo desde una ventana de Terminal, esto no es lo más recomendable. Allá afuera existen muchos IDE muy buenos que en su mayoría ofrecen también herramientas para manejar contenido alojado en repositorios. En este ejemplo, mostraremos cómo hacerlo en Positron y RStudio.
+
+:::{.callout-note}
+## Positron
+
+Positron is a new open-source IDE developed by Posit, designed primarily for data science and analytics. It is a **fork of VS Code**, meaning it is built on the same foundation but tailored to Posit's ecosystem, with better integration for R, Python, and Quarto. Positron aims to provide a more stable and customized experience for data scientists, addressing some of the limitations of VS Code while maintaining compatibility with its extensions and features.
+:::
+
+* **Cualquier otro software que vayas a utilizar en tu contenido**, esto incluye lenguajes de programación (R, Python, C++, Java, etc.) o las librerías necesarias para que estos paquetes funcionen. Este ejemplo será bastante básico, por lo que no requerirá que utilices ningún software especializado.
+
+## Hacer una copia (`fork`) del repositorio 
+
+El repositorio de DEN Pages es administrado por el [equipo de Marbec DEN](/contact.qmd) y son ellos los únicos autorizados para aceptar, denegar o revertir cualquier cambio al contenido del sitio web. Entonces, siendo nosotros un usuario externo, el procedimiento para elevar una solicitud de cambio o edición sobre este repositorio pasa primero por obtener una copia del repositorio de DEN Pages en nuestra propia cuenta de Github.
+
+Para ello, iremos al sitio web del repositorio en Github y daremos click al botón **Fork**, que se encuentr entre los botones *Watch* y *Star*.
+
+![](images/1-1.png)
+
+Se abrirá un pequeño formulario en donde nos mostrará lo que va a suceder (i.e., que se llevará a cabo el proceso de `fork`), así que solo necesitaremos dar click en el botón **Create fork**.
+
+![](images/1-1.png)
+
+Genial, a partir de este momento, en nuestro perfil de Github aparecerá añadido el repositorio de DEN Pages, con una etiqueta indicando que se trata de un *Fork from umr-marbec/den_pages*. En esta versión fork sí podemos realizar cambios y ediciones porque ya se encuentra dentro de nuestra cuenta, pero a la vez mantiene un vínculo interno con el repositorio original, lo cual se volverá importante en los pasos siguientes.
+
+![](images/1-3.png)
+
+
+## Clonar repositorio 
+
+El siguiente paso importante es tener una copia del repositorio de Marbec DEN (la versión `fork`) en nuestra PC. Para ello, primero iremos al sitio web del repositorio `fork` y dentro del botón verde llamado `<> Code`, copiaremos el link HTTPS que ahí se muestra.
+
+![](images/2-1.png)
+
+:::{.callout-important}
+Cada link será diferente ya que dependerá del nombre de cada usuario, así que **NO** intentes utilizar el link del repositorio `fork` de alguien más.
+:::
+
+A continuación, abriremos nuestro IDE y crearemos un proyecto a partir de este link de repositorio:
+
+* En RStudio, bastará con ir al menú *File-->New project*. Luego, en la ventana que se abrirá, elegiremos la opción *Version Control*, luego la opción *Git* y finalmente en la última ventana pegaremos el URL copiado en el paso anterior y daremos click al botón *Create Project*.
+
+  ![](images/2-2.png)
+  ![](images/2-3.png)
+  ![](images/2-4.png)
+
+* En Positron, bastará con ir al menú *File-->New folder from Git*. Luego, en la ventana que se abrirá, pegaremos el URL copiado en el paso anterior. Podremos elegir la carpeta en donde queremos que se cree la carpeta del proyecto (recomendamos NO dejar la carpeta por defecto, salvo que estemos completamente seguros de que esa sea la ubicación adecuada) y finalmente daremos click en *OK*. Positron mostrará una pequeña ventana de progreso en la parte inferior y abrirá el proyecto una vez culminada la descarga.
+
+  ![](images/2-5.png)
+  ![](images/2-6.png)
+
+En cualquiera de los casos, se abrá creado una carpeta con el nombre del repositorio que contendrá todo lo necesario para desplegar el sitio web en nuestra PC.
+
+## Realizando los cambios en local
+
+A partir de este punto, ya podemos realizar los cambios deseados:
+
+* Si solo deseamos sugerir un cambio en alguna figura o captura de pantalla (por ejemplo, porque consideramos que está desactualizada o no se ve correctamente), bastará con reemplazar el archivo de imagen con el nuevo. El mismo procedimiento aplica para el reemplazo de cualquier archivo que no sea texto.
+
+* Si deseamos sugerir la **edición del contenido de algún archivo** de texto (e.g., un script o un archivo de Quarto `.qmd`), bastará con abrir el archivo deseado en nuestro IDE (RStudio, Positron o cualquier otro) y hacer las ediciones correspondientes.
+
+* Si deseamos añadir un post nuevo, bastará con crear el archivo `.qmd` correspondiente dentro de la carpeta adecuada. Si no deseas empezar desde cero, siempre puedes utilizar como plantilla cualquiera de los post ya existentes, pero la estructura en casi todos ellos es una (sub)carpeta que contiene: un archivo `.qmd`, un archivo de imagen que sirve como banner del post y una subcarpeta `images/` en donde se almacenan las imágenes requeridas para el post; por supuesto que tu post podría requerir archivos adicionales (e.g., tablas en formato CSV o MS Excel), solo asegúrate que siempre se encuentren DENTRO de la subcarpeta de tu post. Finalmente, ten en cuenta que DEN Pages tiene como principio mostrar contenido redactado en francés e inglés, en ese orden.
+
+:::{.callout-tip}
+## Quarto
+
+DEN Pages utiliza Quarto como framework para la construcción del sitio web, así que te recomendamos que visites su [sitio web oficial](https://quarto.org/docs/websites/) para conocer las herramientas disponibles para que tu post sea lo más didáctico posible.
+:::
+
+Una vez que hayas hecho los cambios deseados, el siguiente paso será comprobar que todo funciona correctamente, i.e. que eres capaz de compilar el sitio web de DEN Pages en tu PC:
+
+* Abriremos cualquiera de los archivos `.qmd` disponibles. Si nuestro cambio involucró la creación misma de archivos `.qmd`, pues sería preferible que abramos uno de estos.
+
+* Seguidamente, daremos la orden de renderizar el archivo `.qmd`: En RStudio, esto es posible
+
+## Subiendo los cambios
+
+Listo, en este punto, ya deberías tener 
+
+
+

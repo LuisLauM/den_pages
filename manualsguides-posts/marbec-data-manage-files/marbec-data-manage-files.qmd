@@ -1,13 +1,15 @@
 ---
 title: "Managing files within `marbec-data`"
 description: |
-  How to manage files and carpetas to and from `marbec-data`? | ¿Cómo gestionar archivos y carpetas desde y hacia `marbec-data`?
+  Comment gérer les fichiers et les dossiers de et vers `marbec-data` ? | How to manage files and carpetas to and from `marbec-data`?
 date: 2024-10-24
 image: banner.png
 about: 
   template: marquee
   image-shape: rectangle
 draft: false
+tags: ["marbec-data", "Filezilla", "copier-coller", "copy-paste", "files", "fichiers"]
+categories: ["marbec-data", "guides"]
 ---
 
 Image credits: Declan Sun at [Unplash](https://unsplash.com/photos/a-shelf-filled-with-lots-of-white-boxes-8byGIDpCU1w?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
@@ -77,7 +79,7 @@ Bien que l'explorateur web de `marbec-data` propose des options pour copier, col
 
 ### Copier-coller
 
-La méthode la plus simple est d'utiliser la commande `cp` et les commandes de navigation mentionnées dans cet [article](https://luislaum.github.io/blog/marbec-gpu-main-cmds/marbec-gpu-main-cmds.html) (par ex. `..` pour indiquer un dossier précédent). La syntaxe de base est : `cp chemin/source chemin/destination`, mais il existe plusieurs cas possibles :
+La méthode la plus simple est d'utiliser la commande `cp` et les commandes de navigation mentionnées dans cet [article](../marbec-gpu-main-cmds/marbec-gpu-main-cmds.qmd) (par ex. `..` pour indiquer un dossier précédent). La syntaxe de base est : `cp chemin/source chemin/destination`, mais il existe plusieurs cas possibles :
 
 * Copier un fichier dans le même dossier avec un nom différent (créer un duplicata) : `cp fichier1.csv fichier1-dup.csv`
 
@@ -184,7 +186,7 @@ While the `marbec-data` web environment explorer offers the options to copy, pas
 
 ### Copy-paste
 
-For this, the simplest way is through the `cp` command and making use of the navigation commands cited in this [post](https://luislaum.github.io/blog/marbec-gpu-main-cmds/marbec-gpu-main-cmds.html) (e.g. `..` to indicate a previous folder). The basic syntax is the following: `cp path/origin /path/destination`, but there are different possible cases:
+For this, the simplest way is through the `cp` command and making use of the navigation commands cited in this [post](../marbec-gpu-main-cmds/marbec-gpu-main-cmds.qmd) (e.g. `..` to indicate a previous folder). The basic syntax is the following: `cp path/origin /path/destination`, but there are different possible cases:
 
 * Copy a file into the same folder, but with a different name (create duplicate): `cp file1.csv file1-dup.csv`.
 

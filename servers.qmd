@@ -1,6 +1,5 @@
 ---
-title: "Serveurs | Servers"
-image: images/main-pages/no-pic.png
+image: images/main-pages/servers-banner.jpg
 toc: true
 about: 
   template: marquee
@@ -14,9 +13,9 @@ about:
       icon: envelope-fill
 ---
 
-Image credits: xxxyyy XXXYYY at [PictureSource](https://url.of.picture.source)
+Image credits: Diego Fernandez at [Unplash](https://unsplash.com/photos/mixing-console-yRNJAcdpDAo?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
-# FR
+# [FR] Serveurs
 
 ## Serveurs des Applications Web
 
@@ -41,9 +40,37 @@ Caractéristiques :
 
 Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser correctement `marbec-gpu` et `marbec-data`, jetez un coup d'oeil à la section [Manuals and Guides]().
 
+## FAQ
+
+* De quelles ressources ai-je besoin d’allouer ?
+
+  Bonne question ! Cela dépend de vos données d’entrée (taille et type), de votre modèle (stochastique, statistique, réseau de neurones, etc.), de votre tâche, mais surtout des packages utilisés. Par exemple, certains packages ne permettent pas d’effectuer des calculs sur GPU, tandis que d’autres ne peuvent pas paralléliser sur plusieurs CPU. Informez-vous donc sur les packages afin d’éviter d’allouer des ressources inutilisées et adaptez vos scripts en conséquence. Quelques exemples d’allocation :
+
+  - **Entraînement Pytorch YOLO** : `--mem=64G`, `--c=16` et `--gres=gpu:1`
+  - **Exécution HSMC (TensorFlow)** : `--mem=64GB`, `--cpus-per-task=30` et `--gpus-per-node=1`
+
+* Mon script est-il compatible avec un GPU ?
+
+  Non, pas directement. Cependant, certaines bibliothèques sont compatibles avec les GPU. Si votre framework ou script n’utilise pas spécifiquement le GPU, votre code NE tirera PAS parti du matériel GPU. Principaux exemples de bibliothèques compatibles avec les GPU : PyTorch, TensorFlow, Keras, Theano, Caffe, etc.
+
+* Comment accéder à la file d’attente des jobs ?
+
+  Utilisez la commande suivante : `squeue --user username`.  
+  Cette commande affiche une liste détaillée des jobs en attente, y compris le nom du job (par exemple, `spawner-jupyterhub`, qui désigne un “session-job”), le nom d’utilisateur, le temps d’exécution, le nom du nœud (par exemple, `gres:gpu:1` pour une allocation GPU, `gres:gpu:0` pour une allocation CPU), l’état du job (par exemple, `PENDING` pour les jobs en attente de démarrage en raison de la disponibilité des ressources ou de la planification, ou `RUNNING` pour les jobs en cours d’exécution) et `JOBID` (un identifiant unique pour chaque job). Consultez la [documentation SLURM squeue](https://slurm.schedmd.com/squeue.html) pour plus de détails.
+
+* Comment annuler un job soumis ?
+
+  Utilisez la commande `scancel JOBID`, où `JOBID` est l’identifiant du job que vous souhaitez annuler. Vous pouvez trouver l’ID du job en utilisant la commande `squeue`. Pour plus de détails, consultez la [documentation SLURM scancel](https://slurm.schedmd.com/scancel.html).
+
+* Comment soumettre plusieurs jobs sans bloquer les autres utilisateurs ?
+
+  Toute la communauté `marbec-gpu` vous remercie pour votre démarche coopérative et amicale.  
+  Vous pouvez utiliser le paramètre `#SBATCH --dependency=afterany:JOBID`, où `JOBID` est l’identifiant du job que vous souhaitez attendre (par exemple, 4391). Vous pouvez trouver l’ID du job dans la sortie de la commande `sbatch` lorsque vous soumettez un job ou en utilisant la commande `squeue`, comme mentionné dans la question précédente. Selon la [documentation SLURM sbatch](https://slurm.schedmd.com/sbatch.html), ce paramètre garantit que le démarrage de votre job est différé jusqu’à ce que la dépendance spécifiée soit satisfaite. Pour des dépendances basées sur des fichiers ou des cas plus complexes, vous pouvez explorer d’autres mécanismes pour retarder ou séquencer l’exécution de votre job selon vos besoins.
+
+
 ---
 
-# EN
+# [EN] Servers
 
 ## Applications' Servers
 
@@ -68,8 +95,28 @@ Features:
 
 In this web site you can find posts about how to correctly use `marbec-gpu` and `marbec-data`, take a look at the [Manuals and Guides]() section.
 
-## Support
+## FAQ
 
+* What resources do I need to allocate?
 
+  Good question! It depends on your input data (size and type), your model (stochastic, statistical, neural network, etc.), your task, but most importantly, the packages used. For example, some packages do not allow computations on a GPU, while others cannot parallelize across multiple CPUs. Therefore, research the packages to avoid allocating resources that won't be used and adjust your scripts accordingly. Some examples of allocation:
 
-If you encounter any issues or have questions interact with the RocketChatIRD.
+  - **Training Pytorch YOLO**: `--mem=64G`, `--c=16`, and `--gres=gpu:1`
+  - **Running HSMC (TensorFlow)**: `--mem=64GB`, `--cpus-per-task=30`, and `--gpus-per-node=1`
+
+* Is my script GPU-compatible?
+
+  No, not directly. However, some libraries are GPU-compatible. If your framework or script does not specifically use the GPU, your code WILL NOT take advantage of the GPU hardware. Major examples of GPU-compatible libraries: PyTorch, TensorFlow, Keras, Theano, Caffe, etc.
+
+* How do I access the job queue?
+
+  Use the following command: `squeue --user username`. This command displays a detailed list of pending jobs, including the job name (e.g., `spawner-jupyterhub` which refers to a "session job"), the username, execution time, node name (e.g., `gres:gpu:1` for a GPU allocation, `gres:gpu:0` for a CPU allocation), job status (e.g., `PENDING` for jobs waiting to start due to resource availability or scheduling, or `RUNNING` for jobs currently executing), and `JOBID` (a unique identifier for each job). Refer to the [SLURM squeue documentation](https://slurm.schedmd.com/squeue.html) for more details.
+
+* How do I cancel a submitted job?
+
+  Use the command `scancel JOBID`, where `JOBID` is the identifier of the job you want to cancel. You can find the Job-ID by using the `squeue` command. For more details, see the [SLURM scancel documentation](https://slurm.schedmd.com/scancel.html).
+
+* How do I submit multiple jobs without blocking other users?
+
+  The entire `marbec-gpu` community thanks you for your cooperative and friendly approach. You can use the parameter `#SBATCH --dependency=afterany:JOBID`, where `JOBID` is the identifier of the job you want to wait for (e.g., 4391). You can find the job ID in the output of the `sbatch` command when submitting a job or by using the `squeue` command, as mentioned in the previous question. According to the [SLURM sbatch documentation](https://slurm.schedmd.com/sbatch.html), this parameter ensures that your job's start is delayed until the specified dependency is satisfied. For file-based dependencies or more complex cases, you can explore other mechanisms to delay or sequence your job execution according to your needs.
+

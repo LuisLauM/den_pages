@@ -1,0 +1,30 @@
+---
+title: "Ichthyop software"
+description: |
+  Ichthyop est un outil Java gratuit conçu pour étudier les effets des facteurs physiques et biologiques sur la dynamique de l'ichtyoplancton. | Ichthyop is a free Java tool designed to study the effects of physical and biological factors on ichthyoplankton dynamics.
+date: 2025-02-04
+image: banner.png
+about: 
+  template: marquee
+  image-shape: rectangle
+draft: false
+engine: knitr
+---
+
+<http://www.ichthyop.org/>
+
+# [FR] Outil lagrangien de simulation de la dynamique de l'ichtyoplancton
+
+Ichthyop est un outil Java gratuit conçu pour étudier les effets des facteurs physiques et biologiques sur la dynamique de l’ichtyoplancton.
+
+Il intègre les processus les plus importants impliqués dans les premiers stades de la vie des poissons : le frai, le mouvement, la croissance, la mortalité et le recrutement. L’outil utilise en entrée des séries temporelles de champs de vitesse, de température et de salinité archivées à partir des modèles océaniques ROMS, MARS, NEMO ou SYMPHONIE (sous forme de fichiers ou d’OpenDAP).
+
+Le logiciel Ichthyop et ses ressources associées sont disponibles sur [GitHub](https://github.com/ichthyop/).
+
+# [EN] Lagrangian tool for simulating ichthyoplankton dynamics
+
+Ichthyop is a free Java tool designed to study the effects of physical and biological factors on ichthyoplankton dynamics.
+
+It incorporates the most important processes involved in fish early life: spawning, movement, growth, mortality and recruitment. The tool uses as input time series of velocity, temperature and salinity fields archived from ROMS, MARS, NEMO or SYMPHONIE oceanic models (either files or OpenDAP).
+
+The Ichthyop software and its associted ressources are available on [GitHub](https://github.com/ichthyop/).
