@@ -1,5 +1,5 @@
 ---
-image: images/main-pages/no-pic.png
+image: images/main-pages/about-banner.jpg
 toc: true
 about: 
   template: marquee
@@ -13,7 +13,7 @@ about:
       icon: envelope
 ---
 
-Image credits: xxxyyy XXXYYY at [PictureSource](https://url.of.picture.source)
+Image credits: Андрей Сизов at [Unplash](https://unsplash.com/photos/a-book-with-a-diagram-on-it-nuz3rK5iiKg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
 # [FR] Marbec DEN
 

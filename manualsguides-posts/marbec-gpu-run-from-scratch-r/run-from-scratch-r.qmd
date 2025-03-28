@@ -174,6 +174,9 @@ Un fichier BASH est un fichier texte brut, nous pouvons donc le créer directeme
 
 cd $SLURM_SUBMIT_DIR
 Rscript code/my_script.R
+
+# Get a summary of utilized resources during the job
+sacct -j $SLURM_JOB_ID --format=JobID,MaxRSS,MaxVMSize,Elapsed >> resources_$SLURM_JOB_ID.txt
 ```
 
 Ensuite, nous l’enregistrons avec le nom spécifié (**my_script_bash.sh**). Il est important de noter que, quel que soit le nom que nous choisissons, il doit TOUJOURS se terminer par **.sh**, car cette extension permet de le reconnaître comme un fichier de script BASH.  
@@ -207,7 +210,16 @@ Il est donc recommandé que tout script que nous souhaitons exécuter sur `marbe
 
 Encore une fois, `marbec-gpu` est une ressource partagée. Si, par exemple, nous réservons 80 Go de RAM alors que notre script n’a besoin que de 40 Go, nous ne recevrons pas d’erreur, mais cette capacité de calcul ne sera PAS disponible pour d’autres utilisateurs, ce qui entraînera des files d’attente plus longues ou empêchera d'autres utilisateurs d'exécuter leurs travaux.  
 
-Soyons responsables.  
+De même, la dernière ligne de l'exemple de script BASH sert à générer un fichier contenant les informations suivantes :
+
+* `JobID` : L'identifiant de job attribué à notre processus.
+* `MaxRSS` : La quantité maximale de RAM physique utilisée.
+* `MaxVMSize` : La quantité maximale de mémoire virtuelle utilisée (RAM + swap + mémoire attribuée mais non utilisée).
+* `Elapsed` : Temps total d'exécution du processus, à l'exclusion du temps d'attente en file.
+
+Ces informations seront enregistrées dans un fichier nommé *resources_$SLURM_JOB_ID.txt*, où `$SLURM_JOB_ID` sera remplacé par l'identifiant de job attribué à notre processus.
+
+Si, pour une raison quelconque, nous devons relancer le processus, il est recommandé de prendre en compte les valeurs d'utilisation des ressources obtenues lors d'une exécution précédente comme guide pour définir les paramètres dans notre script BASH, afin d'éviter de réserver plus de ressources que nécessaire. 
 :::  
 
 ### Exécuter notre script BASH  
@@ -497,6 +509,9 @@ A BASH file is a plain text file, so we can create it directly from RStudio Serv
 
 cd $SLURM_SUBMIT_DIR
 Rscript code/my_script.R
+
+# Get a summary of utilized resources during the job
+sacct -j $SLURM_JOB_ID --format=JobID,MaxRSS,MaxVMSize,Elapsed >> resources_$SLURM_JOB_ID.txt
 ```
 
 Then, we will save it with the specified name (**my_script_bash.sh**). It is important to note that, regardless of the name we choose, it must ALWAYS end with **.sh**, as this extension allows it to be recognized as a BASH script file. 
@@ -528,7 +543,16 @@ We have said that, in simple terms, `marbec-gpu` is like a very powerful compute
 
 It is therefore advisable that any script that we are going to run in `marbec-gpu` has been previously tested in our PCs, not only in order to verify that everything works correctly, but also to evaluate how many resources our script consumes under certain conditions and then use these values to define the parameters that will be reserved to run our process in `marbec-gpu`. For example, if on our PC, our script uses 20 GB of RAM at 8 processing threads, then, when scaling to 16 threads on `marbec-gpu`, we can set a value ~40 GB of RAM (using the `mem` parameter). While this calculation is approximate, it is better to underestimate what we need than to overestimate and end up reserving more resources than we will actually use. Again, `marbec-gpu` is a shared tool and, if we, for example, reserve 80 GB while our script only needs 40 GB, although we will not get any errors, that computational capacity will NOT be available to other users, which will result in long usage queues or simply denials for those other users.
 
-Let's be responsible.
+Similarly, the last line of the BASH script example serves to generate a file that will contain the following information:
+
+* `JobID`: The Job-ID assigned to our process.
+* `MaxRSS`: The maximum amount of physical RAM used.
+* `MaxVMSize`: The maximum amount of virtual memory used (RAM + swap + assigned but unused memory).
+* `Elapsed`: Total process execution time, excluding queuing time.
+
+This information will be saved in a file named *resources_$SLURM_JOB_ID.txt*, where `$SLURM_JOB_ID` will be replaced by the Job-ID assigned to our process.
+
+If, for any reason, we need to relaunch the process, it is recommended to consider the resource usage values obtained from a previous run as a guide for defining the parameters within our BASH script, thus avoiding the reservation of more resources than our process actually requires.
 ::: 
 
 ### Running Our BASH Script  

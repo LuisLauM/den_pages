@@ -24,3 +24,5 @@ De même, si vous avez appris à exécuter un processus ou si vous souhaitez met
 Here you can find manuals and user guides for the different DENs. If you don't find the guide you are looking for or if you find that the instructions in a post are outdated or lead to some unexpected result, you can report it by opening an Issue in our Github profile. 
 
 Also, if you have learned how to run a process or if you want to update the content of an existing post, you can refer to our post about it to learn how to do it.
+
+---

@@ -24,3 +24,5 @@ Pour information, la plupart des sous-sections suivantes renvoi vers des dépôt
 This section is dedicated to referencing the training courses and associated materials made available to UMR and its partners. Due to the specific nature of the training programs, the associated materials may not be available in several languages. 
 
 For your information, most of the following subsections link to Git repositories where you can find training resources. If you have any questions relating to these, it's best to use the services provided by the repository (the Issues section, for example) or, alternatively, to contact the associated contact person(s) directly.
+
+---

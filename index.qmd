@@ -1,6 +1,6 @@
 ---
 title: "Marbec DEN"
-image: images/main-pages/no-pic.png
+image: images/logo-den.webp
 toc: true
 about: 
   template: marquee
@@ -15,7 +15,7 @@ about:
 format: html
 ---
 
-Image credits: xxxyyyy XXXYYYY at [PictureSource](https://url.of.picture.source)
+<!-- Image credits: xxxyyyy XXXYYYY at [PictureSource](https://url.of.picture.source) -->
 
 ::: {.callout-note}
 ## One Marbec, deux langues.

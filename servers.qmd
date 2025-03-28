@@ -36,6 +36,7 @@ Caractéristiques :
 * Cluster SMP : 240 coeurs, 5 To RAM
 * Cluster WEB : 10 serveurs dédiés
 * 4 GPUs
+* Système d'ordonnancement des tâches: PBS
 
 ![](images/servers/datarmor-2.jpg)
 
@@ -52,9 +53,24 @@ Caractéristiques :
 * 3 GPU : [NVIDIA A40](https://www.nvidia.com/fr-fr/data-center/a40/)
 * 2 CPUs : [Intel Xeon Platinum 8380](https://www.intel.com/content/www/us/en/products/sku/212287/intel-xeon-platinum-8380-processor-60m-cache-2-30-ghz/specifications.html) @ 2.30 GHz, 40 cœurs chacun avec Multithreading (i.e. 80 threads).
 * 1,48 To de RAM
-* Interconnexions `marbec-data`.
+* Système d'ordonnancement des tâches: SLURM
 
-Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser correctement `marbec-gpu` et `marbec-data`, jetez un coup d'oeil à la section [Manuals and Guides]().
+Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser correctement `marbec-gpu` et `marbec-data`, jetez un coup d'oeil à la section [Manuals and Guides](manualsguides.qmd).
+
+### Meso\@LR
+
+Site officiel : [meso-lr.umontpellier.fr](https://meso-lr.umontpellier.fr/)
+
+L’accès aux ressources est accordé après avoir effectué une demande de ressources et avoir répondu aux modalités financières et administratives telles que mises à jour et détaillées sur le site web <https://meso-lr.umontpellier.fr>.
+
+Features:
+
+* CPUs: 28 coeurs, 308 noeuds de calcul , [Intel Xeon E5-2680](https://www.intel.com/content/www/us/en/products/sku/64583/intel-xeon-processor-e52680-20m-cache-2-70-ghz-8-00-gts-intel-qpi/specifications.html) @ 2,4 GHz
+* GPUs: 2 noeuds, 26 coeurs (52 threads), [NVIDIA RTX 6000](https://www.nvidia.com/en-us/design-visualization/rtx-6000/)
+* 3 To de RAM
+* Système d'ordonnancement des tâches: SLURM
+
+![](images/servers/mesolr-1.jpg)
 
 ## FAQ
 
@@ -107,6 +123,7 @@ Features :
 * Cluster SMP : 240 cores, 5 TB RAM
 * Cluster WEB : 10 dedicated servers
 * 4 GPUs
+* Job scheduler system: PBS
 
 ![](images/servers/datarmor-2.jpg)
 
@@ -122,10 +139,25 @@ Features:
 
 * 3 GPUs: [NVIDIA A40](https://www.nvidia.com/fr-fr/data-center/a40/)
 * 2 CPUs: [Intel Xeon Platinum 8380](https://www.intel.com/content/www/us/en/products/sku/212287/intel-xeon-platinum-8380-processor-60m-cache-2-30-ghz/specifications.html) @ 2.30 GHz, 40 cores each with Multithreading (i.e. 80 threads).
-* 1,48 To de RAM
-* `marbec-data` Interconnections
+* 1,48 TB of RAM
+* Job scheduler system: SLURM
 
 In this web site you can find posts about how to correctly use `marbec-gpu` and `marbec-data`, take a look at the [Manuals and Guides]() section.
+
+### Meso\@LR
+
+Official web site: [meso-lr.umontpellier.fr](https://meso-lr.umontpellier.fr/)
+
+Way to access: Access to resources is granted after submitting a resource request and meeting the financial and administrative as updated and detailed on the <https://meso-lr.umontpellier.fr> website.
+
+Features:
+
+* CPUs: 28 cores, 308 nodes, [Intel Xeon E5-2680](https://www.intel.com/content/www/us/en/products/sku/64583/intel-xeon-processor-e52680-20m-cache-2-70-ghz-8-00-gts-intel-qpi/specifications.html) @ 2,4 GHz
+* GPUs: 2 nodes with 26 cores (52 threads), [NVIDIA RTX 6000](https://www.nvidia.com/en-us/design-visualization/rtx-6000/)
+* 3 TB of RAM
+* Job scheduler system: SLURM
+
+![](images/servers/mesolr-1.jpg)
 
 ## FAQ
 
