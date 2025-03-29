@@ -40,13 +40,13 @@ Caractéristiques :
 
 ![](images/servers/datarmor-2.jpg)
 
-### `marbec-gpu` & `marbec-data`
+### Marbec-GPU & Marbec-DATA
 
-`marbec-gpu` s'agit d'un cluster conçu pour fournir des ressources informatiques de haute performance pour l'exécution de codes, tels que ceux utilisant Python et R. Il est construit sur le noyau Linux-Ubuntu et dispose d'une interface Jupyter pour faciliter l'utilisation. Plusieurs outils courants sont installés, notamment Python, R, Git, Conda, CUDA et RStudio.
+Marbec-GPU s'agit d'un cluster conçu pour fournir des ressources informatiques de haute performance pour l'exécution de codes, tels que ceux utilisant Python et R. Il est construit sur le noyau Linux-Ubuntu et dispose d'une interface Jupyter pour faciliter l'utilisation. Plusieurs outils courants sont installés, notamment Python, R, Git, Conda, CUDA et RStudio.
 
-`marbec-data` et `marbec-gpu` composent un système de calcul à haute performance. (Très) Fondamentalement, c'est comme avoir un superordinateur préparé pour traiter des problèmes complexes. Imaginez qu'au lieu d'avoir un seul processeur (Intel/AMD) travaillant en conjonction avec la mémoire vive et l'espace de stockage de votre ordinateur (par exemple, votre ordinateur portable), vous avez plusieurs ordinateurs reliés entre eux et combinant leur puissance pour exécuter des processus complexes. C'est ainsi que fonctionne le HPC : il utilise plusieurs ordinateurs qui travaillent ensemble pour résoudre de très gros calculs beaucoup plus rapidement qu'un seul ordinateur personnel ne pourrait le faire. Marbec HPC est composé de deux systèmes : `marbec-data` (un système de fichiers réseau ou NFS) et `marbec-gpu` (une grappe de calcul).
+Marbec-DATA et Marbec-GPU composent un système de calcul à haute performance. (Très) Fondamentalement, c'est comme avoir un superordinateur préparé pour traiter des problèmes complexes. Imaginez qu'au lieu d'avoir un seul processeur (Intel/AMD) travaillant en conjonction avec la mémoire vive et l'espace de stockage de votre ordinateur (par exemple, votre ordinateur portable), vous avez plusieurs ordinateurs reliés entre eux et combinant leur puissance pour exécuter des processus complexes. C'est ainsi que fonctionne le HPC : il utilise plusieurs ordinateurs qui travaillent ensemble pour résoudre de très gros calculs beaucoup plus rapidement qu'un seul ordinateur personnel ne pourrait le faire. Marbec HPC est composé de deux systèmes : Marbec-DATA (un système de fichiers réseau ou NFS) et Marbec-GPU (une grappe de calcul).
 
-Un NFS est un protocole réseau qui permet à plusieurs appareils connectés à un réseau de partager des fichiers et des répertoires. Cela permet aux chercheurs de stocker les données d'entrée, les codes et les résultats, mais avec l'avantage d'avoir une sauvegarde centralisée et la possibilité d'accéder à leurs fichiers à partir de n'importe quelle machine connectée au cluster. En termes très simples et pour revenir à l'analogie avec votre PC actuel, les « données Marbec » remplacent le stockage (c'est-à-dire le disque dur) dans le HPC. D'autre part, une grappe de calcul est, par essence, un ensemble d'éléments de calcul interconnectés travaillant de manière coordonnée pour exécuter des processus de calcul complexes. Dans l'analogie de votre PC actuel, `marbec-gpu` équivaut à : votre processeur principal (CPU), votre processeur graphique (GPU), la mémoire vive générale et la mémoire vive vidéo. Bien sûr, avec ces simplifications, nous laissons de côté certains détails importants que nous expliquerons en profondeur si nécessaire.
+Un NFS est un protocole réseau qui permet à plusieurs appareils connectés à un réseau de partager des fichiers et des répertoires. Cela permet aux chercheurs de stocker les données d'entrée, les codes et les résultats, mais avec l'avantage d'avoir une sauvegarde centralisée et la possibilité d'accéder à leurs fichiers à partir de n'importe quelle machine connectée au cluster. En termes très simples et pour revenir à l'analogie avec votre PC actuel, les « données Marbec » remplacent le stockage (c'est-à-dire le disque dur) dans le HPC. D'autre part, une grappe de calcul est, par essence, un ensemble d'éléments de calcul interconnectés travaillant de manière coordonnée pour exécuter des processus de calcul complexes. Dans l'analogie de votre PC actuel, Marbec-GPU équivaut à : votre processeur principal (CPU), votre processeur graphique (GPU), la mémoire vive générale et la mémoire vive vidéo. Bien sûr, avec ces simplifications, nous laissons de côté certains détails importants que nous expliquerons en profondeur si nécessaire.
 
 Caractéristiques : 
 
@@ -55,7 +55,7 @@ Caractéristiques :
 * 1,48 To de RAM
 * Système d'ordonnancement des tâches: SLURM
 
-Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser correctement `marbec-gpu` et `marbec-data`, jetez un coup d'oeil à la section [Manuals and Guides](manualsguides.qmd).
+Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser correctement Marbec-GPU et Marbec-DATA, jetez un coup d'oeil à la section [Manuals and Guides](manualsguides.qmd).
 
 ### Meso\@LR
 
@@ -96,7 +96,7 @@ Features:
 
 * Comment soumettre plusieurs jobs sans bloquer les autres utilisateurs ?
 
-  Toute la communauté `marbec-gpu` vous remercie pour votre démarche coopérative et amicale.  
+  Toute la communauté Marbec-GPU vous remercie pour votre démarche coopérative et amicale.  
   Vous pouvez utiliser le paramètre `#SBATCH --dependency=afterany:JOBID`, où `JOBID` est l’identifiant du job que vous souhaitez attendre (par exemple, 4391). Vous pouvez trouver l’ID du job dans la sortie de la commande `sbatch` lorsque vous soumettez un job ou en utilisant la commande `squeue`, comme mentionné dans la question précédente. Selon la [documentation SLURM sbatch](https://slurm.schedmd.com/sbatch.html), ce paramètre garantit que le démarrage de votre job est différé jusqu’à ce que la dépendance spécifiée soit satisfaite. Pour des dépendances basées sur des fichiers ou des cas plus complexes, vous pouvez explorer d’autres mécanismes pour retarder ou séquencer l’exécution de votre job selon vos besoins.
 
 
@@ -127,13 +127,13 @@ Features :
 
 ![](images/servers/datarmor-2.jpg)
 
-### `marbec-gpu` & `marbec-data`
+### Marbec-GPU & Marbec-DATA
 
-`marbec-gpu` is a cluster is designed to provide high-performance computing resources for code execution, such as those using Python and R. It is built on the Linux-Ubuntu kernel and features a Jupyter interface for ease of use. Several common tools are installed, including Python, R, Git, Conda, CUDA, and RStudio.
+Marbec-GPU is a cluster is designed to provide high-performance computing resources for code execution, such as those using Python and R. It is built on the Linux-Ubuntu kernel and features a Jupyter interface for ease of use. Several common tools are installed, including Python, R, Git, Conda, CUDA, and RStudio.
 
-`marbec-data` and `marbec-gpu` compose a High-performance computing system. (Very) Basically, it is like having a supercomputer prepared to deal with complex problems. Imagine that, instead of having a single processor (Intel/AMD) working in conjunction with the RAM and storage space of just your computer (e.g. your laptop), you have several computers linked together combining their power to run complex processes. This is how HPC works: it uses multiple computers working together to solve very large computations much faster than a single personal computer could. Marbec HPC is composed of two systems: `marbec-data` (a Network File System or NFS) and `marbec-gpu` (a compute cluster).
+Marbec-DATA and Marbec-GPU compose a High-performance computing system. (Very) Basically, it is like having a supercomputer prepared to deal with complex problems. Imagine that, instead of having a single processor (Intel/AMD) working in conjunction with the RAM and storage space of just your computer (e.g. your laptop), you have several computers linked together combining their power to run complex processes. This is how HPC works: it uses multiple computers working together to solve very large computations much faster than a single personal computer could. Marbec HPC is composed of two systems: Marbec-DATA (a Network File System or NFS) and Marbec-GPU (a compute cluster).
 
-An NFS is a network protocol that allows multiple devices connected to a network to share files and directories. This allows researchers to store input data, codes and results, but with the advantage of having a centralized backup and the ability to access their files from any machine connected to the cluster. In very simple words and going back to the analogy with your current PC, `marbec-data` takes the place of the storage (i.e. the hard disk) in the HPC. On the other hand, a compute cluster is, in essence, a set of interconnected computational elements working in a coordinated manner to execute complex computational processes. Within the analogy of your current PC, `marbec-gpu` equates to: your main processor (CPU), your graphics processor (GPU), general RAM and video RAM. Of course, with these simplifications we are leaving out some important details that we will explain in depth as we need to.
+An NFS is a network protocol that allows multiple devices connected to a network to share files and directories. This allows researchers to store input data, codes and results, but with the advantage of having a centralized backup and the ability to access their files from any machine connected to the cluster. In very simple words and going back to the analogy with your current PC, Marbec-DATA takes the place of the storage (i.e. the hard disk) in the HPC. On the other hand, a compute cluster is, in essence, a set of interconnected computational elements working in a coordinated manner to execute complex computational processes. Within the analogy of your current PC, Marbec-GPU equates to: your main processor (CPU), your graphics processor (GPU), general RAM and video RAM. Of course, with these simplifications we are leaving out some important details that we will explain in depth as we need to.
 
 Features: 
 
@@ -142,7 +142,7 @@ Features:
 * 1,48 TB of RAM
 * Job scheduler system: SLURM
 
-In this web site you can find posts about how to correctly use `marbec-gpu` and `marbec-data`, take a look at the [Manuals and Guides]() section.
+In this web site you can find posts about how to correctly use Marbec-GPU and Marbec-DATA, take a look at the [Manuals and Guides]() section.
 
 ### Meso\@LR
 
@@ -182,5 +182,5 @@ Features:
 
 * How do I submit multiple jobs without blocking other users?
 
-  The entire `marbec-gpu` community thanks you for your cooperative and friendly approach. You can use the parameter `#SBATCH --dependency=afterany:JOBID`, where `JOBID` is the identifier of the job you want to wait for (e.g., 4391). You can find the job ID in the output of the `sbatch` command when submitting a job or by using the `squeue` command, as mentioned in the previous question. According to the [SLURM sbatch documentation](https://slurm.schedmd.com/sbatch.html), this parameter ensures that your job's start is delayed until the specified dependency is satisfied. For file-based dependencies or more complex cases, you can explore other mechanisms to delay or sequence your job execution according to your needs.
+  The entire Marbec-GPU community thanks you for your cooperative and friendly approach. You can use the parameter `#SBATCH --dependency=afterany:JOBID`, where `JOBID` is the identifier of the job you want to wait for (e.g., 4391). You can find the job ID in the output of the `sbatch` command when submitting a job or by using the `squeue` command, as mentioned in the previous question. According to the [SLURM sbatch documentation](https://slurm.schedmd.com/sbatch.html), this parameter ensures that your job's start is delayed until the specified dependency is satisfied. For file-based dependencies or more complex cases, you can explore other mechanisms to delay or sequence your job execution according to your needs.
 

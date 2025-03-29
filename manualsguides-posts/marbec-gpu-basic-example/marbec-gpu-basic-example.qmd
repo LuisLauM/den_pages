@@ -1,10 +1,10 @@
 ---
-title: "Saying 'Hello world 💙' on `marbec-gpu`"
+title: "Saying 'Hello world 💙' on Marbec-GPU"
 author: 
   - name: Auguste Verdier
     email: auguste.verdier@umontpellier.fr
 description: |
-  Un guide rapide sur la façon d'imprimer un `Hello world <3` sur `marbec-gpu`. | A quick guide on how to print a `Hello world <3` on `marbec-gpu`.
+  Un guide rapide sur la façon d'imprimer un `Hello world <3` sur Marbec-GPU. | A quick guide on how to print a `Hello world <3` on Marbec-GPU.
 date: 2025-02-13
 image: banner.jpg
 about: 
@@ -20,12 +20,12 @@ Image credits: David Clode at [Unplash](https://unsplash.com/photos/black-snake-
 
 # [FR] Exécuter un exemple simple sur Marbec-GPU
 
-Tout au long de ce tutoriel, vous trouverez tout ce dont vous avez besoin pour éxécuter un script Python ou R (afficher "Hello World <3"), ainsi que des conseils et des ressources supplémentaires qui vous seront utiles pour d'autres tâches sur MARBEC-GPU.
+Tout au long de ce tutoriel, vous trouverez tout ce dont vous avez besoin pour éxécuter un script Python ou R (afficher "Hello World <3"), ainsi que des conseils et des ressources supplémentaires qui vous seront utiles pour d'autres tâches sur Marbec-GPU.
 
 Il y a deux grandes manières pour exécuter un programme sur Marbec-GPU. La première est d'utiliser un script de soumission de tâche, la deuxième est d'utliser la session de manière intéractive. Dans cet exemple, nous allons utiliser la première méthode qui est de loin la plus adpatée et facilment adaptable pour des programme plus complexe.
 
 :::{.callout-note}
-Lorque vous voudrez exécuter un programme plus complexe, assurez-vous que votre projet fonctionne localement (sur votre ordinateur personnel). Cela signifie configurer votre environnement correctement et déboguer votre script localement. Une fois que tout fonctionne avec succès sur votre PC (même en utilisant seulement 1% de l'ensemble de données si vous rencontrez des contraintes de calcul), vous pouvez ensuite déployer votre projet sur MARBEC-GPU.
+Lorque vous voudrez exécuter un programme plus complexe, assurez-vous que votre projet fonctionne localement (sur votre ordinateur personnel). Cela signifie configurer votre environnement correctement et déboguer votre script localement. Une fois que tout fonctionne avec succès sur votre PC (même en utilisant seulement 1% de l'ensemble de données si vous rencontrez des contraintes de calcul), vous pouvez ensuite déployer votre projet sur Marbec-GPU.
 :::
 
 Commencez par créer un dossier de travail dans lequel les différents fichiers seront créés. En commande bash cela donnerait :
@@ -112,12 +112,12 @@ Le fichier `output.log` contenant les sorties de votre script python est créé 
 
 # [EN] Running a simple example on Marbec-GPU
 
-Throughout this tutorial, you will find everything you need to run a Python or R script (displaying "Hello World <3"), along with additional tips and resources that will be helpful for other MARBEC-GPU tasks.
+Throughout this tutorial, you will find everything you need to run a Python or R script (displaying "Hello World <3"), along with additional tips and resources that will be helpful for other Marbec-GPU tasks.
 
 There are two main ways to run a program on Marbec-GPU. The first is to use a task submission script, the second is to use the session interactively. In this example, we will use the first method which is by far the most suitable and easily adaptable for more complex programs.
 
 :::{.callout-note}
-When you want to run a more complex program, make sure your project works locally (on your personal computer). This means setting up your environment correctly and debugging your script locally. Once everything works successfully on your PC (even using only 1% of the dataset if you encounter computational constraints), you can then deploy your project on MARBEC-GPU.
+When you want to run a more complex program, make sure your project works locally (on your personal computer). This means setting up your environment correctly and debugging your script locally. Once everything works successfully on your PC (even using only 1% of the dataset if you encounter computational constraints), you can then deploy your project on Marbec-GPU.
 :::
 
 Start by creating a working directory in which the different files will be created. In bash command it would be :

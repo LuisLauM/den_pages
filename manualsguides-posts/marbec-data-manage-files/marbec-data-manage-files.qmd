@@ -1,10 +1,12 @@
 ---
-title: "Managing files within `marbec-data`"
+title: "Managing files within Marbec-DATA"
 author: 
   - name: Wencheng Lau-Medrano
     email: luis.lau-medrano@etu.umontpellier.fr
+  - name: Claudia Restrepo-Ortiz
+    email: claudia.restrepo-ortiz@ird.fr
 description: |
-  Comment gérer les fichiers et les dossiers de et vers `marbec-data` ? | How to manage files and carpetas to and from `marbec-data`?
+  Comment gérer les fichiers et les dossiers de et vers Marbec-DATA ? | How to manage files and carpetas to and from Marbec-DATA?
 date: 2024-10-24
 image: banner.png
 about: 
@@ -17,21 +19,45 @@ categories: ["marbec-data", "guides"]
 
 Image credits: Declan Sun at [Unplash](https://unsplash.com/photos/a-shelf-filled-with-lots-of-white-boxes-8byGIDpCU1w?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
-# [FR] Gestion des fichiers depuis/vers `marbec-data`
+# [FR] Gestion des fichiers depuis/vers Marbec-DATA
 
-## Créer un dossier de travail partagé
+## Créer un dossier sur Marbec-DATA
 
-\[Contenu en préparation\]
+* Aller sur l'interface web de JupyterLab et ouvrir une fenêtre Terminal.
 
-## Lier un dossier de travail à `marbec-gpu`
+![](images/clipboard-1695566983.png)
 
-\[Contenu en préparation\]
+* Créez le dossier de notre projet à l'aide de la commande `mkdir` :
 
-## Gérer des fichiers entre `marbec-data` et notre PC (FileZilla)
+```bash
+mkdir /marbec-data/My_1st_peoject
+```
 
-### Installer FileZilla et se connecter à `marbec-data`
+## Lier un dossier de travail à Marbec-GPU.
 
-Le moyen le plus simple de déplacer (copier, couper et coller) des fichiers entre notre PC et l'un de nos dossiers de travail partagés ou notre dossier utilisateur sur `marbec-gpu` est d'utiliser le logiciel gratuit FileZilla. Pour télécharger l'installateur, il suffit de se rendre sur son site officiel <https://filezilla-project.org/> et de cliquer sur le bouton **Download FileZilla Client**.
+Le serveur Marbec-DATA est dédié au stockage des données et est connecté au serveur Marbec-GPU, qui est utilisé pour les calculs. Cependant, ces dossiers n'apparaissent pas directement dans l'arbre des fichiers, donc pour les voir et y avoir accès dans un terminal JupyterLab, nous devons créer un **lien symbolique** :
+
+* Ouvrez un terminal dans JupyterHub.
+
+* Naviguez jusqu'à l'endroit où vous voulez que le dossier apparaisse :
+
+```bash
+cd /home/your_username/
+```
+
+* Créez le lien symbolique avec le nom de votre dossier dans Marbec-DATA :
+
+```bash
+ln -s /marbec-data/your_folder
+```
+
+* Rafraîchissez l'interface Jupyter pour voir le dossier apparaître.
+
+## Gérer des fichiers entre Marbec-DATA et notre PC (FileZilla)
+
+### Installer FileZilla et se connecter à Marbec-DATA
+
+Le moyen le plus simple de déplacer (copier, couper et coller) des fichiers entre notre PC et l'un de nos dossiers de travail partagés ou notre dossier utilisateur sur Marbec-GPU est d'utiliser le logiciel gratuit FileZilla. Pour télécharger l'installateur, il suffit de se rendre sur son site officiel <https://filezilla-project.org/> et de cliquer sur le bouton **Download FileZilla Client**.
 
 ![](images/clipboard-1730566289.png)
 
@@ -47,14 +73,14 @@ Une fois le fichier téléchargé, il suffit de l'exécuter en conservant la plu
 
 ![](images/clipboard-1730566291.png)
 
-Nous allons maintenant établir une connexion avec `marbec-data`. Pour cela, dans la partie supérieure, nous remplirons les champs suivants :
+Nous allons maintenant établir une connexion avec Marbec-DATA. Pour cela, dans la partie supérieure, nous remplirons les champs suivants :
 
 * Serveur : marbec-data.ird.fr
 * Utilisateur : notreutilisateur
 * Mot de passe : notremotdepasse
 * Port : 22
 
-Si tout se passe bien, un message indiquera que la connexion a réussi. De plus, les panneaux inférieurs à droite afficheront les dossiers déjà liés et disponibles sur notre compte `marbec-data`.
+Si tout se passe bien, un message indiquera que la connexion a réussi. De plus, les panneaux inférieurs à droite afficheront les dossiers déjà liés et disponibles sur notre compte Marbec-DATA.
 
 ![](images/clipboard-1730566292.png)
 
@@ -64,7 +90,7 @@ Il n'est pas nécessaire de saisir ses identifiants à chaque connexion à FileZ
 ![](images/clipboard-1730566293.png)
 :::
 
-Et voilà ! Les panneaux de gauche permettent de naviguer dans les répertoires de notre PC, tandis que ceux de droite permettent d'accéder aux répertoires de `marbec-gpu` et `marbec-data`.
+Et voilà ! Les panneaux de gauche permettent de naviguer dans les répertoires de notre PC, tandis que ceux de droite permettent d'accéder aux répertoires de Marbec-GPU et Marbec-DATA.
 
 ### Copier des fichiers et dossiers
 
@@ -76,9 +102,9 @@ De plus, si FileZilla détecte que des fichiers du même nom existent déjà, un
 
 ![](images/clipboard-1730566295.png)
 
-## Gérer des fichiers dans `marbec-data`
+## Gérer des fichiers dans Marbec-DATA
 
-Bien que l'explorateur web de `marbec-data` propose des options pour copier, coller, supprimer, etc., ce n'est pas une méthode efficace pour les fichiers de taille moyenne ou grande (>10 Mo). Voici comment effectuer ces opérations via **Terminal**.
+Bien que l'explorateur web de Marbec-DATA propose des options pour copier, coller, supprimer, etc., ce n'est pas une méthode efficace pour les fichiers de taille moyenne ou grande (>10 Mo). Voici comment effectuer ces opérations via **Terminal**.
 
 ### Copier-coller
 
@@ -123,21 +149,45 @@ Bien que dans le Terminal, il soit toujours possible d'annuler une commande en u
 
 ---
 
-# [EN] Managing files from/to `marbec-data`
+# [EN] Managing files from/to Marbec-DATA
 
-## Create a shared work folder
+## Create a folder on Marbec-DATA
 
-\[Content in preparation]
+* Go to the JupyterLab web interface and open a Terminal window.
 
-## Linking a working folder to `marbec-gpu`.
+![](images/clipboard-1695566983.png)
 
-\[Content in preparation]
+* Create the folder of our project through the `mkdir` command:
 
-## Managing files between `marbec-data` and our PC (FileZilla)
+```bash
+mkdir /marbec-data/My_1st_peoject
+```
 
-### Installing FileZilla and connecting to `marbec-data`.
+## Linking a working folder to Marbec-GPU.
 
-The easiest way to move (copy, cut and paste) files from our PC to one of our shared work folders or to our `marbec-gpu` user folder is through the (free) FileZilla software. To download the installer, just go to its official website <https://filezilla-project.org/> and select the **Download FileZilla Client** button.
+The Marbec-DATA server is dedicated to data storage and is connected to the Marbec-GPU server, which is used for computations. However, these folders do not appear directly in the file tree, so to view and having access to them in a JupyterLab Terminal, we have to create a **symbolic link**:
+
+* Open a terminal in JupyterHub.
+
+* Navigate to the location where you want the folder to appear:
+
+```bash
+cd /home/your_username/
+```
+
+* Create the symbolic link with the name of your folder in Marbec-DATA:
+
+```bash
+ln -s /marbec-data/your_folder
+```
+
+* Refresh the Jupyter interface to see the folder appear.
+
+## Managing files between Marbec-DATA and our PC (FileZilla)
+
+### Installing FileZilla and connecting to Marbec-DATA.
+
+The easiest way to move (copy, cut and paste) files from our PC to one of our shared work folders or to our Marbec-GPU user folder is through the (free) FileZilla software. To download the installer, just go to its official website <https://filezilla-project.org/> and select the **Download FileZilla Client** button.
 
 ![](images/clipboard-1730566289.png)
 
@@ -154,14 +204,14 @@ Once the file has been downloaded, it will be enough to run it leaving most of t
 ![](images/clipboard-1730566291.png)
 
 
-The next thing we will do is to establish a connection to `marbec-data`. To do this, at the top, we will fill in the following fields:
+The next thing we will do is to establish a connection to Marbec-DATA. To do this, at the top, we will fill in the following fields:
 
 * Server: marbec-data.ird.fr
 * User: youruser
 * Password: yourpassword
 * Port: 22
 
-If all goes well, a message indicating that the connection has been successful will be displayed in the panel immediately below. In addition, the next two lower panels to the right will show those folders already linked and available in our `marbec-data` account. 
+If all goes well, a message indicating that the connection has been successful will be displayed in the panel immediately below. In addition, the next two lower panels to the right will show those folders already linked and available in our Marbec-DATA account. 
 
 ![](images/clipboard-1730566292.png)
 
@@ -171,7 +221,7 @@ It is not necessary to log in every time we log back into FileZilla. We could sa
 ![](images/clipboard-1730566293.png)
 :::
 
-And that is all! In the left panels, we will be able to navigate in the directories of our PC, while in the right panels we will be able to do it in the `marbec-gpu` and `marbec-data` ones. 
+And that is all! In the left panels, we will be able to navigate in the directories of our PC, while in the right panels we will be able to do it in the Marbec-GPU and Marbec-DATA ones. 
 
 ### Copying files and folders
 
@@ -183,9 +233,9 @@ Also, if at any time FileZilla detects that there are repeated items, it will sh
 
 ![](images/clipboard-1730566295.png)
 
-## Manage files within `marbec-data`.
+## Manage files within Marbec-DATA.
 
-While the `marbec-data` web environment explorer offers the options to copy, paste, delete, etc., it is not an efficient method when our files are medium or large (>10 MB). Here is how to perform these operations from **Terminal**.
+While the Marbec-DATA web environment explorer offers the options to copy, paste, delete, etc., it is not an efficient method when our files are medium or large (>10 MB). Here is how to perform these operations from **Terminal**.
 
 ### Copy-paste
 

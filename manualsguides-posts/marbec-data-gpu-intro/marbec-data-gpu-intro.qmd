@@ -1,12 +1,12 @@
 ---
-title: "First steps on `marbec-data` and `marbec-gpu`"
+title: "First steps on Marbec-DATA and Marbec-GPU"
 author: 
   - name: Auguste Verdier
     email: auguste.verdier@umontpellier.fr
   - name: Wencheng Lau-Medrano
     email: luis.lau-medrano@etu.umontpellier.fr
 description: |
-  Comment accéder à `marbec-gpu` et `marbec-data` ? | How to access to `marbec-gpu` and `marbec-data`? 
+  Comment accéder à Marbec-GPU et Marbec-DATA ? | How to access to Marbec-GPU and Marbec-DATA? 
 date: 2024-10-21
 image: banner.jpg
 about: 
@@ -19,11 +19,11 @@ categories: ["marbec-data", "marbec-gpu", "guides"]
 
 Image credits: Tim Mossholder at [Unplash](https://unsplash.com/photos/bleu-entry-signage-WHXbCz2KWhE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
-# [FR] Introduction à `marbec-data` et `marbec-gpu`
+# [FR] Introduction à Marbec-DATA et Marbec-GPU
 
-## Comment accéder à `marbec-data` ?
+## Comment accéder à Marbec-DATA ?
 
-Cela dépendra de ce que nous devons faire. Si nous voulons simplement jeter un coup d'œil rapide aux fichiers et vérifier certains aspects de notre compte, il suffira d'ouvrir une fenêtre de navigateur et d'aller à l'adresse <https://marbec-data.ird.fr/>. Une interface de connexion s'affichera où nous devrons entrer nos identifiants d'accès (fournis par les administrateurs de `marbec-gpu`).
+Cela dépendra de ce que nous devons faire. Si nous voulons simplement jeter un coup d'œil rapide aux fichiers et vérifier certains aspects de notre compte, il suffira d'ouvrir une fenêtre de navigateur et d'aller à l'adresse <https://marbec-data.ird.fr/>. Une interface de connexion s'affichera où nous devrons entrer nos identifiants d'accès (fournis par les administrateurs de Marbec-GPU).
 
 ![](images/clipboard-380148957.png)
 
@@ -31,7 +31,7 @@ Une fois connectés, nous verrons une interface semblable à un bureau affichant
 
 ![](images/clipboard-3953217027.png)
 
-## Comment changer notre mot de passe de `marbec-data` ?
+## Comment changer notre mot de passe de Marbec-DATA ?
 
 Nous commencerons par cliquer sur l'icône des options utilisateur (celle représentant une petite personne en haut à droite), puis nous sélectionnerons l'option **Personnel**.
 
@@ -41,9 +41,9 @@ Une petite fenêtre s'ouvrira et, dans l'onglet affiché par défaut (**Compte**
 
 ![](images/clipboard-222437051.png)
 
-## Vérifier l'espace disponible sur `marbec-data`
+## Vérifier l'espace disponible sur Marbec-DATA
 
-Dans la même fenêtre **Personnel** mentionnée dans la section précédente, sous l'onglet **Quota**, nous pouvons vérifier la limite de stockage attribuée à notre utilisateur ainsi que l'espace utilisé jusqu'à présent dans chacun des dossiers associés à notre compte. C'est une manière simple et graphique de visualiser l'espace disponible restant. Si, à un moment donné, nous avons besoin de plus d'espace, il suffit d'en faire la demande par e-mail aux administrateurs de `marbec-data`.
+Dans la même fenêtre **Personnel** mentionnée dans la section précédente, sous l'onglet **Quota**, nous pouvons vérifier la limite de stockage attribuée à notre utilisateur ainsi que l'espace utilisé jusqu'à présent dans chacun des dossiers associés à notre compte. C'est une manière simple et graphique de visualiser l'espace disponible restant. Si, à un moment donné, nous avons besoin de plus d'espace, il suffit d'en faire la demande par e-mail aux administrateurs de Marbec-DATA.
 
 ![](images/clipboard-2171152553.png)
 
@@ -51,45 +51,45 @@ Dans la même fenêtre **Personnel** mentionnée dans la section précédente, s
 Si, au cours de l'exécution d'un processus, la limite de quota allouée est atteinte, le système bloquera toute tentative d'enregistrement de fichiers, ce qui entraînera soit l'arrêt inattendu du processus, soit des erreurs liées à des problèmes d'écriture sur le disque.
 :::
 
-## Comment gérer des fichiers dans `marbec-data` ou entre `marbec-data` et notre PC ?
+## Comment gérer des fichiers dans Marbec-DATA ou entre Marbec-DATA et notre PC ?
 
 Nous avons un [article](../marbec-data-manage-files/marbec-data-manage-files.qmd) où nous développons ce point plus en détail.
 
-## Comment accéder à `marbec-gpu` ?
+## Comment accéder à Marbec-GPU ?
 
-Le moyen le plus simple d'accéder à `marbec-gpu` est via un navigateur en utilisant l'environnement JupyterLab. Pour cela, il suffit d'ouvrir une fenêtre de navigateur (Chrome, Firefox, Brave, etc.) et de se rendre à l'adresse <https://marbec-gpu.ird.fr/>. Une fenêtre s'affichera pour entrer nos identifiants (**ATTENTION : Ce ne sont pas nécessairement les mêmes que ceux de `marbec-data`**) puis nous cliquerons sur le bouton **Start my server**. Ensuite, un menu déroulant nous permettra de choisir parmi différentes configurations prédéfinies de puissance de calcul pour notre session.
+Le moyen le plus simple d'accéder à Marbec-GPU est via un navigateur en utilisant l'environnement JupyterLab. Pour cela, il suffit d'ouvrir une fenêtre de navigateur (Chrome, Firefox, Brave, etc.) et de se rendre à l'adresse <https://marbec-gpu.ird.fr/>. Une fenêtre s'affichera pour entrer nos identifiants (**ATTENTION : Ce ne sont pas nécessairement les mêmes que ceux de Marbec-DATA**) puis nous cliquerons sur le bouton **Start my server**. Ensuite, un menu déroulant nous permettra de choisir parmi différentes configurations prédéfinies de puissance de calcul pour notre session.
 
 ![](images/clipboard-1569546190.png)
 
 ::: callout-note
-Bien que nous ayons mentionné que `marbec-gpu` dispose d'un grand nombre de CPU, GPU et de RAM, cela représente 100 % de sa puissance absolue, et `marbec-gpu` est un service partagé. Il n'est donc pas possible (ni autorisé) qu'un seul utilisateur monopolise la totalité de sa capacité. C'est pourquoi la première étape consiste à choisir la puissance requise pour notre processus. Par exemple, si nous voulons exécuter un processus d'automatisation de téléchargement de données satellitaires, réserver 1 CPU et 2 Go de RAM suffira. En revanche, si notre script est conçu (et testé) pour n'utiliser que des cœurs CPU, il n'est pas nécessaire de réserver des configurations incluant des GPU. Rappelons que si nous sélectionnons une option trop puissante que nous n'utiliserons pas pleinement, elle ne sera pas disponible pour un autre utilisateur qui pourrait en avoir réellement besoin (choisissez judicieusement).
+Bien que nous ayons mentionné que Marbec-GPU dispose d'un grand nombre de CPU, GPU et de RAM, cela représente 100 % de sa puissance absolue, et Marbec-GPU est un service partagé. Il n'est donc pas possible (ni autorisé) qu'un seul utilisateur monopolise la totalité de sa capacité. C'est pourquoi la première étape consiste à choisir la puissance requise pour notre processus. Par exemple, si nous voulons exécuter un processus d'automatisation de téléchargement de données satellitaires, réserver 1 CPU et 2 Go de RAM suffira. En revanche, si notre script est conçu (et testé) pour n'utiliser que des cœurs CPU, il n'est pas nécessaire de réserver des configurations incluant des GPU. Rappelons que si nous sélectionnons une option trop puissante que nous n'utiliserons pas pleinement, elle ne sera pas disponible pour un autre utilisateur qui pourrait en avoir réellement besoin (choisissez judicieusement).
 :::
 
 Après avoir sélectionné (et réservé) les ressources pour notre session et cliqué sur **Start**, une fenêtre s'ouvrira avec le Launcher de JupyterLab. Nous y verrons les différentes applications préinstallées et disponibles. La principale est **Terminal**, qui nous permettra de lancer (exécuter) nos processus (scripts).
 
 ![](images/clipboard-1563571514.png)
 
-## Changer son mot de passe sur `marbec-gpu`
+## Changer son mot de passe sur Marbec-GPU
 
 À partir de l'étape précédente, nous commencerons par ouvrir une fenêtre de **Terminal** (en cliquant sur l'icône correspondante). Dans la fenêtre qui s'ouvre, nous taperons la commande `passwd` (puis *Enter*). Ensuite, il nous sera demandé de saisir notre mot de passe actuel, puis le nouveau. **ATTENTION : Par défaut et pour des raisons de sécurité, lors du changement de mot de passe, aucun curseur ne s'affiche à l'écran pendant la saisie. Il pourrait donc sembler que le clavier ne fonctionne pas, mais ce n'est pas le cas. Tapez normalement.**
 
 ![](images/clipboard-1563571515.png)
 
 ::: callout-important
-Il est très important de définir des mots de passe sécurisés (alphanumériques avec des symboles et une combinaison de majuscules et de minuscules), de préférence différents pour la connexion à `marbec-data` et `marbec-gpu`. Par ailleurs, l'environnement JupyterLab PERMET l'utilisation des raccourcis classiques comme `Ctrl+C`-`Ctrl+V` (ou `Cmd+C`-`Cmd+V` sur MacOS) pour copier-coller des chaînes de caractères, ce qui peut être utilisé lors du changement de mot de passe avec la commande `passwd`.
+Il est très important de définir des mots de passe sécurisés (alphanumériques avec des symboles et une combinaison de majuscules et de minuscules), de préférence différents pour la connexion à Marbec-DATA et Marbec-GPU. Par ailleurs, l'environnement JupyterLab PERMET l'utilisation des raccourcis classiques comme `Ctrl+C`-`Ctrl+V` (ou `Cmd+C`-`Cmd+V` sur MacOS) pour copier-coller des chaînes de caractères, ce qui peut être utilisé lors du changement de mot de passe avec la commande `passwd`.
 :::
 
-## Comment exécuter un processus sur `marbec-gpu` ?
+## Comment exécuter un processus sur Marbec-GPU ?
 
 Nous avons un [article](../marbec-gpu-basic-example/marbec-gpu-basic-example.qmd) où nous développons ce point plus en détail.
 
 ---
 
-# [EN] Introduction to `marbec-data` and `marbec-gpu`
+# [EN] Introduction to Marbec-DATA and Marbec-GPU
 
 ## How to access marbec-data?
 
-This will depend on what we need to do. If we just want to take a quick look at the files and review aspects of our account, we just open a browser window and go to the address <https://marbec-data.ird.fr/>. This will open a login interface where we just need to enter our credentials (provided by the `marbec-gpu` administrators).
+This will depend on what we need to do. If we just want to take a quick look at the files and review aspects of our account, we just open a browser window and go to the address <https://marbec-data.ird.fr/>. This will open a login interface where we just need to enter our credentials (provided by the Marbec-GPU administrators).
 
 ![](images/clipboard-380148957.png)
 
@@ -97,7 +97,7 @@ Once inside, we will see a sort of desktop where we will see a couple of icons t
 
 ![](images/clipboard-3953217027.png)
 
-## ¿How to change our password in `marbec-data`?
+## ¿How to change our password in Marbec-DATA?
 
 We will start by clicking on the user options icon (the one that looks like a little person) at the top right of the desktop and selecting the **Personal** option.
 
@@ -107,9 +107,9 @@ A small window will open where in the first tab shown (**Account**), we will hav
 
 ![](images/clipboard-222437051.png)
 
-## Check our available space in `marbec-data`.
+## Check our available space in Marbec-DATA.
 
-From the same **Personal** window seen in the previous section, in the **Quota** tab we will be able to verify the storage limit assigned to our user and what has been used so far in each of the folders associated to our user. This is a simple and graphic way to visualize the available space we have left. If at any time we need more space, just request it by e-mail to the `marbec-data` administrators.
+From the same **Personal** window seen in the previous section, in the **Quota** tab we will be able to verify the storage limit assigned to our user and what has been used so far in each of the folders associated to our user. This is a simple and graphic way to visualize the available space we have left. If at any time we need more space, just request it by e-mail to the Marbec-DATA administrators.
 
 ![](images/clipboard-2171152553.png)
 
@@ -117,33 +117,33 @@ From the same **Personal** window seen in the previous section, in the **Quota**
 If at any time during the execution of a process the allocated quota limit is reached, the system will block any attempt to save files and this will result in the unplanned termination of the process or errors related to disk write problems.
 :::
 
-## How to manage files inside `marbec-data` or between `marbec-data` and our PC?
+## How to manage files inside Marbec-DATA or between Marbec-DATA and our PC?
 
 We have a [post](../marbec-data-manage-files/marbec-data-manage-files.qmd) where we develop this point in more detail.
 
-## How to access `marbec-gpu`?
+## How to access Marbec-GPU?
 
-The easiest way to access `marbec-gpu` is through a browser using the JupyterLab environment. To do this, just open a browser (Chrome, Firefox, Brave, etc.) window and go to <https://marbec-gpu.ird.fr/>. A window will appear to enter our credentials (NOTE: They are not necessarily the same as those of `marbec-data`) and then click on the **Start my server** button. Next, a drop-down menu will appear where we will be able to choose different default configurations of computing power for our session. 
+The easiest way to access Marbec-GPU is through a browser using the JupyterLab environment. To do this, just open a browser (Chrome, Firefox, Brave, etc.) window and go to <https://marbec-gpu.ird.fr/>. A window will appear to enter our credentials (NOTE: They are not necessarily the same as those of Marbec-DATA) and then click on the **Start my server** button. Next, a drop-down menu will appear where we will be able to choose different default configurations of computing power for our session. 
 
 ![](images/clipboard-1569546190.png)
 
 ::: callout-note
-Although we indicated a moment ago that marbec-gpu has a good amount of CPUs, GPUs and RAM, this represents 100% of its absolute power and `marbec-gpu` is a shared service, so it is not possible (allowed) for a single user to monopolize 100% of its capacity. That is why the first choice will consist of deciding what is the power we require for our process. For example, if we want to run an automated process of downloading satellite information, it will be enough to reserve 1 CPU and 2GB of RAM. On the other hand, if our script is only configured (and tested) to use CPU cores, it will not be necessary to reserve those configurations that include GPU. Remember that if you select a very powerful option that you will not take advantage of, it will not be available for someone else who might really need it (choose wisely).
+Although we indicated a moment ago that marbec-gpu has a good amount of CPUs, GPUs and RAM, this represents 100% of its absolute power and Marbec-GPU is a shared service, so it is not possible (allowed) for a single user to monopolize 100% of its capacity. That is why the first choice will consist of deciding what is the power we require for our process. For example, if we want to run an automated process of downloading satellite information, it will be enough to reserve 1 CPU and 2GB of RAM. On the other hand, if our script is only configured (and tested) to use CPU cores, it will not be necessary to reserve those configurations that include GPU. Remember that if you select a very powerful option that you will not take advantage of, it will not be available for someone else who might really need it (choose wisely).
 :::
 
 After selecting (and reserving) the resources for our session and clicking **Start**, a window with the JupyterLab Launcher will appear. In it, we will be able to see the different preinstalled and available applications. The main one will be the **Terminal**, which is the one we will use to launch (execute) our processes (scripts).
 
 ![](images/clipboard-1563571514.png)
 
-## Change password in `marbec-gpu`.
+## Change password in Marbec-GPU.
 
 From the previous step, we will start by opening a **Terminal** window (by clicking on the corresponding icon) and the window that opens we will type the command `passwd` (and then *Enter*). Next, we will be prompted to type our current and new passwords. **By default and for security, during the password change process NO cursor is displayed while typing, so it may appear that our keyboard is not working, but this is not the case. You type normally**.
 
 ::: callout-important
-It is very important to define strong passwords (alphanumeric with symbols and uppercase-case) and preferably different passwords for the login in `marbec-data` and `marbec-gpu`. On the other hand, the JupyterLab environment DOES allow the use of classic shortcuts like `Ctrl+C`-`Ctrl+V` (or `Cmd+C`-`Cmd+V` in MacOS) to copy-paste character strings, so it is possible to use them during the password change process with the `passwd` command.
+It is very important to define strong passwords (alphanumeric with symbols and uppercase-case) and preferably different passwords for the login in Marbec-DATA and Marbec-GPU. On the other hand, the JupyterLab environment DOES allow the use of classic shortcuts like `Ctrl+C`-`Ctrl+V` (or `Cmd+C`-`Cmd+V` in MacOS) to copy-paste character strings, so it is possible to use them during the password change process with the `passwd` command.
 :::
 
-## How to run a process on `marbec-gpu`?
+## How to run a process on Marbec-GPU?
 
 We have a [post](../marbec-gpu-basic-example/marbec-gpu-basic-example.qmd) where we develop this point in more detail.
 

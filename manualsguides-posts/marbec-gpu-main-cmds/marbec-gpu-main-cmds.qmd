@@ -1,14 +1,12 @@
 ---
-title: "Main commands in `marbec-gpu` Terminal"
+title: "Main commands in Marbec-GPU Terminal"
 author: 
   - name: Auguste Verdier
     email: auguste.verdier@umontpellier.fr
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr
-  - name: Claudia Restrepo-Ortiz
-    email: claudia.restrepo-ortiz@ird.fr
+    email: luis.lau-medrano@etu.umontpellier.fr  
 description: |
-  Une liste rapide des principales commandes à utiliser dans le terminal `marbec-gpu`. | A quick list of the main commands to use within the `marbec-gpu` Terminal. 
+  Une liste rapide des principales commandes à utiliser dans le terminal Marbec-GPU. | A quick list of the main commands to use within the Marbec-GPU Terminal. 
 date: 2024-10-23
 image: banner.jpg
 about: 
@@ -22,9 +20,9 @@ categories: ["marbec-gpu", "guides"]
 
 Image credits: Kajetan Sumila at [Unplash](https://unsplash.com/photos/black-metal-tools-on-brown-wooden-shelf-sXPR9JV270c?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
-# [FR] Principales commandes dans le Terminal de `marbec-gpu`
+# [FR] Principales commandes dans le Terminal de Marbec-GPU
 
-La première chose à noter est que `marbec-gpu` utilise Ubuntu, donc les commandes listées ci-dessous sont celles utilisées sur cet OS. Cet article présente une description des principaux modes d'utilisation de chaque commande. Cependant, si vous avez un besoin spécifique, vous pouvez toujours consulter des forums comme Stack Overflow ou utiliser l'aide intégrée à chaque commande en tapant son nom suivi de `--help`. Par exemple, pour afficher l'aide de la commande `ls`, il suffit d'exécuter `ls --help` dans le Terminal.
+La première chose à noter est que Marbec-GPU utilise Ubuntu, donc les commandes listées ci-dessous sont celles utilisées sur cet OS. Cet article présente une description des principaux modes d'utilisation de chaque commande. Cependant, si vous avez un besoin spécifique, vous pouvez toujours consulter des forums comme Stack Overflow ou utiliser l'aide intégrée à chaque commande en tapant son nom suivi de `--help`. Par exemple, pour afficher l'aide de la commande `ls`, il suffit d'exécuter `ls --help` dans le Terminal.
 
 ::: {.callout-note title="Majuscules et minuscules"}
 Comme en R ou Python, l'utilisation des majuscules et minuscules est importante lors de l'exécution des commandes. Par exemple, `ls -D` n'est pas équivalent à `ls -d`, donc il faut être attentif.
@@ -124,13 +122,23 @@ Si nous souhaitons forcer l'arrêt ou l'annulation d'un processus en cours, nous
 
 Par défaut, deux outils sont disponibles dans le Terminal : `vi` et `nano`. La syntaxe pour les ouvrir est aussi simple que `vi chemin/fichier1.txt` ou `nano chemin/fichier1.txt`, où `fichier1.txt` peut être n'importe quel fichier texte (par ex. un script en R ou Python). Les raccourcis de navigation sont différents dans chaque environnement, mais leur documentation est abondante sur Internet. Choisissez celui qui vous convient le mieux.
 
-### Créer un lien symbolique
+### Créer un lien symbolique (commande `ln`)
+
+La création de **liens symboliques (symlinks)** est cruciale pour une gestion efficace du flux de travail, car ils permettent aux utilisateurs de référencer des fichiers et des répertoires sans dupliquer les données, ce qui permet d'économiser un espace de stockage précieux. Ils simplifient également l'organisation des fichiers en permettant un accès facile aux ensembles de données ou aux installations logicielles fréquemment utilisés dans différents répertoires. Ceci est particulièrement utile lors de la gestion de simulations à grande échelle ou de ressources partagées, en assurant la cohérence et en minimisant la redondance dans le cadre du HPC.
+
+Prenons un exemple : Imaginez que vous travaillez sur Marbec-GPU et que votre projet nécessite un accès fréquent à un grand ensemble de données stocké dans `/shared/storage/datasets/big_data.csv`. Au lieu de taper ce long chemin à chaque fois ou de copier le fichier dans votre répertoire de travail (ce qui gaspille de l'espace de stockage), vous pouvez créer un lien symbolique dans votre répertoire personnel : 
+
+```bash
+ln -s /shared/storage/datasets/big_data.csv ~/big_data.csv`
+```
+
+Maintenant, vous pouvez simplement faire référence à `~/big_data.csv` dans vos scripts, ce qui rend votre flux de travail plus efficace. Si le jeu de données est mis à jour, le lien symbolique pointe toujours vers la dernière version sans qu'aucune modification ne soit nécessaire. 
 
 ---
 
-# [EN] Main commands in `marbec-gpu` Terminal
+# [EN] Main commands in Marbec-GPU Terminal
 
-The first thing to keep in mind is that `marbec-gpu` has Ubuntu installed, so the commands listed below will be the same as the ones used in that OS. This article will show a description of the main usage modes for each command, but if you have any additional requirements, you can always search in forums like [Stackoverflow](https://stackoverflow.com/) or check the help for each command, which consists of placing the command name followed by `--help`. For example, if I want to know the help for the `ls` command, just run `ls --help` in the Terminal.
+The first thing to keep in mind is that Marbec-GPU has Ubuntu installed, so the commands listed below will be the same as the ones used in that OS. This article will show a description of the main usage modes for each command, but if you have any additional requirements, you can always search in forums like [Stackoverflow](https://stackoverflow.com/) or check the help for each command, which consists of placing the command name followed by `--help`. For example, if I want to know the help for the `ls` command, just run `ls --help` in the Terminal.
 
 ::: {.callout-note title="Upper and lower case"}
 As in R or Python, the use of upper or lower case when indicating an option does matter. For example, `ls -D` is not equivalent to `ls -d`, so be carefull.
@@ -231,10 +239,16 @@ If we want to force the closing or the cancellation of a process already started
 
 By default, there are two tools available from Terminal: `vi` and `nano`. The syntax for their execution is as simple as `vi path/file1.txt` or `nano path/file1.txt`, where `file1.txt` can be any plain text file (e.g. an R or Python script). The navigation shortcuts within each of these environments are different, but documentation is abundant on the Internet. Choose the one you like best.
 
-### Creating a symbolic link (command `ln`)
+### Creating a 📌symbolic link (command `ln`)
 
 Creating **symbolic links (symlinks)** is crucial for efficient workflow management, because they allow users to reference files and directories without duplicating data, saving valuable storage space. They also simplify file organization by enabling easy access to frequently used datasets or software installations across different directories. This is particularly useful when handling large-scale simulations or shared resources, ensuring consistency and minimizing redundancy in the HPC setting.
 
-Let's do it using an example: Imagine you are working on `marbec-gpu`, and your project requires frequent access to a large dataset stored in `/shared/storage/datasets/big_data.csv`. Instead of typing this long path every time or copying the file to your working directory (which wastes storage), you can create a symbolic link in your home directory: `ln -s /shared/storage/datasets/big_data.csv ~/big_data.csv`. Now, you can simply refer to `~/big_data.csv` in your scripts, making your workflow more efficient. If the dataset gets updated, the symlink still points to the latest version without requiring any changes.
+Let's do it using an example: Imagine you are working on Marbec-GPU, and your project requires frequent access to a large dataset stored in `/shared/storage/datasets/big_data.csv`. Instead of typing this long path every time or copying the file to your working directory (which wastes storage), you can create a symbolic link in your home directory: 
+
+```bash
+ln -s /shared/storage/datasets/big_data.csv ~/big_data.csv`
+```
+
+Now, you can simply refer to `~/big_data.csv` in your scripts, making your workflow more efficient. If the dataset gets updated, the symlink still points to the latest version without requiring any changes. 
 
 
