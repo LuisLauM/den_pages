@@ -8,17 +8,17 @@ website:
   navbar:
     right:
       - href: index.qmd
-        text: Accueil | Home
+        text: "<span class='nav-center'>Accueil<br>Home</span>"
       - href: about.qmd
-        text: About | À propos
+        text: "<span class='nav-center'>À propos<br>About</span>"
       - href: servers.qmd
-        text: Serveurs | Servers
+        text: "<span class='nav-center'>Serveurs<br>Servers</span>"
       - href: softwaretraining.qmd
-        text: Logiciels & Formation | Software & Training
+        text: "<span class='nav-center'>Logiciels & Formation<br>Software & Training</span>"
       - href: manualsguides.qmd
-        text: Manuels & Guides | Manuals & Guides
+        text: "<span class='nav-center'>Manuels & Guides<br>Manuals & Guides</span>"
       - href: contact.qmd
-        text: Contact     
+        text: "<span class='nav-center'>Contact</span>"
   page-footer:
     left: © Copyright 2025, IRD-Marbec
     right: This website is built with [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/umr-marbec/den_pages){target=_blank} and [Quarto](https://quarto.org/){target=_blank}

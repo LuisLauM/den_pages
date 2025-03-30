@@ -24,7 +24,6 @@ Dans ce tutoriel, nous verrons comment exécuter un script R sur le HPC Marbec-G
 
 :::{.callout-note}  
 Dans ce post, nous utiliserons souvent le terme HPC, qui signifie "High-Performance Computing device" (dispositif de calcul haute performance). En termes très simples, il s'agit d'un ordinateur très puissant dont les ressources peuvent être utilisées par plusieurs utilisateurs en même temps. Pour plus de détails sur les caractéristiques de Marbec-GPU et Marbec-DATA, veuillez consulter notre post [Documentation Marbec-GPU](/servers.qmd).  
-
 ::: 
 
 ## AVANT DE COMMENCER  
@@ -35,7 +34,7 @@ Dans ce post, nous utiliserons souvent le terme HPC, qui signifie "High-Performa
   - Claudia Restrepo-Ortiz ([claudia.restrepo-ortiz@ird.fr](mailto:claudia.restrepo-ortiz@ird.fr))  
   - Nicolas Barrier ([nicolas.barrier@ird.fr](mailto:nicolas.barrier@ird.fr))  
 
-* Installez le logiciel FileZilla, que nous utiliserons pour transférer les fichiers d'entrée et de sortie entre notre PC et Marbec-DATA. Vous pouvez trouver les étapes de téléchargement, d’installation et de connexion à FileZilla dans notre post : [Gérer des fichiers depuis/vers Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).  
+* Installez le logiciel [FileZilla](https://filezilla-project.org/), que nous utiliserons pour transférer les fichiers d'entrée et de sortie entre notre PC et Marbec-DATA. Vous pouvez trouver les étapes de téléchargement, d’installation et de connexion à FileZilla dans notre post : [Gérer des fichiers depuis/vers Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).  
 
 ### Répertoire de travail  
 
@@ -61,6 +60,19 @@ La première étape consiste à créer un dossier qui servira de répertoire de 
 
   ![](images/4-3.png)  
 
+:::{.callout-important}  
+Il est possible que le dossier sur lequel vous travaillez SOIT DÉJÀ ou se trouve à l'intérieur d'un dossier qui EST DÉJÀ disponible (visible) pour Marbec-Data. Dans ce cas, l'étape suivante n'est pas nécessaire puisque Marbec-GPU aura déjà accès à votre dossier et que tout adressage sera effectué par le script BASH, dont vous verrez la création dans les prochaines étapes de ce billet.
+
+En d'autres termes, l'étape suivante n'est recommandée qu'aux utilisateurs qui n'ont PAS de dossier associé à Marbec-DATA, ou qui souhaitent ouvrir leur répertoire de travail en tant que nouveau dossier dans Marbec-DATA.
+:::  
+
+* Rendre notre dossier visible dans Marbec-DATA. Cela se fait au moyen d'un lien symbolique. Pour ce faire, il suffit d'aller dans le panneau Terminal de RStudio (on peut aussi le faire à partir d'une fenêtre Terminal de JupyterLab) et d'exécuter la commande suivante :
+
+```bash
+# Ici, vous devez remplacer les valeurs de 
+# your_username et your_folder en conséquence
+cd /home/your_username/ && ln -s /marbec-data/your_folder
+```
 
 ### Fichiers d’entrée  
 
@@ -373,6 +385,7 @@ During this post we will use a lot the term HPC, which stands for “High-Perfor
 
 * Install the FileZilla software, which we will use to transfer input and output files between our PC and Marbec-DATA. You can find the steps for downloading, installing, and logging into FileZilla in our post: [Managing files from/to Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).  
 
+
 ### Working Directory  
 
 One of the main recommendations when working with R is to properly define a folder that will contain the input/output files and scripts needed to obtain our results. Having an active account on Marbec-DATA means that there is also a folder named after our username, which Marbec-GPU can access.  
@@ -397,6 +410,18 @@ The first step is to create a folder that will serve as our working directory. T
 
   ![](images/4-3.png)
 
+:::{.callout-important}  
+It is possible that the folder you are working on ALREADY IS or is inside a folder that IS ALREADY available (visible) to Marbec-Data. In that case, the next step is not required since Marbec-GPU will already have access to your folder and any addressing will be done through the BASH script, the creation of which you will see in the next steps of this post.
+
+In other words, the following step is recommended only for those users who do NOT have any folder associated with Marbec-DATA, or who wish to open set up their Working Directory as a new folder in Marbec-DATA.
+:::  
+
+* Make our folder visible in Marbec-DATA. This is achieved through a symbolic link. To do this, just go to the Terminal panel in RStudio (it can also be done through a JupyterLab Terminal window) and execute the following command:
+
+```bash
+# Here you must replace the values of your_username and your_folder accordingly
+cd /home/your_username/ && ln -s /marbec-data/your_folder
+```
 
 ### Input Files  
 

@@ -1,0 +1,35 @@
+---
+title: "Marbec-GPU Best practices"
+author: 
+  - name: Claudia Restrepo-Ortiz
+    email: claudia.restrepo-ortiz@ird.fr
+  - name: Wencheng Lau-Medrano
+    email: luis.lau-medrano@etu.umontpellier.fr  
+description: |
+  Exécuter correctement vos scripts. | Running Your Scripts Right. 
+date: 2025-03-31
+image: banner.png
+about: 
+  template: marquee
+  image-shape: rectangle
+draft: false
+engine: knitr
+tags: ["marbec-gpu", "marbec-data", "den-marbec", "recommendations", "software", "logiciel"]
+categories: ["marbec-gpu", "guides"]
+---
+
+Image credits: [GeeksForGeeks](https://www.geeksforgeeks.org/best-html-coding-practices-you-must-know/)
+
+# [FR] Principales commandes dans le Terminal de Marbec-GPU
+
+* Soumettez obligatoirement vos jobs via un script Bash.
+* Utilisez session interactif uniquement pour des tests courts et non pour des calculs longs.
+* Fermez votre session lorsque vous ne l’utilisez plus pour libérer les ressources.
+
+---
+
+# [EN] Main commands in Marbec-GPU Terminal
+
+* Submit jobs via a Bash script.
+* Use interactive session only for short tests, not for long calculations.
+* Close your session when not in use to free up resources.
