@@ -3,7 +3,6 @@ project:
 
 website:
   site-url: https://luislaum.github.io/den_pages/
-  branch: den_pages-quarto
   favicon: images/favicon/favicon.ico
   title: "DEN Pages"
   navbar:
