@@ -26,10 +26,18 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
+      
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: html
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          path: ./_site/
+          branch: den_pages-quarto
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
