@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  site-url: https://umr-marbec.github.io/
+  site-url: https://luislaum.github.io/den_pages/
   favicon: images/favicon/favicon.ico
   title: "DEN Pages"
   navbar:
