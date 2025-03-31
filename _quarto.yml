@@ -4,7 +4,7 @@ project:
 website:
   site-url: https://luislaum.github.io/den_pages/
   favicon: images/favicon/favicon.ico
-  title: "DEN Pages"
+  title: "<b>DEN Pages</b> <span style='font-size: 0.8em;'>by Marbec</span>"
   navbar:
     right:
       - href: index.qmd

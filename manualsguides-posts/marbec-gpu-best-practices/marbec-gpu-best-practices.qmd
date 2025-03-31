@@ -3,8 +3,6 @@ title: "Marbec-GPU Best practices"
 author: 
   - name: Claudia Restrepo-Ortiz
     email: claudia.restrepo-ortiz@ird.fr
-  - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr  
 description: |
   Exécuter correctement vos scripts. | Running Your Scripts Right. 
 date: 2025-03-31
@@ -12,7 +10,7 @@ image: banner.png
 about: 
   template: marquee
   image-shape: rectangle
-draft: false
+draft: true
 engine: knitr
 tags: ["marbec-gpu", "marbec-data", "den-marbec", "recommendations", "software", "logiciel"]
 categories: ["marbec-gpu", "guides"]

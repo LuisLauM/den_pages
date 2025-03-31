@@ -1,0 +1,25 @@
+---
+title: "Multivariate Analysis with R"
+description: |
+  Apprendre la manipulation, la visualisation et l'analyse de données avec le tidyverse en R. | Learn data manipulation, visualization, and analysis with the tidyverse in R. 
+date: 2025-02-04
+image: banner.jpg
+about: 
+  template: marquee
+  image-shape: rectangle
+draft: true
+engine: knitr
+---
+
+Image credits: Maxim Berg at [Unsplash](https://unsplash.com/es/fotos/un-campo-de-arboles-de-colores-en-medio-de-un-bosque-24j8h-9ME8o?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+
+Next session
+
+* **[FR]**: Ce cours couvre dplyr, ggplot2, tidyr, et plus encore, pour vous aider à travailler efficacement avec des données. Idéal pour les débutants et les utilisateurs expérimentés !
+
+* **[EN]**: This course covers dplyr, ggplot2, tidyr, and more, helping you work efficiently with data. Ideal for beginners and experienced users!
+
+```{=html}
+<iframe width="780" height="500" src="https://umr-marbec.github.io/tidyverse-training/" title="Tidyverse training"></iframe>
+```
+

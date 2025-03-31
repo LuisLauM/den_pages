@@ -54,7 +54,7 @@ Image credits: Jovita Braun at [Unsplash](https://unsplash.com/photos/a-close-up
 * {{< bi linkedin >}} [mathieu-depetris](https://www.linkedin.com/in/mathieu-depetris-ab3b3b90/)
 * {{< bi globe >}} [mathieudepetris.github.io](https://mathieudepetris.github.io/)
 * {{< fa brands orcid >}} [0000-0001-8080-0531](https://orcid.org/0000-0001-8080-0531)
-* {{< bi github >}} [barriern](https://github.com/mathieudepetris)
+* {{< bi github >}} [mathieudepetris](https://github.com/mathieudepetris)
 
 ---
 
