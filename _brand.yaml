@@ -4,6 +4,7 @@ color:
 logo: 
   large: images/logo-den-bw.webp
 
+# More fonts: https://fonts.google.com/
 typography:
   fonts:
     - family: Open Sans
@@ -15,3 +16,4 @@ typography:
   base: Open Sans
   headings: Sora
   monospace: Sometype Mono
+  
