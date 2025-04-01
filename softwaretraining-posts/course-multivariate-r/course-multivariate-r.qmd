@@ -2,7 +2,7 @@
 title: "Multivariate Analysis with R"
 description: |
   Apprendre la manipulation, la visualisation et l'analyse de données avec le tidyverse en R. | Learn data manipulation, visualization, and analysis with the tidyverse in R. 
-date: 2025-02-04
+date: 2025-03-31
 image: banner.jpg
 about: 
   template: marquee

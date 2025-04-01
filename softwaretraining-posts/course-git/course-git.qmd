@@ -2,7 +2,7 @@
 title: "GIT training"
 description: |
   L'outil incontournable pour la gestion et le contrôle de version de vos fichiers | The essential tool for file management and version control.
-date: 2025-02-04
+date: 2025-04-01
 image: banner.jpg
 about: 
   template: marquee
