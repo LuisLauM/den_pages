@@ -20,7 +20,7 @@ Image credits: Faris Mohammed at [Unplash](https://unsplash.com/photos/green-spr
 
 # [FR] Exécuter un script R sur Marbec-GPU à partir de zéro
 
-Dans ce tutoriel, nous verrons comment exécuter un script R sur le HPC Marbec-GPU en partant de (presque) zéro. Bien que nous utilisions RStudio Server pour éditer notre script dans cet exemple, nous n’exécuterons PAS notre code dans RStudio. À la place, nous l’exécuterons en utilisant des commandes SLURM via un script BASH dans le terminal de JupyterLab sur Marbec-GPU. C’est la méthode recommandée pour exécuter des scripts nécessitant l’utilisation de plusieurs cœurs/threads ou de GPU.  
+Dans ce tutoriel, nous verrons comment exécuter un script R sur le HPC Marbec-GPU en partant de (presque) zéro. Bien que nous utilisions RStudio Server pour éditer notre script dans cet exemple, nous n'exécuterons PAS notre code dans RStudio. À la place, nous l'exécuterons en utilisant des commandes SLURM via un script BASH dans le terminal de JupyterLab sur Marbec-GPU. C'est la méthode recommandée pour exécuter des scripts nécessitant l'utilisation de plusieurs cœurs/threads ou de GPU.  
 
 :::{.callout-note}  
 Dans ce post, nous utiliserons souvent le terme HPC, qui signifie "High-Performance Computing device" (dispositif de calcul haute performance). En termes très simples, il s'agit d'un ordinateur très puissant dont les ressources peuvent être utilisées par plusieurs utilisateurs en même temps. Pour plus de détails sur les caractéristiques de Marbec-GPU et Marbec-DATA, veuillez consulter notre post [Documentation Marbec-GPU](/servers.qmd).  
@@ -30,25 +30,25 @@ Dans ce post, nous utiliserons souvent le terme HPC, qui signifie "High-Performa
 
 ### Prérequis  
 
-* Vous devez avoir un compte actif sur Marbec-GPU et Marbec-DATA. Si vous n’avez pas de compte sur l’une de ces plateformes, veuillez contacter les administrateurs :  
+* Vous devez avoir un compte actif sur Marbec-GPU et Marbec-DATA. Si vous n'avez pas de compte sur l'une de ces plateformes, veuillez contacter les administrateurs :  
   - Claudia Restrepo-Ortiz ([claudia.restrepo-ortiz@ird.fr](mailto:claudia.restrepo-ortiz@ird.fr))  
   - Nicolas Barrier ([nicolas.barrier@ird.fr](mailto:nicolas.barrier@ird.fr))  
 
-* Installez le logiciel [FileZilla](https://filezilla-project.org/), que nous utiliserons pour transférer les fichiers d'entrée et de sortie entre notre PC et Marbec-DATA. Vous pouvez trouver les étapes de téléchargement, d’installation et de connexion à FileZilla dans notre post : [Gérer des fichiers depuis/vers Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).  
+* Installez le logiciel [FileZilla](https://filezilla-project.org/), que nous utiliserons pour transférer les fichiers d'entrée et de sortie entre notre PC et Marbec-DATA. Vous pouvez trouver les étapes de téléchargement, d'installation et de connexion à FileZilla dans notre post : [Gérer des fichiers depuis/vers Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).  
 
 ### Répertoire de travail  
 
-L’une des principales recommandations lorsque l’on travaille avec R est de bien définir un dossier qui contiendra les fichiers d’entrée/sortie ainsi que les scripts nécessaires pour obtenir nos résultats. Avoir un compte actif sur Marbec-DATA signifie qu’il existe également un dossier portant notre nom d’utilisateur, auquel Marbec-GPU peut accéder.  
+L'une des principales recommandations lorsque l'on travaille avec R est de bien définir un dossier qui contiendra les fichiers d'entrée/sortie ainsi que les scripts nécessaires pour obtenir nos résultats. Avoir un compte actif sur Marbec-DATA signifie qu'il existe également un dossier portant notre nom d'utilisateur, auquel Marbec-GPU peut accéder.  
 
-La première étape consiste à créer un dossier qui servira de répertoire de travail. Il existe plusieurs façons de le faire : via l’interface web de Marbec-DATA, via une fenêtre de terminal JupyterLab ou en créant un projet RStudio Server. Ici, nous utiliserons la troisième méthode, car elle nous permet de tout gérer au sein d’un projet RStudio.  
+La première étape consiste à créer un dossier qui servira de répertoire de travail. Il existe plusieurs façons de le faire : via l'interface web de Marbec-DATA, via une fenêtre de terminal JupyterLab ou en créant un projet RStudio Server. Ici, nous utiliserons la troisième méthode, car elle nous permet de tout gérer au sein d'un projet RStudio.  
 
-* Connectez-vous à Marbec-GPU via le lien [marbec-gpu.ird.fr](https://marbec-gpu.ird.fr/) et sélectionnez la première option de serveur (c’est-à-dire la plus simple).  
+* Connectez-vous à Marbec-GPU via le lien [marbec-gpu.ird.fr](https://marbec-gpu.ird.fr/) et sélectionnez la première option de serveur (c'est-à-dire la plus simple).  
 
-* L’interface web de JupyterLab apparaîtra. Cliquez sur l’icône RStudio Server. 
+* L'interface web de JupyterLab apparaîtra. Cliquez sur l'icône RStudio Server. 
 
   ![](images/2.png)
 
-* Un nouvel onglet s’ouvrira avec l’interface de RStudio Server, qui est TRÈS similaire à RStudio Desktop, bien que légèrement différente. Sélectionnez **File → New Project**.  
+* Un nouvel onglet s'ouvrira avec l'interface de RStudio Server, qui est TRÈS similaire à RStudio Desktop, bien que légèrement différente. Sélectionnez **File → New Project**.  
 
   ![](images/3.png)  
 
@@ -60,7 +60,7 @@ La première étape consiste à créer un dossier qui servira de répertoire de 
 
   ![](images/4-3.png)  
 
-:::{.callout-important}  
+:::{.callout-warning}  
 Il est possible que le dossier sur lequel vous travaillez SOIT DÉJÀ ou se trouve à l'intérieur d'un dossier qui EST DÉJÀ disponible (visible) pour Marbec-Data. Dans ce cas, l'étape suivante n'est pas nécessaire puisque Marbec-GPU aura déjà accès à votre dossier et que tout adressage sera effectué par le script BASH, dont vous verrez la création dans les prochaines étapes de ce billet.
 
 En d'autres termes, l'étape suivante n'est recommandée qu'aux utilisateurs qui n'ont PAS de dossier associé à Marbec-DATA, ou qui souhaitent ouvrir leur répertoire de travail en tant que nouveau dossier dans Marbec-DATA.
@@ -74,14 +74,14 @@ En d'autres termes, l'étape suivante n'est recommandée qu'aux utilisateurs qui
 cd /home/your_username/ && ln -s /marbec-data/your_folder
 ```
 
-### Fichiers d’entrée  
+### Fichiers d'entrée  
 
-Super ! Maintenant que nous avons notre répertoire de travail, l’étape suivante consiste à y copier les fichiers nécessaires en utilisant FileZilla. Vous pouvez retrouver les étapes à suivre dans notre post : [Gérer des fichiers depuis/vers Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).  
+Super ! Maintenant que nous avons notre répertoire de travail, l'étape suivante consiste à y copier les fichiers nécessaires en utilisant FileZilla. Vous pouvez retrouver les étapes à suivre dans notre post : [Gérer des fichiers depuis/vers Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).  
 
 :::{.callout-note}  
 Une bonne pratique consiste à organiser votre répertoire de travail avec des sous-répertoires pour différents types de fichiers. Par exemple :  
 - 📁 **raw** (données brutes)  
-- 📁 **inputs** (fichiers d’entrée traités)  
+- 📁 **inputs** (fichiers d'entrée traités)  
 - 📁 **outputs** (résultats)  
 - 📁 **code** (scripts)  
 - 📁 **figures** (graphes et images)  
@@ -90,40 +90,40 @@ Une bonne pratique consiste à organiser votre répertoire de travail avec des s
 
 ### Préparation de notre script R  
 
-Si vous avez décidé d’utiliser Marbec-GPU pour votre script R, il existe deux scénarios possibles :  
+Si vous avez décidé d'utiliser Marbec-GPU pour votre script R, il existe deux scénarios possibles :  
 
-* Vous avez un script qui fonctionne bien sur votre PC mais qui utilise un seul cœur, et vous souhaitez paralléliser son exécution sur Marbec-GPU. Dans ce cas, nous vous recommandons de développer d’abord une version parallélisée de votre script sur votre PC en utilisant un minimum de ressources (par exemple, 2 cœurs de traitement). Une fois que vous avez exécuté ce script sur votre PC et vérifié qu’il produit les résultats attendus, son exécution sur Marbec-GPU sera très simple. Si vous souhaitez apprendre à paralléliser un script rapidement, vous pouvez consulter notre post dédié à ce sujet.  
+* Vous avez un script qui fonctionne bien sur votre PC mais qui utilise un seul cœur, et vous souhaitez paralléliser son exécution sur Marbec-GPU. Dans ce cas, nous vous recommandons de développer d'abord une version parallélisée de votre script sur votre PC en utilisant un minimum de ressources (par exemple, 2 cœurs de traitement). Une fois que vous avez exécuté ce script sur votre PC et vérifié qu'il produit les résultats attendus, son exécution sur Marbec-GPU sera très simple. Si vous souhaitez apprendre à paralléliser un script rapidement, vous pouvez consulter notre post dédié à ce sujet.  
 
-* Vous avez déjà un script qui utilise plusieurs cœurs et fonctionne relativement bien sur votre PC, mais vous ne pouvez pas l’exécuter complètement en raison de ressources limitées (cœurs CPU, RAM ou GPU).  
+* Vous avez déjà un script qui utilise plusieurs cœurs et fonctionne relativement bien sur votre PC, mais vous ne pouvez pas l'exécuter complètement en raison de ressources limitées (cœurs CPU, RAM ou GPU).  
 
 :::{.callout-warning}  
-Pour poursuivre les prochaines étapes, vous devez disposer d’un script parallélisé fonctionnel que vous avez déjà exécuté avec succès sur votre PC et dont vous avez confirmé le bon fonctionnement.  
+Pour poursuivre les prochaines étapes, vous devez disposer d'un script parallélisé fonctionnel que vous avez déjà exécuté avec succès sur votre PC et dont vous avez confirmé le bon fonctionnement.  
 :::  
 
 Maintenant, dans notre interface web de RStudio Server, nous allons ouvrir notre script R et effectuer les vérifications suivantes :  
 
-* Vérifiez toutes les références aux fichiers (entrée ou sortie) afin d’éviter les erreurs de type "Fichier introuvable" ou "Chemin incorrect". Une méthode simple pour cela est d’utiliser la touche **Tab** (de notre clavier) lors de la saisie des chemins de fichiers afin que RStudio complète automatiquement le bon chemin dans notre **répertoire de travail**.
+* Vérifiez toutes les références aux fichiers (entrée ou sortie) afin d'éviter les erreurs de type "Fichier introuvable" ou "Chemin incorrect". Une méthode simple pour cela est d'utiliser la touche **Tab** (de notre clavier) lors de la saisie des chemins de fichiers afin que RStudio complète automatiquement le bon chemin dans notre **répertoire de travail**.
 
   ![](images/5.gif)
 
-* Vérifiez que tous les packages requis pour notre script sont installés sur Marbec-GPU. Pour cela, il suffit d’essayer de charger chaque package avec les fonctions `require` ou `library`. Si un package est manquant, nous pouvons l’installer avec la fonction `install.packages` ou via la méthode standard dans RStudio, c’est-à-dire via **Tools → Install Packages**.  
+* Vérifiez que tous les packages requis pour notre script sont installés sur Marbec-GPU. Pour cela, il suffit d'essayer de charger chaque package avec les fonctions `require` ou `library`. Si un package est manquant, nous pouvons l'installer avec la fonction `install.packages` ou via la méthode standard dans RStudio, c'est-à-dire via **Tools → Install Packages**.  
 
-* Assurez-vous que notre script R enregistre explicitement les résultats souhaités. Par exemple, si nous générons des figures en utilisant l’environnement **graphics**, nous devons inclure des lignes qui sauvegardent ces figures (`png`, `jpeg`, `pdf`, et `dev.off`). De même, si nous utilisons **ggplot2**, nous devons enregistrer les graphiques en conséquence. Si notre script génère des tableaux, nous devons les enregistrer au format CSV, XLSX ou tout autre format permettant de les lire ultérieurement. Enfin, si le script produit des objets complexes (par exemple, des sorties GAM, des listes ou des objets spécifiques à certains packages), nous pouvons utiliser la fonction `saveRDS` pour les stocker dans un format binaire et les récupérer plus tard sur notre PC.  
+* Assurez-vous que notre script R enregistre explicitement les résultats souhaités. Par exemple, si nous générons des figures en utilisant l'environnement **graphics**, nous devons inclure des lignes qui sauvegardent ces figures (`png`, `jpeg`, `pdf`, et `dev.off`). De même, si nous utilisons **ggplot2**, nous devons enregistrer les graphiques en conséquence. Si notre script génère des tableaux, nous devons les enregistrer au format CSV, XLSX ou tout autre format permettant de les lire ultérieurement. Enfin, si le script produit des objets complexes (par exemple, des sorties GAM, des listes ou des objets spécifiques à certains packages), nous pouvons utiliser la fonction `saveRDS` pour les stocker dans un format binaire et les récupérer plus tard sur notre PC.  
 
 :::{.callout-note}  
 ## Objets spécifiques  
 
-Certains objets propres à des packages nécessitent une manipulation particulière lors de leur sauvegarde. Il est toujours recommandé de consulter la documentation du package et d’utiliser ses fonctions dédiées. Un exemple clair est le package **terra**, qui possède sa propre version de `saveRDS` pour ses objets principaux. Lors de l’enregistrement d’objets de ce package, nous devons explicitement utiliser `terra::saveRDS`.  
+Certains objets propres à des packages nécessitent une manipulation particulière lors de leur sauvegarde. Il est toujours recommandé de consulter la documentation du package et d'utiliser ses fonctions dédiées. Un exemple clair est le package **terra**, qui possède sa propre version de `saveRDS` pour ses objets principaux. Lors de l'enregistrement d'objets de ce package, nous devons explicitement utiliser `terra::saveRDS`.  
 :::  
 
-* Si notre script génère des fichiers de sortie, nous devons nous assurer que les sous-répertoires dans lesquels ces fichiers seront stockés i) **existent déjà** dans notre **répertoire de travail** (sinon, ils peuvent être créés via l’interface web de Marbec-DATA, FileZilla ou un terminal avec la commande `mkdir nom_sous_dossier/`), ou ii) **seront créés directement dans le script**, en ajoutant des commandes explicites en R comme `dir.create`.  
+* Si notre script génère des fichiers de sortie, nous devons nous assurer que les sous-répertoires dans lesquels ces fichiers seront stockés i) **existent déjà** dans notre **répertoire de travail** (sinon, ils peuvent être créés via l'interface web de Marbec-DATA, FileZilla ou un terminal avec la commande `mkdir nom_sous_dossier/`), ou ii) **seront créés directement dans le script**, en ajoutant des commandes explicites en R comme `dir.create`.  
 
-* Une pratique **fortement recommandée** consiste à ajouter des commandes affichant des messages permettant de suivre l’avancement du script. Prenons un exemple : imaginons que notre script comporte trois étapes principales—lecture des fichiers, analyse des données et génération des figures. À la fin de chaque étape, nous devrions insérer une ligne de code affichant un message indiquant sa réussite (avec des fonctions comme `print`, `cat` ou `message`). Cela peut ne pas sembler crucial lors de l’exécution d’un script dans RStudio, puisque nous pouvons toujours vérifier la Console pour voir où en est l’exécution. Cependant, lorsque nous exécutons un script via une commande BASH (ce que nous verrons dans les prochaines étapes), nous n’aurons pas d’interface conviviale pour suivre la progression—sauf si nous incluons des instructions d’affichage explicites, comme `r print("Lecture des données [OK]")` ou `r cat("\nFigure 1 [OK]")`.  
+* Une pratique **fortement recommandée** consiste à ajouter des commandes affichant des messages permettant de suivre l'avancement du script. Prenons un exemple : imaginons que notre script comporte trois étapes principales—lecture des fichiers, analyse des données et génération des figures. À la fin de chaque étape, nous devrions insérer une ligne de code affichant un message indiquant sa réussite (avec des fonctions comme `print`, `cat` ou `message`). Cela peut ne pas sembler crucial lors de l'exécution d'un script dans RStudio, puisque nous pouvons toujours vérifier la Console pour voir où en est l'exécution. Cependant, lorsque nous exécutons un script via une commande BASH (ce que nous verrons dans les prochaines étapes), nous n'aurons pas d'interface conviviale pour suivre la progression—sauf si nous incluons des instructions d'affichage explicites, comme `r print("Lecture des données [OK]")` ou `r cat("\nFigure 1 [OK]")`.  
 
-Ainsi, en cas d’erreur, il sera beaucoup plus facile de déterminer où le script s’est bien exécuté (c’est-à-dire le dernier message affiché) et donc d’identifier la source potentielle du problème.  
+Ainsi, en cas d'erreur, il sera beaucoup plus facile de déterminer où le script s'est bien exécuté (c'est-à-dire le dernier message affiché) et donc d'identifier la source potentielle du problème.  
 
 :::{.callout-note}  
-N’hésitez pas à ajouter des messages d’affichage ! Si votre script exécute des processus à l’intérieur d’une boucle (c’est-à-dire dans une instruction `for` ou `while`), il est conseillé d’inclure un message juste avant la fin de la boucle. Exemple :  
+N'hésitez pas à ajouter des messages d'affichage ! Si votre script exécute des processus à l'intérieur d'une boucle (c'est-à-dire dans une instruction `for` ou `while`), il est conseillé d'inclure un message juste avant la fin de la boucle. Exemple :  
 
 ```r
 for(j in 1:100){
@@ -134,12 +134,27 @@ for(j in 1:100){
 ```
 :::  
 
+:::{.callout-important}
+## NE PAS exécuter à partir du serveur RStudio  
+
+Bien qu'il soit possible d'exécuter un script à partir de l'interface du RStudio Server, ce n'est PAS une bonne pratique pour de nombreuses raisons :
+
+* Gestion de la charge de travail et des files d'attente : Dans Marbec-GPU, les ressources informatiques sont allouées par l'intermédiaire d'un gestionnaire de file d'attente (SLURM), de sorte que si vous lancez un script complexe à partir de RStudio Server, il ne passera PAS par le gestionnaire de file d'attente, ce qui peut entraîner (i) une mauvaise utilisation des nœuds de calcul, (ii) l'abandon du script en raison d'une consommation excessive de ressources, ou (iii) des retards pour d'autres tâches dans le système.
+
+* Utilisation inefficace des ressources : Le RStudio Server n'est PAS conçu pour gérer des calculs intensifs ; en revanche, un script lancé à l'aide d'un SLURM BASH peut tirer parti de l'ensemble de l'infrastructure de la grappe.
+
+* Stabilité : Le RStudio Server est sujet à des dépassements de temps et à des limitations de session. Si votre script prend trop de temps, la session peut être fermée et la progression perdue. En revanche, les scripts exécutés par l'intermédiaire du gestionnaire de files d'attente s'exécutent en toute sécurité et en arrière-plan, évitant ainsi les interruptions inattendues.
+
+Utilisez RStudio Server comme IDE, c'est-à-dire pour créer ou modifier des scripts ou pour exécuter des processus très basiques tels que l'obtention d'une liste de dossiers ou de fichiers, des opérations arithmétiques simples, l'exécution des premières étapes d'un script pour s'assurer qu'il charge correctement les fichiers, etc. Tout autre test qui implique un calcul complexe (par exemple, tester une boucle multithread), il est recommandé de le faire sur votre PC AVANT de le charger dans Marbec-GPU.
+
+N'oubliez pas que les administrateurs de Marbec-GPU surveillent constamment l'utilisation des ressources et que **tout script complexe lancé à partir du RStudio Server est susceptible d'être interrompu**.
+:::
 
 ### Préparation de notre script BASH  
 
-Super ! Nous avons maintenant notre répertoire de travail, nos données d’entrée et notre script R prêts. Il est temps de préparer la commande que nous enverrons à Marbec-GPU pour exécuter tout cela via un **script BASH**. Mais qu’est-ce qu’un script BASH et pourquoi est-il important ?  
+Super ! Nous avons maintenant notre répertoire de travail, nos données d'entrée et notre script R prêts. Il est temps de préparer la commande que nous enverrons à Marbec-GPU pour exécuter tout cela via un **script BASH**. Mais qu'est-ce qu'un script BASH et pourquoi est-il important ?  
 
-Un **script BASH** est un fichier texte contenant une séquence de commandes shell permettant d’automatiser des tâches sur les systèmes basés sur Unix. Dans les environnements de **calcul haute performance (HPC)** utilisant **SLURM (Simple Linux Utility for Resource Management)**, les scripts BASH sont essentiels pour la gestion des tâches et l’allocation des ressources. Ces scripts incluent généralement des **directives SLURM** pour définir les ressources comme les CPU, la mémoire et le temps d’exécution, suivies de commandes pour charger les modules nécessaires et exécuter des programmes (par exemple, un script R ou Python).  
+Un **script BASH** est un fichier texte contenant une séquence de commandes shell permettant d'automatiser des tâches sur les systèmes basés sur Unix. Dans les environnements de **calcul haute performance (HPC)** utilisant **SLURM (Simple Linux Utility for Resource Management)**, les scripts BASH sont essentiels pour la gestion des tâches et l'allocation des ressources. Ces scripts incluent généralement des **directives SLURM** pour définir les ressources comme les CPU, la mémoire et le temps d'exécution, suivies de commandes pour charger les modules nécessaires et exécuter des programmes (par exemple, un script R ou Python).  
 
 En résumé, un script BASH sert simplement à exécuter notre script R (fichier), mais son importance réside dans la définition des ressources informatiques que le HPC allouera à notre processus.
 
@@ -188,7 +203,7 @@ cd $SLURM_SUBMIT_DIR
 Rscript code/my_script.R
 ```
 
-Ensuite, nous l’enregistrons avec le nom spécifié (**my_script_bash.sh**). Il est important de noter que, quel que soit le nom que nous choisissons, il doit TOUJOURS se terminer par **.sh**, car cette extension permet de le reconnaître comme un fichier de script BASH.  
+Ensuite, nous l'enregistrons avec le nom spécifié (**my_script_bash.sh**). Il est important de noter que, quel que soit le nom que nous choisissons, il doit TOUJOURS se terminer par **.sh**, car cette extension permet de le reconnaître comme un fichier de script BASH.  
 
 Voyons en détail chaque ligne de notre script BASH :  
 
@@ -199,10 +214,10 @@ Voyons en détail chaque ligne de notre script BASH :
 * `#SBATCH --job-name=my_1st_job` → Définit le nom du travail comme **"my_1st_job"** pour une identification plus facile.  
 * `#SBATCH --error=job_%x_%j.err` → Redirige les **messages d'erreur** vers un fichier nommé **"job_my_1st_job_JOBID.err"** (`%x` = nom du travail, `%j` = ID du travail).  
 * `#SBATCH --output=job_%x_%j.log` → Sauvegarde la **sortie du travail** (y compris les messages affichés) dans **"job_my_1st_job_JOBID.log"**. Ce fichier contiendra également tous les messages explicitement imprimés dans notre script R.  
-* `cd $SLURM_SUBMIT_DIR` → Se place dans le **répertoire d’où le travail a été soumis**. Cette ligne est toujours importante, car elle garantit que le répertoire de travail du script BASH est le même que celui utilisé par notre script R.  
+* `cd $SLURM_SUBMIT_DIR` → Se place dans le **répertoire d'où le travail a été soumis**. Cette ligne est toujours importante, car elle garantit que le répertoire de travail du script BASH est le même que celui utilisé par notre script R.  
 * `Rscript code/my_script.R` → Exécute le **script R** (`my_script.R`) situé dans le dossier **"code/"**.  
 
-Un point essentiel à considérer lors de la définition de ces paramètres est que le nombre total de threads alloués doit toujours être **supérieur ou égal** au nombre de processus parallèles définis dans notre script R. Par exemple, si notre script R spécifie `cl <- makeCluster(spec = 3)`, cela signifie que nous utilisons 3 threads parallèles. Par conséquent, dans notre script BASH, le produit de `ntasks` et `cpus-per-task` doit être d’au moins **3**, ce qui est le cas ici.  
+Un point essentiel à considérer lors de la définition de ces paramètres est que le nombre total de threads alloués doit toujours être **supérieur ou égal** au nombre de processus parallèles définis dans notre script R. Par exemple, si notre script R spécifie `cl <- makeCluster(spec = 3)`, cela signifie que nous utilisons 3 threads parallèles. Par conséquent, dans notre script BASH, le produit de `ntasks` et `cpus-per-task` doit être d'au moins **3**, ce qui est le cas ici.  
 
 :::{.callout-note}  
 ## `cpus-per-task`  
@@ -215,23 +230,23 @@ Au moment de la rédaction de ce guide, Marbec-GPU utilise des processeurs Intel
 
 Nous avons dit que, en termes simples, Marbec-GPU est comme un ordinateur très puissant, mais il n'est PAS infiniment puissant. De plus, la puissance de calcul est partagée entre plusieurs utilisateurs, donc il est de notre responsabilité de choisir judicieusement les ressources disponibles.  
 
-Il est donc recommandé que tout script que nous souhaitons exécuter sur Marbec-GPU ait été préalablement testé sur notre PC, non seulement pour vérifier qu’il fonctionne correctement, mais aussi pour évaluer la quantité de ressources qu’il consomme dans certaines conditions, afin d’utiliser ces valeurs pour définir les paramètres que nous réserverons pour l'exécution sur Marbec-GPU. Par exemple, si sur notre PC, notre script utilise 20 Go de RAM avec 8 threads, alors en le faisant tourner avec 16 threads sur Marbec-GPU, nous pourrions allouer environ **40 Go de RAM** (avec le paramètre `mem`). Bien que ce calcul soit approximatif, il est préférable de sous-estimer nos besoins plutôt que de les surestimer et de réserver plus de ressources que nécessaire.  
+Il est donc recommandé que tout script que nous souhaitons exécuter sur Marbec-GPU ait été préalablement testé sur notre PC, non seulement pour vérifier qu'il fonctionne correctement, mais aussi pour évaluer la quantité de ressources qu'il consomme dans certaines conditions, afin d'utiliser ces valeurs pour définir les paramètres que nous réserverons pour l'exécution sur Marbec-GPU. Par exemple, si sur notre PC, notre script utilise 20 Go de RAM avec 8 threads, alors en le faisant tourner avec 16 threads sur Marbec-GPU, nous pourrions allouer environ **40 Go de RAM** (avec le paramètre `mem`). Bien que ce calcul soit approximatif, il est préférable de sous-estimer nos besoins plutôt que de les surestimer et de réserver plus de ressources que nécessaire.  
 
-Encore une fois, Marbec-GPU est une ressource partagée. Si, par exemple, nous réservons 80 Go de RAM alors que notre script n’a besoin que de 40 Go, nous ne recevrons pas d’erreur, mais cette capacité de calcul ne sera PAS disponible pour d’autres utilisateurs, ce qui entraînera des files d’attente plus longues ou empêchera d'autres utilisateurs d'exécuter leurs travaux.  
+Encore une fois, Marbec-GPU est une ressource partagée. Si, par exemple, nous réservons 80 Go de RAM alors que notre script n'a besoin que de 40 Go, nous ne recevrons pas d'erreur, mais cette capacité de calcul ne sera PAS disponible pour d'autres utilisateurs, ce qui entraînera des files d'attente plus longues ou empêchera d'autres utilisateurs d'exécuter leurs travaux.  
 
 Soyons responsables.  
 :::  
 
 ### Exécuter notre script BASH  
 
-Une fois notre script BASH prêt, la dernière étape consiste à l’exécuter dans une fenêtre Terminal. Bien que nous puissions utiliser l’onglet *Terminal* dans RStudio Server, pour plus de clarté et de productivité, nous utiliserons le Terminal fourni par l’interface JupyterLab.  
+Une fois notre script BASH prêt, la dernière étape consiste à l'exécuter dans une fenêtre Terminal. Bien que nous puissions utiliser l'onglet *Terminal* dans RStudio Server, pour plus de clarté et de productivité, nous utiliserons le Terminal fourni par l'interface JupyterLab.  
 
 1. Ouvrez JupyterLab dans votre navigateur en accédant à [marbec-gpu.ird.fr](https://marbec-gpu.ird.fr/).  
-2. Sélectionnez l’icône *Terminal*.  
+2. Sélectionnez l'icône *Terminal*.  
 
   ![](images/6.png)  
 
-3. Un écran de terminal noir classique s’ouvrira, affichant `yourusername@marbec-gpu:~$` avec un curseur clignotant.  
+3. Un écran de terminal noir classique s'ouvrira, affichant `yourusername@marbec-gpu:~$` avec un curseur clignotant.  
 
   ![](images/7.png)  
 
@@ -258,7 +273,7 @@ ls code/
 ![](images/10.png)  
 
 :::{.callout-tip}  
-Comme dans RStudio, dans le Terminal de JupyterLab, il est possible d'utiliser la touche Tab pour compléter automatiquement les commandes ou les chemins vers les fichiers ou dossiers. Si plusieurs éléments commencent par la même séquence de caractères, l'autocomplétion s’arrêtera jusqu'à la partie commune, et vous devrez taper quelques caractères supplémentaires pour préciser votre intention.  
+Comme dans RStudio, dans le Terminal de JupyterLab, il est possible d'utiliser la touche Tab pour compléter automatiquement les commandes ou les chemins vers les fichiers ou dossiers. Si plusieurs éléments commencent par la même séquence de caractères, l'autocomplétion s'arrêtera jusqu'à la partie commune, et vous devrez taper quelques caractères supplémentaires pour préciser votre intention.  
 :::
 
 
@@ -268,7 +283,7 @@ Faisons rapidement le point sur ce que nous devons avoir préparé :
 
 * Un **répertoire de travail** (dossier de projet).  
 * Un **script R**, de préférence dans un sous-dossier `code/`.  
-* Des **fichiers de données d’entrée**, idéalement organisés dans des sous-dossiers (`raw/`, `inputs/environmental/sst/`, `inputs/records/`, etc.).  
+* Des **fichiers de données d'entrée**, idéalement organisés dans des sous-dossiers (`raw/`, `inputs/environmental/sst/`, `inputs/records/`, etc.).  
 * Des **sous-dossiers** pour stocker les fichiers de sortie (figures, tableaux, objets R, etc.).  
 * Les **packages R nécessaires installés**, ainsi que tout autre logiciel additionnel (ex. : CUDA, Gurobi, etc.).  
 * Un **script BASH** stocké à la racine du projet.  
@@ -283,14 +298,14 @@ Une fois tout en place :
 sbatch my_script_bash.sh
 ```  
 
-Si tout est bien configuré (pas d’erreurs de syntaxe dans le script BASH), un message s'affichera avec l’**ID du job** attribué au processus.  
+Si tout est bien configuré (pas d'erreurs de syntaxe dans le script BASH), un message s'affichera avec l'**ID du job** attribué au processus.  
 
 ![](images/11.png)  
 
 De plus, en exécutant `ls`, vous devriez voir deux nouveaux fichiers créés :  
 
 * **job_\<NomDuJob\>_\<jobID\>.log** → Stocke les messages imprimés par le script R.  
-* **job_\<NomDuJob\>_\<jobID\>.err** → Contient les erreurs ou avertissements rencontrés pendant l’exécution.  
+* **job_\<NomDuJob\>_\<jobID\>.err** → Contient les erreurs ou avertissements rencontrés pendant l'exécution.  
 
 ![](images/12.png)  
 
@@ -298,10 +313,10 @@ De plus, en exécutant `ls`, vous devriez voir deux nouveaux fichiers créés :
 
 ### Suivi de l'exécution  
 
-Pendant l’exécution du script, plusieurs méthodes permettent de suivre sa progression :  
+Pendant l'exécution du script, plusieurs méthodes permettent de suivre sa progression :  
 
 * Surveiller les fichiers `.log` et `.err`  
-Ces fichiers stockent les messages du script et peuvent être ouverts à tout moment avec RStudio Server pour suivre l’avancement.  
+Ces fichiers stockent les messages du script et peuvent être ouverts à tout moment avec RStudio Server pour suivre l'avancement.  
 
 :::{.callout-tip}  
 ## Les commandes `watch` et `tail`  
@@ -312,7 +327,7 @@ Pour surveiller en continu les **15 dernières lignes** du fichier `.log`, mises
 watch -n 10 tail -n 15 job_my_1st_job_9999.log
 ```  
 
-Remplacez `9999` par l’**ID du job**, récupérable avec `bash squeue`.  
+Remplacez `9999` par l'**ID du job**, récupérable avec `bash squeue`.  
 
 Utile si le script R affiche des messages de progression. Pour **quitter le mode de surveillance**, appuyez sur `Ctrl + C` (Windows/Linux) ou `Cmd + C` (MacOS).  
 :::  
@@ -325,7 +340,7 @@ Affiche depuis combien de temps le script tourne.
 
 * Consulter les fichiers de sortie  
 
-On peut aussi suivre l’exécution en examinant les fichiers produits dans les sous-dossiers. Cela peut se faire via (i) **L’interface web de Marbec-DATA**, (ii) **FileZilla** or (iii) **Le Terminal JupyterLab**, avec `bash ls notre/sous_dossier/`  
+On peut aussi suivre l'exécution en examinant les fichiers produits dans les sous-dossiers. Cela peut se faire via (i) **L'interface web de Marbec-DATA**, (ii) **FileZilla** or (iii) **Le Terminal JupyterLab**, avec `bash ls notre/sous_dossier/`  
 
 * Contrôle de l'utilisation des ressources
 
@@ -350,19 +365,31 @@ Deux avantages majeurs de Marbec-GPU :
 
 * **Ne plus dépendre de son PC** : Pas besoin de le laisser allumé pendant des heures ou des jours ! Beaucoup d'ordinateurs portables ne sont pas conçus pour supporter des charges de calcul intensives sur de longues périodes, ce qui peut entraîner des pannes matérielles (RAM grillée, alimentation surchauffée…).  
 
-* **Accéder au suivi de partout** : Tant qu’on a une connexion internet et un navigateur, on peut suivre l'exécution du script, même depuis un smartphone ! 
+* **Accéder au suivi de partout** : Tant qu'on a une connexion internet et un navigateur, on peut suivre l'exécution du script, même depuis un smartphone ! 
 :::  
 
 
 
 ## APRÈS L'EXÉCUTION  
 
-Pour vérifier si le script est terminé, exécutez `bash bash squeue`. Si l’ID du job n’apparaît plus, l’exécution est finie. Ensuite, procédez comme suit :  
+Pour vérifier si le script est terminé, exécutez `bash bash squeue`. Si l'ID du job n'apparaît plus, l'exécution est finie. Ensuite, procédez comme suit :  
 
-* **Vérifier les fichiers `.log` et `.err`** pour voir si tout s’est bien déroulé.  
+* **Vérifier les fichiers `.log` et `.err`** pour voir si tout s'est bien déroulé.  
+
 * **Inspecter rapidement les fichiers de sortie** avec RStudio Server. (⚠ Attention : cette session a une RAM limitée. Si les fichiers sont volumineux, mieux vaut les copier sur son PC.)  
+
 * **Transférer les fichiers de sortie vers son PC** via **FileZilla**. Un guide détaillé est disponible ici :  
 [Gestion des fichiers avec Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd).
+
+Si vous n'avez pas l'intention d'exécuter à nouveau un processus, une étape finale TRÈS importante consiste à vous déconnecter de Marbec-GPU, afin de permettre l'accès à d'autres utilisateurs qui pourraient être en attente de ressources. Pour ce faire : 
+
+* Allez dans l'interface de JupyterLab et sélectionnez l'option de menu *File → Hub Control Panel*
+
+  ![](images/14.png)
+
+* Enfin cliquez sur le bouton *Stop My Server*. 
+  
+  ![](images/15.png)
 
 ---
 
@@ -410,7 +437,7 @@ The first step is to create a folder that will serve as our working directory. T
 
   ![](images/4-3.png)
 
-:::{.callout-important}  
+:::{.callout-warning}  
 It is possible that the folder you are working on ALREADY IS or is inside a folder that IS ALREADY available (visible) to Marbec-Data. In that case, the next step is not required since Marbec-GPU will already have access to your folder and any addressing will be done through the BASH script, the creation of which you will see in the next steps of this post.
 
 In other words, the following step is recommended only for those users who do NOT have any folder associated with Marbec-DATA, or who wish to open set up their Working Directory as a new folder in Marbec-DATA.
@@ -483,11 +510,25 @@ for(j in 1:100){
 ```
 :::  
 
+:::{.callout-important}
+## DO NOT run from RStudio Server  
 
+While it is possible to run a script from the RStudio Server interface from this point, this IS NOT a good practice due to many reasons:
+
+* Workload and queue management: In Marbec-GPU, computational resources are allocated through a workload queue manager (SLURM), so if you launch a complex script from RStudio Server, it will NOT go through the queue manager, which may cause (i) compute nodes not to be used correctly, (ii) the script to be dropped due to excessive resource consumption, or (iii) other tasks in the system to suffer delays.
+
+* Inefficient use of resources: RStudio Server is NOT designed to deal with intensive computation handling; on the other hand, a script launched with a SLURM BASH can take advantage of the entire cluster infrastructure.
+
+* Stability: RStudio Server is subject to timeouts and session limitations. If your script takes too long, the session could be closed and progress lost. In contrast, scripts executed through the queue manager run safely and in the background, avoiding unexpected interruptions.
+
+Use RStudio Server as an IDE, i.e. to create or edit scripts or to run very basic processes such as getting a list of folders or files, simple arithmetic operations, running the first steps of a script to make sure it is loading files correctly, etc. Any other test that involves a complex computation (e.g. testing a multithreaded loop), it is recommended to do it on your PC BEFORE loading it in Marbec-GPU.
+
+Remember that Marbec-GPU administrators are constantly monitoring resource usage and **any complex script launched from RStudio Server is likely to be terminated**.
+:::
 
 ### Preparing our BASH Script  
 
-Great! We now have our working directory, input data, and R script ready. It’s time to prepare the command that we will send to Marbec-GPU to execute everything via a **BASH script**. But what exactly is a BASH script, and why is it important?  
+Great! We now have our working directory, input data, and R script ready. It's time to prepare the command that we will send to Marbec-GPU to execute everything via a **BASH script**. But what exactly is a BASH script, and why is it important?  
 
 A **BASH script** is a text file containing a sequence of shell commands that automate tasks in Unix-based systems. In **High-Performance Computing (HPC)** environments using **SLURM (Simple Linux Utility for Resource Management)**, BASH scripts are essential for job scheduling and resource allocation. These scripts typically include **SLURM directives** to define resources such as CPUs, memory, and execution time, followed by commands to load necessary modules and execute programs (e.g., an R/Python script).  
 
@@ -706,5 +747,16 @@ To verify that the process has finished, we can run `bash squeue`. If the Job-ID
 * Check the **.log** and **.err** files to evaluate whether everything ran smoothly or if any errors occurred. These are plain text files and can be opened directly in RStudio Server (**File → Open File**).
 
 * Use RStudio Server to **quickly inspect** output files, but keep in mind that this session runs with limited RAM. If the output files are too large, it's better to copy them to your PC and analyze them locally.  
+
 * If everything went well, **transfer the output files to your PC** using **FileZilla**. You can find detailed steps in our post: [Managing files from/to Marbec-DATA](/manualsguides-posts/marbec-data-manage-files/marbec-data-manage-files.qmd). 
+
+If you do not plan to run a process again, a VERY important final step is to log out of Marbec-GPU, thus allowing access to other users who may be waiting for resources. To do this, you must: 
+
+* Go to the JupyterLab interface and select the menu option *File → Hub Control Panel*.
+
+  ![](images/14.png)
+
+* Finally click on the *Stop My Server* button. 
+
+  ![](images/15.png)
  

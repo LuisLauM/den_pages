@@ -6,6 +6,7 @@ website:
   favicon: images/favicon/favicon.ico
   title: "<b>DEN Pages</b> <span style='font-size: 0.8em;'>by Marbec</span>"
   navbar:
+    background: "#543461"
     right:
       - href: index.qmd
         text: "<span class='nav-center'>Accueil<br>Home</span>"
@@ -22,11 +23,13 @@ website:
   page-footer:
     left: © Copyright 2025, IRD-Marbec
     right: This website is built with [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/umr-marbec/den_pages){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
-
+  draft-mode: gone
 
 format:
   html:
-    theme: sandstone
+    theme: 
+      - brand
+      - sandstone
     css: styles.css
     toc: true
 

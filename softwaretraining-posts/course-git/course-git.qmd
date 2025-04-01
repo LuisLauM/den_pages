@@ -1,10 +1,7 @@
 ---
 title: "GIT training"
-author: 
-  - name: Mathieu Depetris
-    email: mathieu.depetris@cnrs.fr
 description: |
-  Git est essentiel pour gérer le contrôle des versions, le suivi des modifications et l'historique du code dans le cadre du développement de logiciels et de projets de recherche. | Git is essential for managing version control, tracking changes, and managing code history for software development and research projects.
+  L'outil incontournable pour la gestion et le contrôle de version de vos fichiers | The essential tool for file management and version control.
 date: 2025-02-04
 image: banner.jpg
 about: 
@@ -16,22 +13,103 @@ engine: knitr
 
 Image credits: Roman Synkevych at [Unsplash](https://unsplash.com/photos/a-close-up-of-a-text-description-on-a-computer-screen-842ofHC6MaI?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
-### [FR]
+# [FR] Git : l'outil incontournable pour la gestion et le contrôle de version de vos fichiers
 
-Vous trouverez ici tous les ressources en lien avec l'utilisation des systèmes de controle de version. Au niveau de l'UMR plusieurs forges sont utilisées, à savoir :
+## Session suivante
 
-* [GitHub MARBEC](https://github.com/umr-marbec){.external target="_blank"}
-* [GitLab IRD](https://forge.ird.fr/){.external target="_blank"}
-* [GitLab Ifremer](https://gitlab.ifremer.fr/){.external target="_blank"}
+* Dates : 1 jour, le Mardi 03 Juin 2025 
+* Heur : 9h - 12h / 13h30 - 17h
+* Lieu : [Montpellier](https://maps.app.goo.gl/eV8scwVork87buQGA)
+* Inscription : Le bulletin de pré-inscription doit être complété et visé par votre responsable hiérarchique, puis
+retourné par mail à [carmen.pellet@ird.fr](mailto:carmen.pellet@ird.fr) avant le 25 avril 2025.
+* Intervenants : 
+  * Nicolas Barrier, IR (MARBEC)
+  * Jacques Dainat, IR (MiVEGEC, plateau bio-informatique i-Trop)
+* Langue : Français
+
+## Présentation
+
+Vous travaillez dans la recherche scientifique et vous réalisez de nombreuses analyses ?
+
+Cette formation vous permettra d'apprendre à suivre, gérer et partager vos codes et données de manière efficace avec Git. En maîtrisant Git, vous améliorerez la collaboration au sein de vos équipes, garantirez l'intégrité de vos projets et adopterez les meilleures pratiques de la science reproductible. Que vous soyez chercheur, ingénieur ou étudiant, cette formation vous fournira les compétences
+essentielles pour une gestion optimisée de vos projets scientifiques.
+
+Rejoignez-nous pour transformer votre manière de travailler et renforcer la rigueur de vos analyses !
+
+## Objectifs pédagogiques
+
+À l'issue de cette formation, les participants seront capables de :
+
+* Comprendre les principes fondamentaux des systèmes de contrôle de version et le rôle de Git.
+
+* Maîtriser les commandes de base de Git pour suivre les changements dans vos fichiers.
+
+* Mettre en place un dépôt Git et configurer les paramètres essentiels.
+
+* Prendre en main son compte sur la forge IRD.
+
+* Utiliser les tags et versions pour suivre l’évolution de scripts d’analyse.
+
+* Collaborer efficacement : créer des branches, fusionner des modifications et gérer les conflits (cette utilisation plus avancée sera abordée en fin de formation).
+
+* Se servir de Git via une interface graphique comme RStudio ou VSCode (cette utilisation pourra être abordée en fin de formation)
+
+## Prérequis généraux et modalité d’inscription
+
+* Compétences requises : connaissance de base de la ligne de commande / terminal
+* Équipement : ordinateur personnel
+* Public : Personnel de l’IRD, partenaires et collaborateurs (dans la limite des places disponibles)
+* Évaluation à l’issue de la formation : Attestation de suivi de formation
 
 
-### [EN]
+# [EN] Git: the essential tool for file management and version control
 
-Here you will find all the resources related to the use of version control systems. Several forges are used at UMR:
+## Next session
 
-* [GitHub MARBEC](https://github.com/umr-marbec){.external target="_blank"}
-* [GitLab IRD](https://forge.ird.fr/){.external target="_blank"}
-* [GitLab Ifremer](https://gitlab.ifremer.fr/){.external target="_blank"}
+* Dates: 1 day, Tuesday June 03, 2025 
+* Time: 9h - 12h / 13h30 - 17h
+* Location: [Ifremer - Sète](https://maps.app.goo.gl/h3Zd5ZGRFkPvW6D99), in the Mont Saint Clair room 
+* Registration: The pre-registration form must be completed and stamped by your line manager, then returned to
+returned by e-mail to [carmen.pellet@ird.fr](mailto:carmen.pellet@ird.fr) before April 25, 2025.
+* Speakers: 
+  * Nicolas Barrier, IR (MARBEC)
+  * Jacques Dainat, IR (MiVEGEC, i-Trop bioinformatics platform)
+* Language: French
+
+## Presentation
+
+Do you work in scientific research and carry out numerous analyses?
+
+This course will teach you how to track, manage and share your code and data efficiently with Git. By mastering Git, you'll improve collaboration within your teams, guarantee the integrity of your projects and adopt the best practices of reproducible science. Whether you're a researcher, engineer or student, this course will provide you with the skills
+for optimized management of your scientific projects.
+
+Join us to transform the way you work and strengthen the rigor of your analyses!
+
+## Teaching objectives
+
+At the end of this course, participants will be able to:
+
+* Understand the fundamentals of version control systems and the role of Git.
+
+* Master Git's basic commands to track changes in your files.
+
+* Set up a Git repository and configure essential parameters.
+
+* Get to grips with your IRD forge account.
+
+* Use tags and versions to track the evolution of analysis scripts.
+
+* Collaborate efficiently: create branches, merge modifications and manage conflicts (this more advanced use will be covered at the end of the course).
+
+* Use Git via a graphical interface such as RStudio or VSCode (this use may be covered at the end of the course).
+
+## General prerequisites and how to register
+
+* Skills required: basic command line / terminal knowledge
+* Equipment: Personal computer
+* Public: IRD staff, partners and collaborators (subject to availability)
+* Evaluation at the end of the course: Training follow-up certificate
+  
 
 # Git training course
 

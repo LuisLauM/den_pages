@@ -15,9 +15,9 @@ engine: knitr
 
 ### [FR] Simulateur Orienté Objet des Écosystèmes Marins
 
-OSMOSE est un modèle multi-espèces et basé sur l’individu (IBM) qui se concentre sur les espèces de poissons. Ce modèle suppose une prédation opportuniste basée sur la cooccurrence spatiale et l’adéquation de taille entre un prédateur et sa proie (prédation opportuniste basée sur la taille). Il représente des individus de poissons regroupés en bancs, caractérisés par leur taille, leur poids, leur âge, leur taxonomie et leur localisation géographique (modèle 2D), et qui subissent les principaux processus du cycle de vie des poissons (croissance, prédation explicite, mortalité naturelle et par inanition, reproduction et migration) et de l’exploitation par la pêche.
+OSMOSE est un modèle multi-espèces et basé sur l'individu (IBM) qui se concentre sur les espèces de poissons. Ce modèle suppose une prédation opportuniste basée sur la cooccurrence spatiale et l'adéquation de taille entre un prédateur et sa proie (prédation opportuniste basée sur la taille). Il représente des individus de poissons regroupés en bancs, caractérisés par leur taille, leur poids, leur âge, leur taxonomie et leur localisation géographique (modèle 2D), et qui subissent les principaux processus du cycle de vie des poissons (croissance, prédation explicite, mortalité naturelle et par inanition, reproduction et migration) et de l'exploitation par la pêche.
 
-Le modèle a besoin de paramètres biologiques de base qui sont souvent disponibles pour une large gamme d’espèces, et qui peuvent être trouvés dans FishBase par exemple, et de données sur la distribution spatiale des poissons. Ce paquetage fournit des outils pour construire un modèle et effectuer des simulations en utilisant le modèle OSMOSE.
+Le modèle a besoin de paramètres biologiques de base qui sont souvent disponibles pour une large gamme d'espèces, et qui peuvent être trouvés dans FishBase par exemple, et de données sur la distribution spatiale des poissons. Ce paquetage fournit des outils pour construire un modèle et effectuer des simulations en utilisant le modèle OSMOSE.
 
 Le modèle est disponible sur [GitHub](https://github.com/osmose-model/osmose).
 

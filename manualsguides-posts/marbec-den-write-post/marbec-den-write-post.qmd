@@ -24,11 +24,11 @@ Si vous êtes arrivé ici, c'est que vous souhaitez soutenir ce site web et **no
 
 * **Avoir un compte Github**, puisque c'est la plateforme où ce site est hébergé. Cette étape est relativement simple, il suffit d'aller sur le site [Github](https://github.com/), de choisir l'option S'inscrire et de remplir les champs requis.
 
-* Téléchargez et installez le logiciel de contrôle de version Git** depuis son [site officiel] (https://git-scm.com/downloads) et selon le système d'exploitation de votre PC.
+* **Téléchargez et installez le logiciel de contrôle de version Git** depuis son [site officiel] (https://git-scm.com/downloads) et selon le système d'exploitation de votre PC.
 
-* Téléchargez et installez Quarto** à partir de son [site web officiel] (https://quarto.org/docs/get-started/) et en fonction du système d'exploitation de votre PC. Ce logiciel est la plateforme sur laquelle le site DEN pages est construit.
+* **Téléchargez et installez Quarto** à partir de son [site web officiel] (https://quarto.org/docs/get-started/) et en fonction du système d'exploitation de votre PC. Ce logiciel est la plateforme sur laquelle le site DEN pages est construit.
 
-* Vous devez disposer d'un logiciel qui vous permet d'éditer du code et de gérer des dépôts Git**. En fait, vous avez besoin d'un IDE. Bien que vous puissiez tout faire à partir d'une fenêtre de terminal, ce n'est pas recommandé. Il existe de nombreux IDE très performants, dont la plupart proposent également des outils pour gérer le contenu hébergé dans les dépôts. Dans cet exemple, nous montrerons comment le faire avec Positron et RStudio.
+* **Vous devez disposer d'un logiciel qui vous permet d'éditer du code et de gérer des dépôts Git**. En fait, vous avez besoin d'un IDE. Bien que vous puissiez tout faire à partir d'une fenêtre de terminal, ce n'est pas recommandé. Il existe de nombreux IDE très performants, dont la plupart proposent également des outils pour gérer le contenu hébergé dans les dépôts. Dans cet exemple, nous montrerons comment le faire avec Positron et RStudio.
 
 :::{.callout-note}
 ## Positron
@@ -46,7 +46,7 @@ Pour ce faire, nous allons nous rendre sur le site du dépôt sur Github et cliq
 
 ![](images/1-1.png)
 
-Un petit formulaire va s'ouvrir et nous montrer ce qui va se passer (c'est à dire que le processus `fork` va avoir lieu), il ne nous reste plus qu'à cliquer sur le bouton **Create fork**.
+Un petit formulaire va s'ouvrir et nous montrer ce qui va se passer (c'est à dire que le processus `fork` va avoir lieu), il ne nous reste plus qu'à cliquer sur le bouton **Fork**.
 
 ![](images/1-1.png)
 
@@ -67,13 +67,13 @@ Chaque lien sera différent car il dépendra du nom de chaque utilisateur, donc 
 
 Ensuite, nous allons ouvrir notre IDE et créer un projet à partir de ce lien de dépôt :
 
-* Dans RStudio, il suffira d'aller dans le menu *Fichier-->Nouveau projet*. Ensuite, dans la fenêtre qui s'ouvrira, nous choisirons l'option *Contrôle de version*, puis l'option *Git* et enfin dans la dernière fenêtre nous collerons l'URL copiée dans l'étape précédente et cliquerons sur le bouton *Créer un projet*.
+* Dans RStudio, il suffira d'aller dans le menu *File→New project*. Ensuite, dans la fenêtre qui s'ouvrira, nous choisirons l'option *Version Control*, puis l'option *Git* et enfin dans la dernière fenêtre nous collerons l'URL copiée dans l'étape précédente et cliquerons sur le bouton *Create project*.
 
   ![](images/2-2.png)
   ![](images/2-3.png)
   ![](images/2-4.png)
 
-* Dans Positron, il suffira d'aller dans le menu *Fichier-->Nouveau dossier depuis Git*. Ensuite, dans la fenêtre qui s'ouvrira, il faudra coller l'URL copiée dans l'étape précédente. Nous pourrons choisir le dossier dans lequel nous voulons que le dossier du projet soit créé (nous recommandons de NE PAS laisser le dossier par défaut, à moins que nous soyons complètement sûrs que c'est le bon emplacement) et enfin cliquer sur *OK*. Positron affichera une petite fenêtre de progression en bas et ouvrira le projet une fois le téléchargement terminé.
+* Dans Positron, il suffira d'aller dans le menu *File→New folder from Git*. Ensuite, dans la fenêtre qui s'ouvrira, il faudra coller l'URL copiée dans l'étape précédente. Nous pourrons choisir le dossier dans lequel nous voulons que le dossier du projet soit créé (nous recommandons de NE PAS laisser le dossier par défaut, à moins que nous soyons complètement sûrs que c'est le bon emplacement) et enfin cliquer sur *OK*. Positron affichera une petite fenêtre de progression en bas et ouvrira le projet une fois le téléchargement terminé.
 
   ![](images/2-5.png)
   ![](images/2-6.png)
@@ -93,7 +93,7 @@ A partir de maintenant, nous pouvons effectuer les changements souhaités :
 :::{.callout-tip}
 ## Quarto
 
-Nous vous recommandons donc de visiter leur [site officiel] (https://quarto.org/docs/websites/) pour vous familiariser avec les outils disponibles afin de rendre votre article aussi didactique que possible.
+Nous vous recommandons donc de visiter leur [site officiel](https://quarto.org/docs/websites/) pour vous familiariser avec les outils disponibles afin de rendre votre article aussi didactique que possible.
 :::
 
 Une fois que vous avez effectué les modifications souhaitées, l'étape suivante consiste à vérifier que tout fonctionne correctement, c'est-à-dire que vous êtes en mesure de compiler le site web DEN Pages sur votre PC :
@@ -102,7 +102,7 @@ Une fois que vous avez effectué les modifications souhaitées, l'étape suivant
 
 * Ensuite, nous donnerons la commande pour rendre le fichier `.qmd` : 
   
-  * Dans RStudio, dans l'onglet actif du fichier `.qmd` sélectionné, nous cliquerons sur le bouton *Rendu*.
+  * Dans RStudio, dans l'onglet actif du fichier `.qmd` sélectionné, nous cliquerons sur le bouton *Render*.
 
     ![](images/3-1.png)
 
@@ -122,7 +122,7 @@ La première étape consiste à télécharger les changements dans notre référ
 
 * Nous devrons cliquer sur un bouton qui montre le mot Git en vertical, situé dans la barre d'outils de RStudio.
 
-  ![](images/4.1.png)
+  ![](images/4-1.png)
 
 * Dans le menu affiché, choisissez l'option *Commit*.
 
@@ -140,7 +140,7 @@ La première étape consiste à télécharger les changements dans notre référ
 
   ![](images/4-5.png)
 
-* Ensuite, dans le panneau *Message de validation*, nous allons écrire une TRES brève description des changements que nous avons effectués. Le texte doit être concis (pas plus d'une phrase), mais suffisamment clair pour donner aux administrateurs un aperçu des changements effectués. A la fin, cliquez sur le bouton *Commit*.
+* Ensuite, dans le panneau *Commit message*, nous allons écrire une TRES brève description des changements que nous avons effectués. Le texte doit être concis (pas plus d'une phrase), mais suffisamment clair pour donner aux administrateurs un aperçu des changements effectués. A la fin, cliquez sur le bouton *Commit*.
 
   ![](images/4-6.png)
 
@@ -152,11 +152,11 @@ La première étape consiste à télécharger les changements dans notre référ
 
   ![](images/4-7.png)
 
-* Dans le panneau qui s'ouvre, tous les fichiers ajoutés, édités ou supprimés sont affichés. Nous allons passer le curseur à droite du titre du sous-panneau Source Control et nous verrons qu'un bouton apparaîtra comme une coche. Il s'agit du bouton Commit, sur lequel nous allons cliquer.
+* Dans le panneau qui s'ouvre, tous les fichiers ajoutés, édités ou supprimés sont affichés. Nous allons passer le curseur à droite du titre du sous-panneau *Source Control* et nous verrons qu'un bouton apparaîtra comme une coche. Il s'agit du bouton *Commit*, sur lequel nous allons cliquer.
 
   ![](images/4-8.png)
 
-* Dans le panneau de l'éditeur, un fichier contenant la liste de toutes les modifications sera ouvert en tant que commentaire (c'est-à-dire commençant par le symbole `#`). De plus, le curseur sera positionné sur la ligne 1, attendant que nous écrivions une TRES brève description des changements que nous avons effectués. Le texte doit être concis (pas plus d'une phrase), mais suffisamment clair pour donner aux administrateurs un aperçu des modifications apportées. A la fin, cliquez sur le bouton « check » en haut de ce panneau.
+* Dans le panneau de l'éditeur, un fichier contenant la liste de toutes les modifications sera ouvert en tant que commentaire (c'est-à-dire commençant par le symbole `#`). De plus, le curseur sera positionné sur la ligne 1, attendant que nous écrivions une TRES brève description des changements que nous avons effectués. Le texte doit être concis (pas plus d'une phrase), mais suffisamment clair pour donner aux administrateurs un aperçu des modifications apportées. A la fin, cliquez sur le bouton ✔ en haut de ce panneau.
 
   ![](images/4-9.png)
 
@@ -179,7 +179,7 @@ Terminé. Indépendamment de l'IDE utilisé, nous pouvons toujours vérifier que
 
 ## Télécharger les changements vers le dépôt officiel
 
-Si nous sommes sur la page Github de notre dépôt, nous verrons qu'un bouton appelé *Pull request* a été activé. 
+Si nous sommes sur la page Github de notre dépôt, nous verrons qu'un bouton appelé *Compare & Pull request* a été activé. 
 
 ![](images/5-1.png)
 
@@ -198,11 +198,11 @@ If you have arrived here, you are interested in supporting this website and **we
 
 * **Have a Github account**, since that is the platform where this website is hosted. This step is relatively simple, just go to the [Github](https://github.com/) website, choose the Sign up option and fill in the required fields.
 
-* Download and install the version control software Git** from its [official website](https://git-scm.com/downloads) and depending on your PC operating system.
+* **Download and install the version control software Git** from its [official website](https://git-scm.com/downloads) and depending on your PC operating system.
 
-* Download and install Quarto** from its [official website](https://quarto.org/docs/get-started/) and according to your PC operating system. This software is the platform on which the DEN pages website is built.
+* **Download and install Quarto** from its [official website](https://quarto.org/docs/get-started/) and according to your PC operating system. This software is the platform on which the DEN pages website is built.
 
-* You need to have some software that allows you to edit code and manage Git repositories**. Basically, you need an IDE. While you could do everything from a Terminal window, this is not recommended. There are many very good IDEs out there, most of which also offer tools to manage repository-hosted content. In this example, we will show how to do it in Positron and RStudio.
+* **You need to have some software that allows you to edit code and manage Git repositories**. Basically, you need an IDE. While you could do everything from a Terminal window, this is not recommended. There are many very good IDEs out there, most of which also offer tools to manage repository-hosted content. In this example, we will show how to do it in Positron and RStudio.
 
 :::{.callout-note}
 ## Positron
@@ -241,13 +241,13 @@ Each link will be different as it will depend on each user's name, so **DO NOT**
 
 Next, we will open our IDE and create a project from this repository link:
 
-* In RStudio, it will be enough to go to the menu *File-->>New project*. Then, in the window that will open, we will choose the *Version Control* option, then the *Git* option and finally in the last window we will paste the URL copied in the previous step and click on the *Create Project* button.
+* In RStudio, it will be enough to go to the menu *File→New project*. Then, in the window that will open, we will choose the *Version Control* option, then the *Git* option and finally in the last window we will paste the URL copied in the previous step and click on the *Create Project* button.
 
   ![](images/2-2.png)
   ![](images/2-3.png)
   ![](images/2-4.png)
 
-* In Positron, it will be enough to go to the menu *File-->New folder from Git*. Then, in the window that will open, paste the URL copied in the previous step. We will be able to choose the folder where we want the project folder to be created (we recommend NOT to leave the default folder, unless we are completely sure that this is the right location) and finally click on *OK*. Positron will show a small progress window at the bottom and will open the project once the download is finished.
+* In Positron, it will be enough to go to the menu *File→New folder from Git*. Then, in the window that will open, paste the URL copied in the previous step. We will be able to choose the folder where we want the project folder to be created (we recommend NOT to leave the default folder, unless we are completely sure that this is the right location) and finally click on *OK*. Positron will show a small progress window at the bottom and will open the project once the download is finished.
 
   ![](images/2-5.png)
   ![](images/2-6.png)
@@ -296,7 +296,7 @@ The first step is to upload the changes to our `fork` repository, where we do ha
 
 * We will have to click on a button that shows the word Git in vertical, located in the toolbar of RStudio.
 
-  ![](images/4.1.png)
+  ![](images/4-1.png)
 
 * In the displayed menu, choose the *Commit* option.
 
@@ -330,7 +330,7 @@ The first step is to upload the changes to our `fork` repository, where we do ha
 
   ![](images/4-8.png)
 
-* In the Editor panel, a file with the list of all changes will be opened as a comment (i.e., starting with the `#` symbol). Also, the cursor will be positioned on line 1 waiting for us to write a VERY brief description of the changes we have made. The text should be concise (no more than one sentence), but clear enough to give the administrators a hint of the changes made. At the end, click on the check button at the top of this panel.
+* In the Editor panel, a file with the list of all changes will be opened as a comment (i.e., starting with the `#` symbol). Also, the cursor will be positioned on line 1 waiting for us to write a VERY brief description of the changes we have made. The text should be concise (no more than one sentence), but clear enough to give the administrators a hint of the changes made. At the end, click on the check button (✔) at the top of this panel.
 
   ![](images/4-9.png)
 

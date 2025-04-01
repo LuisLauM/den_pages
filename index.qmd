@@ -1,5 +1,5 @@
 ---
-title: "Marbec DEN"
+title: "DEN Pages"
 image: images/logo-den.webp
 toc: true
 about: 
@@ -15,12 +15,10 @@ about:
 format: html
 ---
 
-<!-- Image credits: xxxyyyy XXXYYYY at [PictureSource](https://url.of.picture.source) -->
-
 ::: {.callout-note}
 ## One Marbec, deux langues.
 
-Vous trouverez ici des contenus en deux langues : **Français (FR) et Anglais (EN)**. Notre objectif est d'offrir un contenu dans les deux langues sur la même page. Il se peut que certaines sections ne soient temporairement disponibles que dans une seule langue. Ne vous inquiétez pas, nous essaierons de les compléter dès que possible ou vous pouvez également nous aider à traduire (voir comment le faire), nous vous en serons très reconnaissants.
+Vous trouverez ici des contenus en deux langues : **Français (FR) et Anglais (EN)**. Notre objectif est d'offrir un contenu dans les deux langues sur la même page. Il se peut que certaines sections ne soient temporairement disponibles que dans une seule langue. Ne vous inquiétez pas, nous essaierons de les compléter dès que possible ou vous pouvez également nous aider à traduire ([voir comment le faire](/manualsguides-posts/marbec-den-write-post/)), nous vous en serons très reconnaissants.
 
-Here you will find content in two languages: **French (FR) and English (EN)**. Our goal is to offer content in both languages on the same page. You may find that some sections are temporarily only available in one language, don't worry, we will try to complete it soon or you can also support us with the translation (see how to do it), we will be very grateful.
+Here you will find content in two languages: **French (FR) and English (EN)**. Our goal is to offer content in both languages on the same page. You may find that some sections are temporarily only available in one language, don't worry, we will try to complete it soon or you can also support us with the translation ([see how to do it](/manualsguides-posts/marbec-den-write-post/)), we will be very grateful.
 :::

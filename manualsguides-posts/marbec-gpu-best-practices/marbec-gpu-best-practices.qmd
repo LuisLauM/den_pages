@@ -22,7 +22,7 @@ Image credits: [GeeksForGeeks](https://www.geeksforgeeks.org/best-html-coding-pr
 
 * Soumettez obligatoirement vos jobs via un script Bash.
 * Utilisez session interactif uniquement pour des tests courts et non pour des calculs longs.
-* Fermez votre session lorsque vous ne l’utilisez plus pour libérer les ressources.
+* Fermez votre session lorsque vous ne l'utilisez plus pour libérer les ressources.
 
 ---
 

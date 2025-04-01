@@ -13,13 +13,148 @@ engine: knitr
 
 Image credits: Maxim Berg at [Unsplash](https://unsplash.com/es/fotos/un-campo-de-arboles-de-colores-en-medio-de-un-bosque-24j8h-9ME8o?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
 
-Next session
 
-* **[FR]**: Ce cours couvre dplyr, ggplot2, tidyr, et plus encore, pour vous aider à travailler efficacement avec des données. Idéal pour les débutants et les utilisateurs expérimentés !
 
-* **[EN]**: This course covers dplyr, ggplot2, tidyr, and more, helping you work efficiently with data. Ideal for beginners and experienced users!
+# [FR] 
 
-```{=html}
-<iframe width="780" height="500" src="https://umr-marbec.github.io/tidyverse-training/" title="Tidyverse training"></iframe>
-```
+## Session suivante
 
+* Dates : lundi 14 et mardi 15 avril 2025
+* Lieu : [Ifremer - Sète](https://maps.app.goo.gl/h3Zd5ZGRFkPvW6D99), en salle Mont Saint Clair 
+* Inscription : Remplir le [formulaire](https://evento.renater.fr/survey/formation-analyse-multivariee-avec-r-14-et-15-avril-marbec-sete-zpesm0g1)
+* Intervenants : Monique Simier, IRD, UMR MARBEC, DEN
+* Langue : Français
+
+## Objectifs
+
+* Apprendre à identifier les questions statistiques relevant du domaine de l’analyse multivariée.
+
+* Savoir choisir une méthode en fonction de la nature des données et des questions posées.
+
+* Connaitre les principaux packages R permettant de réaliser des analyses multivariées.
+
+* Savoir mettre en pratique les analyses factorielles à un tableau de données (ACP, AFC, ACM) et à deux tableaux de données (Analyses Inter/Intra‐classes, Analyse Discriminante, Analyses sur Variables Instrumentales, Analyse de Co‐inertie) et interpréter les résultats.
+
+* Savoir mettre en pratique les méthodes de classification automatique (CAH, partitionnement) et interpréter les résultats.
+
+* Avoir un aperçu général des méthodes d’analyses multi‐tableaux.
+
+## Programme détaillé
+
+### 1. Introduction
+
+* Contexte et objectifs de l’analyse multivariée
+* Ordination ou classification ?
+* Ordination basée sur les distances ou sur les valeurs propres (analyses factorielles)
+* Les packages R spécialisés : ade4 et FactoMineR
+
+### 2. Analyses factorielles à un tableau de données, avec les packages ade4 et FactoMineR
+
+* Analyse en Composantes Principales (ACP) : plusieurs variables quantitatives
+
+* Analyse Factorielle des Correspondances (AFC) : deux variables qualitatives
+
+* Analyse des Correspondances Multiples (ACM) : plusieurs variables qualitatives
+
+### 3. Classification Automatique
+
+* Classification Ascendante Hiérarchique (CAH) avec la fonction `hclust`
+
+* Partitionnement avec la fonction `kmeans`
+
+### 4. Méthodes de couplage de tableaux avec le package ade4
+
+* Analyses Inter et Intra‐classes
+
+* Analyse Discriminante
+
+* Analyses sur variables Instrumentales (ACPVI ou RDA, AFCVI ou CCA)
+
+* Analyse de Co‐inertie
+
+### 5. Aperçu des méthodes d’analyse multi‐tableaux
+
+* Analyse Triadique Partielle
+
+* STATIS
+
+* Analyse Factorielle Multiple
+
+## Pré‐requis
+
+* Connaitre les bases du langage R, savoir lire un tableau de données et réaliser des statistiques et graphiques élémentaires avec R (le module R débutant peut suffire).
+
+* Avoir un ordinateur équipé de R, RStudio et avoir installé les librairies [ade4](https://cran.r-project.org/package=ade4) et [FactoMineR](https://cran.r-project.org/package=FactoMineR).
+
+---
+
+# [EN] 
+
+## Next session
+
+* Dates: Monday 14 and Tuesday 15 April 2025
+* Location: [Ifremer - Sète](https://maps.app.goo.gl/h3Zd5ZGRFkPvW6D99), in the Mont Saint Clair room 
+* Registration: Fill in the [form](https://evento.renater.fr/survey/formation-analyse-multivariee-avec-r-14-et-15-avril-marbec-sete-zpesm0g1)
+* Instructor : Monique Simier, IRD, UMR MARBEC, DEN
+* Language: French
+
+## Objectives
+
+* Learn to identify statistical issues in multivariate analysis.
+
+* Know how to choose a method according to the nature of the data and the questions asked.
+
+* Know the main R packages for multivariate analysis.
+
+* Apply factorial analyses to one data table (PCA, CFA, MCA) and to two data tables (Inter/Intra-Class Analysis, Discriminant Analysis, Instrumental Variable Analysis, Co-inertia Analysis) and interpret the results.
+
+* Know how to apply automatic classification methods (AHC, partitioning) and interpret results.
+
+* Gain a general overview of multi-table analysis methods.
+
+## Detailed program
+
+### 1 Introduction
+
+* Context and objectives of multivariate analysis
+* Ordination or classification?
+* Ordination based on distances or eigenvalues (factorial analysis)
+* Specialized R packages: ade4 and FactoMineR
+
+### 2. Factor analysis of a data table, with the ade4 and FactoMineR packages
+
+* Principal Component Analysis (PCA): several quantitative variables
+
+* Correspondence Factorial Analysis (CFA): two qualitative variables
+
+* Multiple Correspondence Analysis (MCA): several categorical variables
+
+### 3. Automatic classification
+
+* Hierarchical Ascending Classification (HAC) with the `hclust` function
+
+* Partitioning with the `kmeans` function
+
+### 4. Table linking methods with the ade4 package
+
+* Inter- and intra-class analysis
+
+* Discriminant analysis
+
+* Instrumental variable analysis (ACPVI or RDA, AFCVI or CCA)
+
+* Co-inertia analysis
+
+### 5. Overview of multi-table analysis methods
+
+* Partial Triadic Analysis
+
+* STATIS
+
+* Multiple Factor Analysis
+
+## Prerequisites
+
+* Knowledge of the basics of the R language, ability to read a data table and produce elementary statistics and graphs with R (the beginner's R module may suffice).
+
+* You must have a computer running R, RStudio and have installed the [ade4](https://cran.r-project.org/package=ade4) and [FactoMineR](https://cran.r-project.org/package=FactoMineR) libraries.

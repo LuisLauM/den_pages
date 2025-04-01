@@ -61,7 +61,7 @@ Sur ce site web, vous pouvez trouver des articles sur la façon d'utiliser corre
 
 Site officiel : [meso-lr.umontpellier.fr](https://meso-lr.umontpellier.fr/)
 
-L’accès aux ressources est accordé après avoir effectué une demande de ressources et avoir répondu aux modalités financières et administratives telles que mises à jour et détaillées sur le site web <https://meso-lr.umontpellier.fr>.
+L'accès aux ressources est accordé après avoir effectué une demande de ressources et avoir répondu aux modalités financières et administratives telles que mises à jour et détaillées sur le site web <https://meso-lr.umontpellier.fr>.
 
 Features:
 
@@ -74,30 +74,30 @@ Features:
 
 ## FAQ
 
-* De quelles ressources ai-je besoin d’allouer ?
+* De quelles ressources ai-je besoin d'allouer ?
 
-  Bonne question ! Cela dépend de vos données d’entrée (taille et type), de votre modèle (stochastique, statistique, réseau de neurones, etc.), de votre tâche, mais surtout des packages utilisés. Par exemple, certains packages ne permettent pas d’effectuer des calculs sur GPU, tandis que d’autres ne peuvent pas paralléliser sur plusieurs CPU. Informez-vous donc sur les packages afin d’éviter d’allouer des ressources inutilisées et adaptez vos scripts en conséquence. Quelques exemples d’allocation :
+  Bonne question ! Cela dépend de vos données d'entrée (taille et type), de votre modèle (stochastique, statistique, réseau de neurones, etc.), de votre tâche, mais surtout des packages utilisés. Par exemple, certains packages ne permettent pas d'effectuer des calculs sur GPU, tandis que d'autres ne peuvent pas paralléliser sur plusieurs CPU. Informez-vous donc sur les packages afin d'éviter d'allouer des ressources inutilisées et adaptez vos scripts en conséquence. Quelques exemples d'allocation :
 
   - **Entraînement Pytorch YOLO** : `--mem=64G`, `--c=16` et `--gres=gpu:1`
   - **Exécution HSMC (TensorFlow)** : `--mem=64GB`, `--cpus-per-task=30` et `--gpus-per-node=1`
 
 * Mon script est-il compatible avec un GPU ?
 
-  Non, pas directement. Cependant, certaines bibliothèques sont compatibles avec les GPU. Si votre framework ou script n’utilise pas spécifiquement le GPU, votre code NE tirera PAS parti du matériel GPU. Principaux exemples de bibliothèques compatibles avec les GPU : PyTorch, TensorFlow, Keras, Theano, Caffe, etc.
+  Non, pas directement. Cependant, certaines bibliothèques sont compatibles avec les GPU. Si votre framework ou script n'utilise pas spécifiquement le GPU, votre code NE tirera PAS parti du matériel GPU. Principaux exemples de bibliothèques compatibles avec les GPU : PyTorch, TensorFlow, Keras, Theano, Caffe, etc.
 
-* Comment accéder à la file d’attente des jobs ?
+* Comment accéder à la file d'attente des jobs ?
 
   Utilisez la commande suivante : `squeue --user username`.  
-  Cette commande affiche une liste détaillée des jobs en attente, y compris le nom du job (par exemple, `spawner-jupyterhub`, qui désigne un “session-job”), le nom d’utilisateur, le temps d’exécution, le nom du nœud (par exemple, `gres:gpu:1` pour une allocation GPU, `gres:gpu:0` pour une allocation CPU), l’état du job (par exemple, `PENDING` pour les jobs en attente de démarrage en raison de la disponibilité des ressources ou de la planification, ou `RUNNING` pour les jobs en cours d’exécution) et `JOBID` (un identifiant unique pour chaque job). Consultez la [documentation SLURM squeue](https://slurm.schedmd.com/squeue.html) pour plus de détails.
+  Cette commande affiche une liste détaillée des jobs en attente, y compris le nom du job (par exemple, `spawner-jupyterhub`, qui désigne un “session-job”), le nom d'utilisateur, le temps d'exécution, le nom du nœud (par exemple, `gres:gpu:1` pour une allocation GPU, `gres:gpu:0` pour une allocation CPU), l'état du job (par exemple, `PENDING` pour les jobs en attente de démarrage en raison de la disponibilité des ressources ou de la planification, ou `RUNNING` pour les jobs en cours d'exécution) et `JOBID` (un identifiant unique pour chaque job). Consultez la [documentation SLURM squeue](https://slurm.schedmd.com/squeue.html) pour plus de détails.
 
 * Comment annuler un job soumis ?
 
-  Utilisez la commande `scancel JOBID`, où `JOBID` est l’identifiant du job que vous souhaitez annuler. Vous pouvez trouver l’ID du job en utilisant la commande `squeue`. Pour plus de détails, consultez la [documentation SLURM scancel](https://slurm.schedmd.com/scancel.html).
+  Utilisez la commande `scancel JOBID`, où `JOBID` est l'identifiant du job que vous souhaitez annuler. Vous pouvez trouver l'ID du job en utilisant la commande `squeue`. Pour plus de détails, consultez la [documentation SLURM scancel](https://slurm.schedmd.com/scancel.html).
 
 * Comment soumettre plusieurs jobs sans bloquer les autres utilisateurs ?
 
   Toute la communauté Marbec-GPU vous remercie pour votre démarche coopérative et amicale.  
-  Vous pouvez utiliser le paramètre `#SBATCH --dependency=afterany:JOBID`, où `JOBID` est l’identifiant du job que vous souhaitez attendre (par exemple, 4391). Vous pouvez trouver l’ID du job dans la sortie de la commande `sbatch` lorsque vous soumettez un job ou en utilisant la commande `squeue`, comme mentionné dans la question précédente. Selon la [documentation SLURM sbatch](https://slurm.schedmd.com/sbatch.html), ce paramètre garantit que le démarrage de votre job est différé jusqu’à ce que la dépendance spécifiée soit satisfaite. Pour des dépendances basées sur des fichiers ou des cas plus complexes, vous pouvez explorer d’autres mécanismes pour retarder ou séquencer l’exécution de votre job selon vos besoins.
+  Vous pouvez utiliser le paramètre `#SBATCH --dependency=afterany:JOBID`, où `JOBID` est l'identifiant du job que vous souhaitez attendre (par exemple, 4391). Vous pouvez trouver l'ID du job dans la sortie de la commande `sbatch` lorsque vous soumettez un job ou en utilisant la commande `squeue`, comme mentionné dans la question précédente. Selon la [documentation SLURM sbatch](https://slurm.schedmd.com/sbatch.html), ce paramètre garantit que le démarrage de votre job est différé jusqu'à ce que la dépendance spécifiée soit satisfaite. Pour des dépendances basées sur des fichiers ou des cas plus complexes, vous pouvez explorer d'autres mécanismes pour retarder ou séquencer l'exécution de votre job selon vos besoins.
 
 
 ---
@@ -110,7 +110,7 @@ Features:
 
 ### Datarmor
 
-Datarmor is a high-performance computing (HPC) cluster operated by Ifremer (French Research Institute for the Exploitation of the Sea). Designed for oceanographic and marine research, it provides powerful computational resources to process large datasets and run complex simulations. Datarmor supports studies in climate modeling, marine biodiversity, and ocean circulation, contributing to France’s leadership in maritime science and HPC innovation.
+Datarmor is a high-performance computing (HPC) cluster operated by Ifremer (French Research Institute for the Exploitation of the Sea). Designed for oceanographic and marine research, it provides powerful computational resources to process large datasets and run complex simulations. Datarmor supports studies in climate modeling, marine biodiversity, and ocean circulation, contributing to France's leadership in maritime science and HPC innovation.
 
 Official web site: [pcdm.ifremer.fr](https://pcdm.ifremer.fr/Equipement)
 
