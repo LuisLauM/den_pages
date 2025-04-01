@@ -20,6 +20,8 @@ website:
         text: "<span class='nav-center'>Manuels & Guides<br>Manuals & Guides</span>"
       - href: contact.qmd
         text: "<span class='nav-center'>Contact</span>"
+      - href: calendar.qmd
+        text: "<i class='bi bi-calendar-week-fill fs-3' title='Calendrier\nCalendar'></i>"
   page-footer:
     left: © Copyright 2025, IRD-Marbec
     right: This website is built with [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/umr-marbec/den_pages){target=_blank} and [Quarto](https://quarto.org/){target=_blank}

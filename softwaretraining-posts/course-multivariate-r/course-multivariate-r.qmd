@@ -7,7 +7,7 @@ image: banner.jpg
 about: 
   template: marquee
   image-shape: rectangle
-draft: true
+draft: false
 engine: knitr
 ---
 
@@ -27,7 +27,7 @@ Image credits: Maxim Berg at [Unsplash](https://unsplash.com/es/fotos/un-campo-d
 
 ## Objectifs
 
-* Apprendre à identifier les questions statistiques relevant du domaine de l’analyse multivariée.
+* Apprendre à identifier les questions statistiques relevant du domaine de l'analyse multivariée.
 
 * Savoir choisir une méthode en fonction de la nature des données et des questions posées.
 
@@ -37,13 +37,13 @@ Image credits: Maxim Berg at [Unsplash](https://unsplash.com/es/fotos/un-campo-d
 
 * Savoir mettre en pratique les méthodes de classification automatique (CAH, partitionnement) et interpréter les résultats.
 
-* Avoir un aperçu général des méthodes d’analyses multi‐tableaux.
+* Avoir un aperçu général des méthodes d'analyses multi‐tableaux.
 
 ## Programme détaillé
 
 ### 1. Introduction
 
-* Contexte et objectifs de l’analyse multivariée
+* Contexte et objectifs de l'analyse multivariée
 * Ordination ou classification ?
 * Ordination basée sur les distances ou sur les valeurs propres (analyses factorielles)
 * Les packages R spécialisés : ade4 et FactoMineR
@@ -72,7 +72,7 @@ Image credits: Maxim Berg at [Unsplash](https://unsplash.com/es/fotos/un-campo-d
 
 * Analyse de Co‐inertie
 
-### 5. Aperçu des méthodes d’analyse multi‐tableaux
+### 5. Aperçu des méthodes d'analyse multi‐tableaux
 
 * Analyse Triadique Partielle
 

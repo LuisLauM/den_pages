@@ -48,18 +48,18 @@ Rejoignez-nous pour transformer votre manière de travailler et renforcer la rig
 
 * Prendre en main son compte sur la forge IRD.
 
-* Utiliser les tags et versions pour suivre l’évolution de scripts d’analyse.
+* Utiliser les tags et versions pour suivre l'évolution de scripts d'analyse.
 
 * Collaborer efficacement : créer des branches, fusionner des modifications et gérer les conflits (cette utilisation plus avancée sera abordée en fin de formation).
 
 * Se servir de Git via une interface graphique comme RStudio ou VSCode (cette utilisation pourra être abordée en fin de formation)
 
-## Prérequis généraux et modalité d’inscription
+## Prérequis généraux et modalité d'inscription
 
 * Compétences requises : connaissance de base de la ligne de commande / terminal
 * Équipement : ordinateur personnel
-* Public : Personnel de l’IRD, partenaires et collaborateurs (dans la limite des places disponibles)
-* Évaluation à l’issue de la formation : Attestation de suivi de formation
+* Public : Personnel de l'IRD, partenaires et collaborateurs (dans la limite des places disponibles)
+* Évaluation à l'issue de la formation : Attestation de suivi de formation
 
 
 # [EN] Git: the essential tool for file management and version control

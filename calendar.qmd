@@ -1,0 +1,26 @@
+---
+title: "Calendrier | Calendar"
+image: images/logo-den.webp
+toc: false
+about: 
+  template: marquee
+  image-shape: rectangle
+  links:
+    - text: GitHub
+      href: https://umr-marbec.github.io/
+      icon: github
+    - text: Email
+      href: mailto:marbec-den-admin@listes.ird.fr
+      icon: envelope-fill
+format: html
+---
+
+```{=html}
+<div class="calendar-container" style="width: 100%; max-width: 100%; text-align: center;">
+  <iframe src="https://drive.ird.fr/apps/calendar/embed/ZBpNdNbz6KS85H95" 
+          frameborder="0" 
+          width="100%" 
+          height="600px" 
+          style="border: none;"></iframe>
+</div>
+```
