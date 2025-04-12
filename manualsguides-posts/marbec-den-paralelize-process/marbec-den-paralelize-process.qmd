@@ -1,0 +1,70 @@
+---
+title: "Cómo paralelizar un proceso en R"
+author: 
+  - name: Wencheng Lau-Medrano
+    email: luis.lau-medrano@etu.umontpellier.fr
+description: |
+  Un ejemplo sencillo de cómo ejecutar un proceso en varios hilos en paralelo.
+date: 2025-04-11
+image: banner.jpg
+about: 
+  template: marquee
+  image-shape: rectangle
+draft: true
+engine: knitr
+tags: ["marbec-gpu", "script", "R", "parallel", "parallèle"]
+categories: ["R", "guides"]
+---
+
+Image credits: Mitchell Luo at [Unplash](https://unsplash.com/photos/black-birds-on-black-wire-0lXrifK71Cg?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)
+
+# [FR] Exécuter un script R sur Marbec-GPU à partir de zéro
+
+---
+
+# [EN] De muchos procesos simples a un proceso en paralelo
+
+## What implies the parallelization of a process?
+
+Parallelizing a process in programming, such as in R, means dividing a task into smaller, independent subtasks that can be executed **simultaneously** across multiple processors or cores. This can significantly reduce computation time, especially for large or complex tasks.
+
+### What does parallelizing a process involve?
+
+1. **Task Decomposition**: Breaking the overall computation into discrete units of work.
+2. **Concurrency**: Executing these units at the same time, either on separate cores (true parallelism) or interleaved on a single core (concurrent execution).
+3. **Coordination**: Managing communication and synchronization between processes (if needed).
+4. **Aggregation**: Collecting and combining results after parallel execution.
+
+In R, parallelization is commonly achieved through packages like `parallel`, `foreach`, `future`, or `doParallel`. These allow us to spawn multiple R processes or threads and assign tasks to each.
+
+### Conditions for a process to be parallelizable
+
+Not all processes can be (or must be) parallelized and, even within those that can, the same parallelization strategy will not be applied to all of them. A process can be parallelized if it meets the following criteria:
+
+1. **Independence of Tasks**:
+   - Subtasks should be **independent** of each other or require minimal communication.
+   - For example, applying the same function to each element in a list (like in a `for` loop) is often parallelizable.
+
+2. **No Shared State or Safe Synchronization**:
+   - If subtasks share data, access must be carefully managed to avoid race conditions.
+   - Read-only data sharing is generally safe.
+
+3. **Significant Computation per Task**:
+   - Overhead from starting parallel processes can outweigh the benefit for small tasks.
+   - Ideal candidates have heavy or time-consuming computation per subtask.
+
+4. **Data Size and Memory**:
+   - The system must have enough memory for multiple processes running simultaneously.
+   - Very large datasets may need careful memory management or parallelization via chunks.
+
+
+### When parallelization is not a good idea?
+
+* Processes that are inherently **sequential** (each step depends on the previous one).
+* Tasks with **heavy inter-process communication** needs.
+* Functions that modify global state or depend on side effects (e.g., writing to the same file).
+
+## First of all: a single-thread process
+
+## Let's parallelize it!
+
