@@ -76,8 +76,8 @@ Une fois le fichier téléchargé, il suffit de l'exécuter en conservant la plu
 Nous allons maintenant établir une connexion avec Marbec-DATA. Pour cela, dans la partie supérieure, nous remplirons les champs suivants :
 
 * Serveur : marbec-data.ird.fr
-* Utilisateur : notreutilisateur
-* Mot de passe : notremotdepasse
+* Utilisateur : votreutilisateurmarbecdata
+* Mot de passe : motdepassemarbecdata
 * Port : 22
 
 Si tout se passe bien, un message indiquera que la connexion a réussi. De plus, les panneaux inférieurs à droite afficheront les dossiers déjà liés et disponibles sur notre compte Marbec-DATA.
@@ -207,8 +207,8 @@ Once the file has been downloaded, it will be enough to run it leaving most of t
 The next thing we will do is to establish a connection to Marbec-DATA. To do this, at the top, we will fill in the following fields:
 
 * Server: marbec-data.ird.fr
-* User: youruser
-* Password: yourpassword
+* User: yourmarbecdatauser
+* Password: yourmarbecdatapassword
 * Port: 22
 
 If all goes well, a message indicating that the connection has been successful will be displayed in the panel immediately below. In addition, the next two lower panels to the right will show those folders already linked and available in our Marbec-DATA account. 
