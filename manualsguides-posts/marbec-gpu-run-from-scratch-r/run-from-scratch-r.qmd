@@ -173,7 +173,7 @@ require(doParallel)
 # Registering cluster
 cl <- makeCluster(spec = 3)
 registerDoParallel(cl = cl)
-requiredPkgs <- c("dplyr", )
+requiredPkgs <- c("dplyr")
 
 # Run multithread process
 allBoots <- foreach(i = 1:300, .inorder = FALSE, .packages = requiredPkgs) %dopar% {
@@ -304,8 +304,8 @@ Si tout est bien configuré (pas d'erreurs de syntaxe dans le script BASH), un m
 
 De plus, en exécutant `ls`, vous devriez voir deux nouveaux fichiers créés :  
 
-* **job_\<NomDuJob\>_\<jobID\>.log** → Stocke les messages imprimés par le script R.  
-* **job_\<NomDuJob\>_\<jobID\>.err** → Contient les erreurs ou avertissements rencontrés pendant l'exécution.  
+* **`job_<NomDuJob>_<jobID>.log`** → Stocke les messages imprimés par le script R.  
+* **`job_<NomDuJob>_<jobID>.err`** → Contient les erreurs ou avertissements rencontrés pendant l'exécution.  
 
 ![](images/12.png)  
 
@@ -334,9 +334,31 @@ Utile si le script R affiche des messages de progression. Pour **quitter le mode
 
 * Vérifier le statut du job avec `squeue`  
 
-Affiche depuis combien de temps le script tourne.  
+Grâce à la commande `squeue`, il est possible de surveiller l'état de notre processus et de vérifier depuis combien de temps il est en cours d'exécution. Le résultat de la commande `squeue` dans Terminal peut ressembler à ceci :
 
-![](images/13.png)  
+![](images/13.png)
+
+La colonne `ST` montre le statut du processus, tandis que la colonne `NODELIST(REASON)` donne des détails sur ce statut. Dans l'image ci-dessus, vous pouvez voir les trois valeurs les plus courantes qui seront affichées dans la colonne `NODELIST(REASON)` :
+
+* `marbec-gpu` : Indique que notre processus est déjà en cours d'exécution. Dans la colonne `TIME`, nous pouvons visualiser la durée d'exécution de ce processus dans le format **JOURS-HEURES:MINUTES:SECONDES**. Il est important de noter que le processus `spawner-Jupyterhub` fait référence à notre propre session dans Marbec-GPU.
+
+* `(Priority)` : Un ou plusieurs travaux de priorité supérieure sont en file d'attente. Votre travail sera finalement exécuté.
+
+* `(Ressources)` : Le travail attend que des ressources soient disponibles et sera finalement exécuté.
+
+Si vous souhaitez obtenir plus de détails sur les états possibles, nous vous recommandons de consulter cet article : [`squeue` Status and Reason Codes](https://curc.readthedocs.io/en/latest/running-jobs/squeue-status-codes.html#squeue-status-and-reason-codes).
+
+:::{.callout-tip}  
+## Voir les détails complets
+
+Par défaut, le résultat de la table `squeue` montre des résultats tronqués. Si vous voulez voir plus de détails, vous devrez l'indiquer à travers l'argument `--format`. Par exemple :
+
+```bash
+squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R"
+```
+
+Bien qu'elle puisse sembler compliquée, la syntaxe est assez simple. Il y a plusieurs morceaux de la forme `%.[X][Y]`, où la lettre en position `[Y]` est utilisée pour indiquer la colonne sur laquelle vous voulez changer la longueur du texte, tandis que le nombre en position `[X]` est utilisé pour indiquer le nombre de caractères que vous voulez afficher pour cette colonne.
+:::
 
 * Consulter les fichiers de sortie  
 
@@ -350,7 +372,7 @@ Surveiller l'utilisation des ressources de notre processus est important car nou
 htop --user <username> --pid <jobID>
 
 # Exemple
-htop --utilisateur mcurie --pid 7145
+htop --user mcurie --pid 7145
 ```
 
 Il est recommandé de surveiller au moins les premières minutes ou lorsque vous savez que votre processus fonctionne pleinement. Pour quitter le mode `htop`, appuyez simplement sur la touche `F10` ou sur la combinaison de touches `Ctrl+C` (Windows/Linux) ou `Cmd+C` (MacOS).
@@ -549,7 +571,7 @@ require(doParallel)
 # Registering cluster
 cl <- makeCluster(spec = 3)
 registerDoParallel(cl = cl)
-requiredPkgs <- c("dplyr", )
+requiredPkgs <- c("dplyr")
 
 # Run multithread process
 allBoots <- foreach(i = 1:300, .inorder = FALSE, .packages = requiredPkgs) %dopar% {
@@ -678,8 +700,8 @@ If everything is set up correctly (i.e., there are no syntax errors in your BASH
 
 Additionally, if you run `ls`, you should see two newly created files:  
 
-* **job_\<NameOfJob\>_\<jobID\>.log** → Stores printed messages from our R script.
-* **job_\<NameOfJob\>_\<jobID\>.err** → Logs any errors or warnings encountered during execution.
+* **`job_<NameOfJob>_<jobID>.log`** → Stores printed messages from our R script.
+* **`job_<NameOfJob>_<jobID>.err`** → Logs any errors or warnings encountered during execution.
 
 ![](images/12.png)
 
@@ -707,9 +729,31 @@ To **exit this monitoring mode** and return to the regular Terminal, press `Ctrl
 
 * Checking the Job Status with `squeue`  
 
-The `squeue` command allows us to check how long our script has been running.
+Through the `squeue` command it is possible to monitor the status of our process as well as check how long it has been running. The result of running `squeue` in Terminal may look like this:
 
 ![](images/13.png)
+
+The `ST` column shows the status of the process, while the `NODELIST(REASON)` column gives details of that status. In the image above you can see the three most common values that will be shown in the `NODELIST(REASON)` column:
+
+* `marbec-gpu`: Indicates that our process is already running. In the `TIME` column we can visualize the time that process has been running in the format **DAYS-HOURS:MINUTES:SECONDS**. It is important to point out that the `spawner-Jupyterhub` process refers to our own session in Marbec-GPU.
+
+* `(Priority)`: One or more higher priority jobs is in queue for running. Your job will eventually run.
+
+* `(Resources)`: The job is waiting for resources to become available and will eventually run.
+
+If you want to know more details about the possible states, we recommend you to visit this post: [`squeue` Status and Reason Codes](https://curc.readthedocs.io/en/latest/running-jobs/squeue-status-codes.html#squeue-status-and-reason-codes).
+
+:::{.callout-tip}  
+## See complete details
+
+By default, the result of the `squeue` table shows trimmed results. If you want to see more details, you will have to indicate it through the `--format` argument. For example:
+
+```bash
+squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R"
+```
+
+Although it may seem complicated, the syntax is quite simple. There are several pieces in the form `%.[X][Y]`, where the letter in the `[Y]` position is used to indicate the column over which you want to change the text length, while the number in the `[X]` position is used to indicate the number of characters you want to display for that column.
+:::
 
 * Checking Output Files  
 
