@@ -1,0 +1,205 @@
+---
+title: "Create your bash startup script for SLURM"
+author: 
+  - name: Wencheng Lau-Medrano
+    email: luis.lau-medrano@etu.umontpellier.fr
+description: |
+  Comment construire votre script bash pour exécuter un processus sur Marbec-GPU ? | How to build your bash script to run a process on Marbec-GPU?
+date: 2025-04-18
+image: banner.jpg
+about: 
+  template: marquee
+  image-shape: rectangle
+draft: false
+engine: knitr
+tags: ["marbec-gpu", "SLURM", "bash", "script"]
+categories: ["marbec-gpu", "guides"]
+---
+
+Image credits: Markus Spiske at [Unplash](https://unsplash.com/photos/black-and-silver-gas-stove-TgHBxYPqMMg)
+
+# [FR] Préparation d'un script bash pour SLURM
+
+## Qu'est-ce que SLURM et pourquoi dois-je préparer un script ?
+
+SLURM (Simple Linux Utility for Resource Management) est un planificateur de tâches largement utilisé dans les environnements de calcul à haute performance (HPC). Son rôle principal est de gérer et d'allouer les ressources informatiques de manière efficace, en permettant à plusieurs utilisateurs d'exécuter des tâches de manière organisée et optimisée. Le script bash SLURM est le principal moyen de définir comment, quand et avec quelles ressources notre processus s'exécutera. 
+
+Chaque script bash pour SLURM doit toujours inclure les éléments suivants :
+
+* **Ligne Shebang:** C'est la première ligne du script et elle indique au système quel shell utiliser (le plus souvent `bash #!/bin/bash`).
+
+* **Directives SLURM:** Ces lignes commencent par `#SBATCH` et sont utilisées pour demander des ressources et configurer le travail. En d'autres termes, elles indiquent à SLURM ce dont votre travail a besoin et combien de temps il peut durer.
+
+* **Chargement des modules / configuration de l'environnement** : En fonction de votre processus, il peut être nécessaire d'utiliser des modules pour gérer les environnements logiciels.
+
+* **Vos commandes réelles** : C'est ici que vous placez les commandes que vous souhaitez exécuter, par exemple pour lancer une simulation ou une analyse.
+
+
+## Principales directives SLURM
+
+* **`--job-name`**: Définit un nom personnalisé pour votre travail. Cela vous permet de l'identifier facilement dans la file d'attente des travaux ou dans les journaux.  
+
+```bash
+#SBATCH --job-name=my_first_job
+```
+
+* **`--output`** and **`--error`**: Redirige les flux de sortie et d'erreur standard vers des fichiers spécifiques. Utile pour le débogage et l'organisation des journaux.  
+
+```bash
+#SBATCH --output=job_output.log
+#SBATCH --error=job_errors.err
+```
+
+* **`--ntasks`**: Spécifie le nombre de tâches (processus) à exécuter. Dans de nombreux cas, vous utiliserez une tâche par cœur de processeur, en particulier pour les tâches MPI.  
+
+```bash
+#SBATCH --ntasks=4
+```
+
+* **`--cpus-per-task`**: Indique à SLURM le nombre de cœurs de CPU à allouer par tâche. Ceci est important pour les programmes multithreads comme OpenMP.  
+
+```bash
+#SBATCH --cpus-per-task=8
+```
+
+* **`--mem`**: Demande une quantité spécifique de mémoire vive pour le travail. Certains systèmes l'exigent pour éviter une surallocation de la mémoire.
+
+```bash
+#SBATCH --mem=32G
+```
+
+* **`--nodes`**: Spécifie le nombre de nœuds de calcul distincts à utiliser. Important pour les travaux distribués qui s'étendent sur plusieurs machines.
+
+```bash
+#SBATCH --nodes=2
+```
+
+* **`--time`**: Définit la durée d'exécution maximale de votre travail. SLURM tuera votre travail s'il dépasse cette durée, soyez donc réaliste mais prudent.
+
+```bash
+#SBATCH --time=02:00:00  # 2 hours
+```
+
+* **`--partition`**: Spécifie la file d'attente (partition) à laquelle votre travail doit être soumis. Les partitions peuvent être basées sur le matériel (par exemple, CPU vs GPU), la politique d'utilisation ou les limites de temps.
+
+```bash
+#SBATCH --partition=gpu
+```
+
+* **`--gpus`**: Indispensable lors de l'utilisation de GPU. Cette directive indique à SLURM le nombre de GPU nécessaires et leur type (le cas échéant).
+
+```bash
+#SBATCH --gpus=1           # Request 1 GPU
+```
+
+:::{.callout-important}
+## Si vous ne l'utilisez pas, ne le nommez pas
+
+Si pour un certain processus nous n'avons pas besoin de définir un certain paramètre, il est préférable de ne pas le mentionner, plutôt que de le mentionner et de le définir avec une valeur nulle. Par exemple, si notre processus ne nécessite pas l'utilisation de GPU, il est préférable de ne RIEN définir au lieu de définir `--gpus=0`.
+:::
+
+## Une ShinyApp pour construire un script bash SLURM
+
+```{=html}
+<div class="calendar-container" style="width: 100%; max-width: 100%;">
+  <iframe src="https://luislaum.shinyapps.io/slurmbash/" 
+          frameborder="0" 
+          width="100%" 
+          height="600px" 
+          style="border: none;"></iframe>
+</div>
+```
+
+---
+
+# [EN] Preparing a bash script for SLURM
+
+## What is SLURM and why should I prepare a script?
+
+SLURM (Simple Linux Utility for Resource Management) is a widely used job scheduler in high-performance computing (HPC) environments. Its main role is to manage and allocate computing resources efficiently, allowing multiple users to run tasks in an organized and optimized way. A bash script SLURM is the main way to define how, when, and with what resources our process will run. 
+
+Every bash script for SLURM must always include the next:
+
+* **Shebang line:** This is the first line of the script and tells the system which shell to use (most commonly `bash #!/bin/bash`).
+
+* **SLURM directives:** These lines begin with `#SBATCH` and are used to request resources and configure the job. In other words, they tell SLURM what your job needs and how long it might run.
+
+* **Module loading / environment setup**: Depending on your process, it would be needed to use modules to manage software environments.
+
+* **Your actual commands**: This is where you put the commands you want to execute, for example, running a simulation or analysis.
+
+
+## Main SLURM directives
+
+* **`--job-name`**: Sets a custom name for your job. This helps you identify it easily in the job queue or logs.  
+
+```bash
+#SBATCH --job-name=my_first_job
+```
+
+* **`--output`** and **`--error`**: Redirects the standard output and error streams to specific files. Useful for debugging and keeping logs organized.  
+
+```bash
+#SBATCH --output=job_output.log
+#SBATCH --error=job_errors.err
+```
+
+* **`--ntasks`**: Specifies the number of tasks (processes) to run. In many cases, you’ll use one task per CPU core, especially in MPI jobs.  
+
+```bash
+#SBATCH --ntasks=4
+```
+
+* **`--cpus-per-task`**: Tells SLURM how many CPU cores to allocate per task. This is important for multi-threaded programs like OpenMP.  
+
+```bash
+#SBATCH --cpus-per-task=8
+```
+
+* **`--mem`**: Requests a specific amount of RAM for the job. Some systems require this to avoid memory over-allocation.  
+
+```bash
+#SBATCH --mem=32G
+```
+
+* **`--nodes`**: Specifies how many separate compute nodes to use. Important for distributed jobs that span multiple machines.  
+
+```bash
+#SBATCH --nodes=2
+```
+
+* **`--time`**: Sets the maximum runtime for your job. SLURM will kill your job if it exceeds this time, so be realistic but conservative.  
+
+```bash
+#SBATCH --time=02:00:00  # 2 hours
+```
+
+* **`--partition`**: Specifies which queue (partition) your job should be submitted to. Partitions may be based on hardware (e.g., CPU vs GPU), usage policy, or time limits.  
+
+```bash
+#SBATCH --partition=gpu
+```
+
+* **`--gpus`**: Essential when using GPUs. This directive tells SLURM how many GPUs you need and what type (if applicable).  
+
+```bash
+#SBATCH --gpus=1           # Request 1 GPU
+```
+
+:::{.callout-important}
+## If you don't use it, don't name it
+
+If for a certain process we don't need to define a certain parameter, it is better not to mention it, instead of mentioning it and defining it with zero value. For example, if our process does not require the use of GPUs, it is preferable NOT to define anything instead of defining `--gpus=0`.
+:::
+
+## A ShinyApp for building a SLURM bash script
+
+```{=html}
+<div class="calendar-container" style="width: 100%; max-width: 100%;">
+  <iframe src="https://luislaum.shinyapps.io/slurmbash/" 
+          frameborder="0" 
+          width="100%" 
+          height="600px" 
+          style="border: none;"></iframe>
+</div>
+```
