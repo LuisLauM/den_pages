@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  site-url: https://luislaum.github.io/den_pages/
+  site-url: https://claudiaximenaro.github.io/den_pages/
   favicon: images/favicon/favicon.ico
   title: "<b>DEN Pages</b> <span style='font-size: 0.8em;'>by Marbec</span>"
   navbar:
