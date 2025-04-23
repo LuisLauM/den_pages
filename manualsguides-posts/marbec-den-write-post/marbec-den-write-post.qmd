@@ -2,7 +2,7 @@
 title: "How to write/edit content in DEN Pages?"
 author: 
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr
+    email: wlaumedrano@protonmail.com
 description: |
   Guide rapide pour modifier ou ajouter du contenu aux pages DEN. | A quick guide to editing or adding content to DEN Pages.
 date: 2025-03-27

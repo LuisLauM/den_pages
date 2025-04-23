@@ -2,7 +2,7 @@
 title: "Managing files within Marbec-DATA"
 author: 
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr
+    email: wlaumedrano@protonmail.com
   - name: Claudia Restrepo-Ortiz
     email: claudia.restrepo-ortiz@ird.fr
 description: |

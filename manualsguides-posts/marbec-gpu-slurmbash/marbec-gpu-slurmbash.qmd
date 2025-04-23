@@ -2,7 +2,7 @@
 title: "Create your bash startup script for SLURM"
 author: 
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr
+    email: wlaumedrano@protonmail.com
 description: |
   Comment construire votre script bash pour exécuter un processus sur Marbec-GPU ? | How to build your bash script to run a process on Marbec-GPU?
 date: 2025-04-18
@@ -98,14 +98,14 @@ Chaque script bash pour SLURM doit toujours inclure les éléments suivants :
 Si pour un certain processus nous n'avons pas besoin de définir un certain paramètre, il est préférable de ne pas le mentionner, plutôt que de le mentionner et de le définir avec une valeur nulle. Par exemple, si notre processus ne nécessite pas l'utilisation de GPU, il est préférable de ne RIEN définir au lieu de définir `--gpus=0`.
 :::
 
-## Une ShinyApp pour construire un script bash SLURM
+## Une ShinyApp pour construire votre premier script bash pour SLURM
 
 ```{=html}
 <div class="calendar-container" style="width: 100%; max-width: 100%;">
   <iframe src="https://luislaum.shinyapps.io/slurmbash/" 
           frameborder="0" 
           width="100%" 
-          height="600px" 
+          height="450px" 
           style="border: none;"></iframe>
 </div>
 ```
@@ -192,14 +192,14 @@ Every bash script for SLURM must always include the next:
 If for a certain process we don't need to define a certain parameter, it is better not to mention it, instead of mentioning it and defining it with zero value. For example, if our process does not require the use of GPUs, it is preferable NOT to define anything instead of defining `--gpus=0`.
 :::
 
-## A ShinyApp for building a SLURM bash script
+## A ShinyApp for building your first bash script for SLURM
 
 ```{=html}
 <div class="calendar-container" style="width: 100%; max-width: 100%;">
   <iframe src="https://luislaum.shinyapps.io/slurmbash/" 
           frameborder="0" 
           width="100%" 
-          height="600px" 
+          height="450px" 
           style="border: none;"></iframe>
 </div>
 ```

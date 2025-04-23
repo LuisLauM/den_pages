@@ -4,7 +4,7 @@ author:
   - name: Auguste Verdier
     email: auguste.verdier@umontpellier.fr
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr  
+    email: wlaumedrano@protonmail.com
 description: |
   Une liste rapide des principales commandes à utiliser dans le terminal Marbec-GPU. | A quick list of the main commands to use within the Marbec-GPU Terminal. 
 date: 2024-10-23

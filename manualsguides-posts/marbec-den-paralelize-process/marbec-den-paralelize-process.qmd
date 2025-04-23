@@ -2,7 +2,7 @@
 title: "Cómo paralelizar un proceso en R"
 author: 
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr
+    email: wlaumedrano@protonmail.com
 description: |
   Un ejemplo sencillo de cómo ejecutar un proceso en varios hilos en paralelo.
 date: 2025-04-11

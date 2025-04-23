@@ -2,7 +2,7 @@
 title: "Running an R script on Marbec-GPU from scratch"
 author: 
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr
+    email: wlaumedrano@protonmail.com
 description: |
   Un guide rapide sur la façon d'exécuter un script R sur Marbec-GPU. | A quick guide on how to run an R script on Marbec-GPU.
 date: 2025-03-25

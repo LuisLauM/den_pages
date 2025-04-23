@@ -4,7 +4,7 @@ author:
   - name: Auguste Verdier
     email: auguste.verdier@umontpellier.fr
   - name: Wencheng Lau-Medrano
-    email: luis.lau-medrano@etu.umontpellier.fr
+    email: wlaumedrano@protonmail.com
 description: |
   Comment accéder à Marbec-GPU et Marbec-DATA ? | How to access to Marbec-GPU and Marbec-DATA? 
 date: 2024-10-21
